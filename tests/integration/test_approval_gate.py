@@ -237,9 +237,7 @@ class TestVersionMismatch:
 
         checksum = gate.compute_brief_checksum(brief)
         # Approval for version 1 (but brief is version 2)
-        approval = Approval(
-            brief_id=brief.brief_id, approved=True, reviewer="test", version=1
-        )
+        approval = Approval(brief_id=brief.brief_id, approved=True, reviewer="test", version=1)
         gate.save_approval(approval, checksum)
 
         with pytest.raises(VersionError):
@@ -251,9 +249,7 @@ class TestVersionMismatch:
         qa = _make_qa(QADecision.ESCALATE)
 
         checksum = gate.compute_brief_checksum(brief)
-        approval = Approval(
-            brief_id=brief.brief_id, approved=True, reviewer="test", version=1
-        )
+        approval = Approval(brief_id=brief.brief_id, approved=True, reviewer="test", version=1)
         gate.save_approval(approval, checksum)
 
         # Should not raise

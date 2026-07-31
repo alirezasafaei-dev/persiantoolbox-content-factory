@@ -1,10 +1,10 @@
 {
   "brief_id": "brief-0fe8a2d317fd",
   "approved": true,
-  "reviewer": "admin",
-  "notes": "Approved via CLI by admin",
+  "reviewer": "canary",
+  "notes": "Approved via CLI by canary",
   "conditions": [],
-  "created_at": "2026-07-31T18:16:10.457238+00:00",
+  "created_at": "2026-07-31T20:35:27.922498+00:00",
   "version": 1,
   "checksum": "0471d2cc33595be203393469bafde51f986080eb4747b7567c948d7ee66dfc10"
 }

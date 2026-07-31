@@ -12,7 +12,9 @@ from ptb_content.types import (
 )
 
 
-def _make_record(risk_tags: list[RiskTag] | None = None, claims: list[Claim] | None = None) -> CatalogRecord:
+def _make_record(
+    risk_tags: list[RiskTag] | None = None, claims: list[Claim] | None = None
+) -> CatalogRecord:
     return CatalogRecord(
         canonical_url="https://example.com/test",
         title="Test",

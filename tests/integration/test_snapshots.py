@@ -8,6 +8,8 @@ Baselines are NEVER auto-updated on failure.
 from __future__ import annotations
 
 import asyncio
+import os
+import shutil
 from pathlib import Path
 
 import pytest
@@ -22,6 +24,19 @@ from ptb_content.types import (
 
 BASELINES_DIR = Path("tests/baselines")
 FIXTURES_DIR = Path("tests/fixtures")
+
+# Playwright + chromium required for PNG rendering
+# The renderer hardcodes /snap/bin/chromium; skip if not available
+_playwright_available = os.path.exists("/snap/bin/chromium")
+try:
+    from playwright.async_api import async_playwright  # noqa: F401
+except ImportError:
+    _playwright_available = False
+
+requires_playwright = pytest.mark.skipif(
+    not _playwright_available,
+    reason="Playwright/chromium not available (CI or headless env)",
+)
 
 # Tolerance for pixel comparison (allow for font rendering differences)
 PIXEL_TOLERANCE = 0.02  # 2% of pixels may differ
@@ -61,6 +76,7 @@ def _get_dimensions(size_key: str) -> tuple[int, int]:
     return SIZES[size_key]
 
 
+@requires_playwright
 class TestSnapshotDimensions:
     """Verify PNG output dimensions match expected sizes."""
 
@@ -102,6 +118,7 @@ class TestSnapshotDimensions:
         assert header[:4] == b"\x89PNG", f"Invalid PNG header for {size_key}: {header[:4]}"
 
 
+@requires_playwright
 class TestSnapshotBaselines:
     """Snapshot regression: compare rendered PNG against baselines."""
 
@@ -131,7 +148,6 @@ class TestSnapshotBaselines:
         if not baseline_path.exists():
             # First run: create baseline, skip comparison
             baseline_dir.mkdir(parents=True, exist_ok=True)
-            import shutil
             shutil.copy2(rendered_path, baseline_path)
             pytest.skip(f"Baseline created for {size_key}. Re-run to compare.")
 
@@ -163,13 +179,13 @@ class TestSnapshotBaselines:
 
         if not baseline_path.exists():
             baseline_dir.mkdir(parents=True, exist_ok=True)
-            import shutil
             rendered_path = asyncio.run(renderer.render_to_png(brief, size_key))
             shutil.copy2(rendered_path, baseline_path)
 
         assert baseline_path.exists(), f"Baseline not found for {size_key}"
 
 
+@requires_playwright
 class TestSnapshotOverflow:
     """Test that long Persian text does not break rendering."""
 
@@ -263,6 +279,7 @@ class TestSnapshotCTA:
         assert "cta_margin" in html or "margin-top" in html, "CTA margin not found"
 
 
+@requires_playwright
 class TestSnapshotAllSizes:
     """Verify all 3 sizes render for each template type."""
 
@@ -280,4 +297,6 @@ class TestSnapshotAllSizes:
         assert len(results) == 3, f"Expected 3 results, got {len(results)}"
         for size_key, path in results.items():
             assert path.exists(), f"Missing output for {size_key}"
-            assert path.stat().st_size > 1000, f"PNG too small for {size_key}: {path.stat().st_size} bytes"
+            assert path.stat().st_size > 1000, (
+                f"PNG too small for {size_key}: {path.stat().st_size} bytes"
+            )

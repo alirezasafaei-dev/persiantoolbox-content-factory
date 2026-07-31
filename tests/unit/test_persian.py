@@ -19,12 +19,12 @@ class TestNormalizePersian:
 
     def test_arabic_kaf_to_persian(self) -> None:
         arabic_kaf = "\u0643"  # Arabic ك
-        persian_kaf = "\u06A9"  # Persian ک
+        persian_kaf = "\u06a9"  # Persian ک
         assert normalize_persian(f"برنامه{arabic_kaf}نویسی") == f"برنامه{persian_kaf}نویسی"
 
     def test_arabic_yeh_to_persian(self) -> None:
         arabic_yeh = "\u0649"  # Arabic ى
-        persian_yeh = "\u06CC"  # Persian ی
+        persian_yeh = "\u06cc"  # Persian ی
         assert normalize_persian(f"علی{arabic_yeh}") == f"علی{persian_yeh}"
 
     def test_whitespace_normalization(self) -> None:

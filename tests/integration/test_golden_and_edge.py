@@ -25,8 +25,7 @@ class TestGoldenSetValidation:
         if not golden_dir.exists():
             return []
         return [
-            json.loads(f.read_text(encoding="utf-8"))
-            for f in sorted(golden_dir.glob("*.json"))
+            json.loads(f.read_text(encoding="utf-8")) for f in sorted(golden_dir.glob("*.json"))
         ]
 
     def test_golden_set_count(self) -> None:
@@ -37,19 +36,13 @@ class TestGoldenSetValidation:
         briefs = self._load_golden()
         for b in briefs:
             if b["risk_level"] == "HIGH":
-                assert b["risk_decision"] == "ESCALATE", (
-                    f"{b['brief_id']} is HIGH but not ESCALATE"
-                )
+                assert b["risk_decision"] == "ESCALATE", f"{b['brief_id']} is HIGH but not ESCALATE"
 
     def test_no_missing_source(self) -> None:
         briefs = self._load_golden()
         for b in briefs:
-            assert b["catalog_record"]["source_id"], (
-                f"{b['brief_id']} missing source_id"
-            )
-            assert b["catalog_record"]["canonical_url"], (
-                f"{b['brief_id']} missing canonical_url"
-            )
+            assert b["catalog_record"]["source_id"], f"{b['brief_id']} missing source_id"
+            assert b["catalog_record"]["canonical_url"], f"{b['brief_id']} missing canonical_url"
 
     def test_persian_normalization(self) -> None:
         briefs = self._load_golden()
@@ -72,9 +65,16 @@ class TestGoldenSetValidation:
     def test_schema_completeness(self) -> None:
         briefs = self._load_golden()
         required_fields = [
-            "brief_id", "catalog_record", "audience", "content_strategy",
-            "psychology_hypothesis", "caption", "art_direction",
-            "risk_level", "risk_decision", "created_at",
+            "brief_id",
+            "catalog_record",
+            "audience",
+            "content_strategy",
+            "psychology_hypothesis",
+            "caption",
+            "art_direction",
+            "risk_level",
+            "risk_decision",
+            "created_at",
         ]
         for b in briefs:
             for field in required_fields:
@@ -98,9 +98,7 @@ class TestPromptInjection:
 
         crawler = Crawler()
         malicious_html = '<title><script>alert("xss")</script></title>'
-        metadata = crawler._extract_metadata(
-            malicious_html, "https://evil.com", 200, {}
-        )
+        metadata = crawler._extract_metadata(malicious_html, "https://evil.com", 200, {})
         # The regex [^<]+ stops at < so it either extracts nothing or partial
         # Either way, the system does NOT execute the script — this is safe
         title = metadata.get("html_title", "")
@@ -113,9 +111,7 @@ class TestPromptInjection:
 
         crawler = Crawler()
         malicious_html = '<meta name="description" content="DROP TABLE users; --">'
-        metadata = crawler._extract_metadata(
-            malicious_html, "https://evil.com", 200, {}
-        )
+        metadata = crawler._extract_metadata(malicious_html, "https://evil.com", 200, {})
         assert "DROP TABLE" in metadata.get("meta_description", "")
 
     def test_injection_in_og_tags(self) -> None:
@@ -124,9 +120,7 @@ class TestPromptInjection:
 
         crawler = Crawler()
         malicious_html = '<meta property="og:title" content="<img src=x onerror=alert(1)>">'
-        metadata = crawler._extract_metadata(
-            malicious_html, "https://evil.com", 200, {}
-        )
+        metadata = crawler._extract_metadata(malicious_html, "https://evil.com", 200, {})
         assert "og:title" in metadata
 
 
@@ -163,9 +157,7 @@ class TestDuplicatePublish:
                 hook_type="direct",
                 template_type=TemplateType.TOOL_DEMO,
             ),
-            psychology_hypothesis=PsychologyHypothesis(
-                principle="test", expected_effect="test"
-            ),
+            psychology_hypothesis=PsychologyHypothesis(principle="test", expected_effect="test"),
             caption=Caption(primary="متن تست تکراری", cta="test"),
             art_direction=ArtDirection(
                 template=TemplateType.TOOL_DEMO,
@@ -178,7 +170,10 @@ class TestDuplicatePublish:
 
         # First publish — no duplicate
         result = qa.run_all(brief, existing_briefs=[])
-        assert result.checks.get("duplicate_check") is None or result.checks["duplicate_check"].status.value == "PASS"
+        assert (
+            result.checks.get("duplicate_check") is None
+            or result.checks["duplicate_check"].status.value == "PASS"
+        )
 
         # Same caption — duplicate detected
         existing = [hash("متن تست تکراری")]
@@ -224,9 +219,7 @@ class TestProviderTimeout:
 
         bench = ProviderBenchmark()
         # Probe a non-existent server — should fail gracefully
-        reachable, latency = asyncio.run(
-            bench.probe_http("http://192.0.2.1:99999", timeout=2)
-        )
+        reachable, latency = asyncio.run(bench.probe_http("http://192.0.2.1:99999", timeout=2))
         assert not reachable
 
 

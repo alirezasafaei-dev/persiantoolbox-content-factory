@@ -101,12 +101,14 @@ class ApprovalGate:
         # 1. FAIL → never publish
         if qa_result.decision == QADecision.FAIL:
             raise ApprovalError(
-                f"QA decision is FAIL for {brief.brief_id}. "
-                "FAIL results are never publishable."
+                f"QA decision is FAIL for {brief.brief_id}. FAIL results are never publishable."
             )
 
         # 2. ESCALATE → must have valid approval
-        if brief.risk_decision == RiskDecision.ESCALATE or qa_result.decision == QADecision.ESCALATE:
+        if (
+            brief.risk_decision == RiskDecision.ESCALATE
+            or qa_result.decision == QADecision.ESCALATE
+        ):
             self._require_valid_approval(brief, current_checksum)
 
         # 3. Checksum must match current brief
@@ -207,3 +209,45 @@ class MockPublisher:
                 "mock": True,
                 "reason": str(e),
             }
+
+
+# --- New Instagram publisher exports ---
+__all__ = [
+    "AuthenticationError",
+    "ContainerError",
+    "ContainerExpiredError",
+    "ContainerProcessingError",
+    "IdempotencyViolationError",
+    "MediaGateway",
+    "MediaGatewayError",
+    "MetaInstagramPublisher",
+    "MetaInstagramSettings",
+    "PublishError",
+    "PublishJob",
+    "PublishQueue",
+    "PublishState",
+    "Publisher",
+    "PublisherError",
+    "RateLimitError",
+    "TokenExpiredError",
+    "can_transition",
+]
+
+from .errors import AuthenticationError as AuthenticationError  # noqa: E402
+from .errors import ContainerError as ContainerError  # noqa: E402
+from .errors import ContainerExpiredError as ContainerExpiredError  # noqa: E402
+from .errors import ContainerProcessingError as ContainerProcessingError  # noqa: E402
+from .errors import IdempotencyViolationError as IdempotencyViolationError  # noqa: E402
+from .errors import MediaGatewayError as MediaGatewayError  # noqa: E402
+from .errors import PublisherError as PublisherError  # noqa: E402
+from .errors import PublishError as PublishError  # noqa: E402
+from .errors import RateLimitError as RateLimitError  # noqa: E402
+from .errors import TokenExpiredError as TokenExpiredError  # noqa: E402
+from .media_gateway import MediaGateway as MediaGateway  # noqa: E402
+from .meta_instagram import MetaInstagramPublisher as MetaInstagramPublisher  # noqa: E402
+from .protocol import Publisher as Publisher  # noqa: E402
+from .protocol import PublishJob as PublishJob  # noqa: E402
+from .protocol import PublishState as PublishState  # noqa: E402
+from .protocol import can_transition as can_transition  # noqa: E402
+from .queue import PublishQueue as PublishQueue  # noqa: E402
+from .settings import MetaInstagramSettings as MetaInstagramSettings  # noqa: E402
