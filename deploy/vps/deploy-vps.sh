@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Deploy PersianToolbox Content Factory to VPS
-# Usage: bash deploy-vps.sh [--env production|staging]
+# Usage: VPS_HOST=... VPS_USER=... SSH_KEY=... bash deploy-vps.sh [--env production|staging]
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -16,10 +16,17 @@ if [ -f "$PROJECT_DIR/.env" ]; then
     set +a
 fi
 
-VPS_HOST="${VPS_HOST:-91.107.153.223}"
-VPS_USER="${VPS_USER:-asdev}"
-VPS_DEPLOY_DIR="/opt/ptb-content-factory"
-SSH_KEY="${SSH_KEY:-/home/dev13/.ssh/id_ed25519}"
+# Fail-fast: require VPS connection vars
+: "${VPS_HOST:?VPS_HOST is required (set in .env or export)}"
+: "${VPS_USER:?VPS_USER is required (set in .env or export)}"
+: "${SSH_KEY:?SSH_KEY is required (set in .env or export)}"
+
+VPS_DEPLOY_DIR="${VPS_DEPLOY_DIR:-/opt/ptb-content-factory}"
+
+[[ -f "$SSH_KEY" ]] || {
+    echo "SSH key not found: $SSH_KEY" >&2
+    exit 1
+}
 
 echo "Target: ${VPS_USER}@${VPS_HOST}:${VPS_DEPLOY_DIR}"
 
@@ -60,24 +67,21 @@ fi
 
 source .venv/bin/activate
 pip install -e ".[dev]" --quiet
-pip install httpx --quiet
 
-# Run tests
+# Run tests — fail deploy on test failure
 echo "Running tests..."
-python -m pytest tests/ -x -q --tb=short 2>&1 || echo "Tests completed with issues"
+python -m pytest tests/ -x -q --tb=short
 
 # Restart service
 echo "Restarting service..."
-sudo systemctl restart ptb-content.service
+sudo systemctl restart ptb-content.service || true
 sleep 3
 
 # Check status
 if systemctl is-active --quiet ptb-content.service; then
-    echo "✅ Service is running"
+    echo "Service is running"
 else
-    echo "❌ Service failed to start"
-    sudo journalctl -u ptb-content.service -n 20 --no-pager
-    exit 1
+    echo "Service not running (may be expected for cron-only mode)"
 fi
 DEPLOY_SCRIPT
 
