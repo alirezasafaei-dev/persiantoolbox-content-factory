@@ -1,0 +1,66 @@
+{
+  "brief_id": "golden-cb65d0acc1f8",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/golden/golden-tool-3",
+    "title": "ابزار رایگان PDF",
+    "summary": "توضیحات ابزار رایگان برای PDF",
+    "category": "tool-demo",
+    "source_id": "golden-tool-3",
+    "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "crawled_at": "2026-07-31T17:27:23.109194+00:00",
+    "claims": [],
+    "risk_tags": [],
+    "http_metadata": {
+      "status_code": 0,
+      "content_type": "",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {}
+  },
+  "audience": {
+    "segment": "کاربران عمومی",
+    "pain_point": "ابزارهای پیچیده",
+    "desire": "سادگی"
+  },
+  "content_strategy": {
+    "angle": "ابزار رایگان PDF",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "تست",
+    "expected_effect": "تست"
+  },
+  "caption": {
+    "primary": "ابزار رایگان PDF — توضیحات ابزار رایگان برای PDF",
+    "variants": {},
+    "alt_text": "",
+    "cta": "همین حالا امتحان کن"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": ""
+  },
+  "risk_level": "LOW",
+  "risk_decision": "AUTO_APPROVE",
+  "utm": {},
+  "created_at": "2026-07-31T17:27:23.109207+00:00",
+  "version": 1
+}

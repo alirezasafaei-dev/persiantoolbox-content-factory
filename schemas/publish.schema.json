@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://persiantoolbox.ir/schemas/publish.json",
+  "title": "Publish Record",
+  "description": "Publishing record with all pre-conditions checked",
+  "type": "object",
+  "required": ["brief_id", "ready_to_publish", "blocks", "created_at"],
+  "properties": {
+    "brief_id": {"type": "string"},
+    "ready_to_publish": {"type": "boolean"},
+    "blocks": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Reasons why publishing is blocked (empty if ready)"
+    },
+    "target_account": {"type": ["string", "null"]},
+    "utm": {
+      "type": "object",
+      "properties": {
+        "source": {"type": "string"},
+        "medium": {"type": "string"},
+        "campaign": {"type": "string"},
+        "content": {"type": "string"}
+      }
+    },
+    "media_ids": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "idempotency_key": {"type": "string"},
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

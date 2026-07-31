@@ -1,0 +1,59 @@
+# Provider Configuration
+
+providers:
+  # Priority order — deterministic is always first
+  - name: "deterministic"
+    type: "deterministic"
+    enabled: true
+    description: "Template-based content generation, no AI needed"
+    free: true
+    requires_auth: false
+
+  - name: "ai-horde"
+    type: "api"
+    url: "https://stablehorde.net/api/v2"
+    enabled: true
+    description: "Free distributed AI cluster"
+    free: true
+    requires_auth: true
+    auth_type: "api_key"
+    auth_env: "AI_HORDE_API_KEY"
+    timeout_seconds: 60
+    models:
+      text: "Any free model"
+      image: "Any free model"
+
+  - name: "ollama-local"
+    type: "local"
+    url: "http://localhost:11434"
+    enabled: false
+    description: "Local Ollama instance"
+    free: true
+    requires_auth: false
+    timeout_seconds: 30
+    models:
+      text: "llama3.2:3b"
+      image: null
+
+  - name: "llama-cpp"
+    type: "local"
+    url: "http://localhost:8080"
+    enabled: false
+    description: "Local llama.cpp server"
+    free: true
+    requires_auth: false
+    timeout_seconds: 30
+    models:
+      text: "any"
+      image: null
+
+# Provider selection rules
+selection:
+  # Always try deterministic first
+  fallback_order:
+    - "deterministic"
+    - "ai-horde"
+    - "ollama-local"
+    - "llama-cpp"
+  # If no provider works, use deterministic
+  default: "deterministic"

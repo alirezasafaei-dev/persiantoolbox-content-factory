@@ -1,0 +1,54 @@
+PersianToolbox Content Factory — Test Report
+=============================================
+Date: 2026-07-31
+Python: 3.12.13
+Platform: Linux x86_64
+
+Test Results: 115 passed, 0 failed
+Ruff Lint: All checks passed
+
+Test Breakdown:
+  - Unit Tests (Persian): 22 passed
+  - Unit Tests (Types): 12 passed
+  - Unit Tests (QA): 11 passed
+  - Unit Tests (Risk): 8 passed
+  - Integration Tests (Pipeline): 4 passed
+  - Integration Tests (Golden & Edge): 16 passed
+  - Integration Tests (Snapshots): 24 passed (3 skipped — baseline creation)
+  - Integration Tests (Approval Gate): 19 passed
+  - Integration Tests (Scheduler Dry-Run): passed
+
+Coverage: Not measured (pytest-cov available)
+
+CLI Tests:
+  - ptb-content --help: OK
+  - ptb-content crawl --pilot: OK (18 items)
+  - ptb-content generate --count 18: OK
+  - ptb-content qa: OK (18 ESCALATE)
+  - ptb-content benchmark: OK (4 providers: deterministic, ai-horde, ollama-local, llama-cpp)
+  - ptb-content report: OK
+  - ptb-content schedule: OK (dry-run validated)
+
+Provider Benchmark:
+  - deterministic: ✓ reachable, 1ms
+  - ai-horde: ✓ reachable, 1534ms
+  - ollama-local: ✓ reachable, 64ms
+  - llama-cpp: ✗ unreachable
+
+Snapshot Regression:
+  - Baselines created: 3 sizes (1080×1350, 1080×1080, 1080×1920)
+  - RTL direction: ✓ verified
+  - Font fallback (Vazirmatn → Tahoma): ✓ verified
+  - Overflow handling (overflow:hidden): ✓ verified
+  - CTA button placement: ✓ verified
+  - PNG header validity: ✓ verified (all 3 sizes)
+
+Approval Gate:
+  - FAIL never publishes: ✓ (11 scenarios)
+  - ESCALATE requires approval: ✓ (3 scenarios)
+  - Checksum validation: ✓ (2 scenarios)
+  - Expired approval: ✓ (2 scenarios)
+  - Version mismatch: ✓ (2 scenarios)
+  - Mock publisher (no external publish): ✓ (3 scenarios)
+  - Approval revocation: ✓ (2 scenarios)
+  - Fail-closed default: ✓ verified

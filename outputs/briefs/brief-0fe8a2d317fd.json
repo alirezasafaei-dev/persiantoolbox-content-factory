@@ -1,0 +1,168 @@
+{
+  "brief_id": "brief-0fe8a2d317fd",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/topics/writing-tools",
+    "title": "ابزارهای نگارش فارسی — 2 ابزار رایگان فارسی | جعبه ابزار فارسی",
+    "summary": "ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک‌سازی و استانداردسازی متن و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.",
+    "category": "tool-demo",
+    "source_id": "topics-writing-tools",
+    "source_hash": "3f950a61dbe4a33f6db8dc87c2b9346d59bf90eccc623a196bd8c655248c77cf",
+    "crawled_at": "2026-07-31T17:21:57.170747+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "topics-writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"49ac4a41-13aa-4d47-90ef-837b5335fb11\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"49ac4a41-13aa-4d47-90ef-837b5335fb11\" href=\"/_next/static/chunks/0-",
+        "source_id": "topics-writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "topics-writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"49ac4a41-13aa-4d47-90ef-837b5335fb11\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "topics-writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"49ac4a41-13aa-4d47-90ef-837b5335fb11\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "topics-writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"49ac4a41-13aa-4d47-90ef-837b5335fb11\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "topics-writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"49ac4a41-13aa-4d47-90ef-837b5335fb11\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "topics-writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"49ac4a41-13aa-4d47-90ef-837b5335fb11\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "topics-writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"49ac4a41-13aa-4d47-90ef-837b5335fb11\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "topics-writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"49ac4a41-13aa-4d47-90ef-837b5335fb11\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "topics-writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "privacy",
+      "statistical"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "ابزارهای نگارش فارسی — 2 ابزار رایگان فارسی | جعبه ابزار فارسی",
+      "og:description": "ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک‌سازی و استانداردسازی متن و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "فریلنسرها",
+    "pain_point": "وقت‌گیری کارهای ساده",
+    "desire": "خودکارسازی"
+  },
+  "content_strategy": {
+    "angle": "معرفی ابزارهای نگارش فارسی — 2 ابزار رایگان فارسی | جعبه ابزار فارسی برای فریلنسرها",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "اثبات اجتماعی",
+    "expected_effect": "افزایش اعتماد"
+  },
+  "caption": {
+    "primary": "ابزارهای نگارش فارسی — 2 ابزار رایگان فارسی | جعبه ابزار فارسی — یه ابزار ساده برای ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک\n\nابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک‌سازی و استانداردسازی متن و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nرایگان امتحان کن",
+    "variants": {
+      "direct_variant": "دیگه نیازی به ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آن نیست\n\nابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک‌سازی و استانداردسازی متن و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nسایت رو ببین 👇",
+      "educational_variant": "یه ترفند ساده برای ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک\n\nابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک‌سازی و استانداردسازی متن و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nسایت رو ببین 👇",
+      "curiosity_variant": "چطور بدون ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آن می‌تونی ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک؟\n\nابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک‌سازی و استانداردسازی متن و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nهمین حالا امتحان کن 👇",
+      "problem-solution_variant": "مشکل ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آن؟ این راه‌حل رو امتحان کن\n\nابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک‌سازی و استانداردسازی متن و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nهمین حالا امتحان کن 👇",
+      "before-after_variant": "قبل: ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آن | بعد: ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک آسان\n\nابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک‌سازی و استانداردسازی متن و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nشروع کن 👇"
+    },
+    "alt_text": "تصویر پست ابزارهای نگارش فارسی — 2 ابزار رایگان فارسی | جعبه ابزار فارسی — ابزارهای نگارش فارسی: نامه اداری حرفه‌ای | ساخت آنلاین نامه رسمی اداری، ویرایشگر فارسی پیشرفته | پاک",
+    "cta": "رایگان امتحان کن"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "topics-writing-tools"
+  },
+  "created_at": "2026-07-31T17:22:06.679531+00:00",
+  "version": 1
+}

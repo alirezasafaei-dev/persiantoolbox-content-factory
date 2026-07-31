@@ -1,0 +1,167 @@
+{
+  "brief_id": "brief-8912e147f563",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/topics/career-tools",
+    "title": "ابزارهای شغلی — 3 ابزار رایگان فارسی | جعبه ابزار فارسی",
+    "summary": "ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رزومه فارسی و انگلیسی، گواهی سابقه کار حرفه‌ای | ساخت گواهی اشتغال به کار آنلاین و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.",
+    "category": "tool-demo",
+    "source_id": "topics-career-tools",
+    "source_hash": "b323a4a325a55da0830f0a6b98f5a58aa0c7a4c57ad451b1ff36b1c086fdfe8f",
+    "crawled_at": "2026-07-31T17:21:56.155326+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "topics-career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"029793db-791d-4aa4-8f8b-654b2c12ce0a\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"029793db-791d-4aa4-8f8b-654b2c12ce0a\" href=\"/_next/static/chunks/0-",
+        "source_id": "topics-career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "topics-career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"029793db-791d-4aa4-8f8b-654b2c12ce0a\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "topics-career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"029793db-791d-4aa4-8f8b-654b2c12ce0a\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "topics-career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"029793db-791d-4aa4-8f8b-654b2c12ce0a\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "topics-career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"029793db-791d-4aa4-8f8b-654b2c12ce0a\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "topics-career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"029793db-791d-4aa4-8f8b-654b2c12ce0a\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "topics-career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"029793db-791d-4aa4-8f8b-654b2c12ce0a\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "topics-career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"029793db-791d-4aa4-8f8b-654b2c12ce0a\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "topics-career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "privacy"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "ابزارهای شغلی — 3 ابزار رایگان فارسی | جعبه ابزار فارسی",
+      "og:description": "ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رزومه فارسی و انگلیسی، گواهی سابقه کار حرفه‌ای | ساخت گواهی اشتغال به کار آنلاین و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "کاربران عمومی",
+    "pain_point": "ابزارهای پیچیده",
+    "desire": "سادگی و سرعت"
+  },
+  "content_strategy": {
+    "angle": "معرفی ابزارهای شغلی — 3 ابزار رایگان فارسی | جعبه ابزار فارسی برای کاربران عمومی",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "سادگی",
+    "expected_effect": "کاهش اصطکاک و افزایش تبدیل"
+  },
+  "caption": {
+    "primary": "ابزارهای شغلی — 3 ابزار رایگان فارسی | جعبه ابزار فارسی — یه ابزار ساده برای ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رز\n\nابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رزومه فارسی و انگلیسی، گواهی سابقه کار حرفه‌ای | ساخت گواهی اشتغال به کار آنلاین و بیشتر. تمام پردازش‌\n\nهمین حالا امتحان کن 👇",
+    "variants": {
+      "direct_variant": "ابزارهای شغلی — 3 ابزار رایگان فارسی | جعبه ابزار فارسی — یه ابزار ساده برای ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رز\n\nابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رزومه فارسی و انگلیسی، گواهی سابقه کار حرفه‌ای | ساخت گواهی اشتغال به کار آنلاین و بیشتر. تمام پردازش‌\n\nشروع کن 👇",
+      "educational_variant": "روش ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رز رو قدم‌به‌قدم یاد بگیر\n\nابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رزومه فارسی و انگلیسی، گواهی سابقه کار حرفه‌ای | ساخت گواهی اشتغال به کار آنلاین و بیشتر. تمام پردازش‌\n\nسایت رو ببین 👇",
+      "curiosity_variant": "چطور بدون ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین ق می‌تونی ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رز؟\n\nابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رزومه فارسی و انگلیسی، گواهی سابقه کار حرفه‌ای | ساخت گواهی اشتغال به کار آنلاین و بیشتر. تمام پردازش‌\n\nرایگان امتحان کن",
+      "problem-solution_variant": "مشکل ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین ق؟ این راه‌حل رو امتحان کن\n\nابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رزومه فارسی و انگلیسی، گواهی سابقه کار حرفه‌ای | ساخت گواهی اشتغال به کار آنلاین و بیشتر. تمام پردازش‌\n\nسایت رو ببین 👇",
+      "before-after_variant": "قبل: ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین ق | بعد: ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رز آسان\n\nابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رزومه فارسی و انگلیسی، گواهی سابقه کار حرفه‌ای | ساخت گواهی اشتغال به کار آنلاین و بیشتر. تمام پردازش‌\n\nهمین حالا امتحان کن 👇"
+    },
+    "alt_text": "تصویر پست ابزارهای شغلی — 3 ابزار رایگان فارسی | جعبه ابزار فارسی — ابزارهای شغلی: قرارداد کار حرفه‌ای | ساخت آنلاین قرارداد اشتغال به کار، ساخت رزومه حرفه‌ای | ساخت رز",
+    "cta": "همین حالا امتحان کن 👇"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "topics-career-tools"
+  },
+  "created_at": "2026-07-31T17:22:06.677501+00:00",
+  "version": 1
+}

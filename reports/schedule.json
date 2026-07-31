@@ -1,0 +1,32 @@
+{
+  "jobs": {
+    "catalog-refresh": {
+      "description": "Refresh tool catalog from persiantoolbox.ir",
+      "schedule": "weekly",
+      "command": "ptb-content crawl --pilot"
+    },
+    "weekly-generation": {
+      "description": "Generate weekly content briefs",
+      "schedule": "weekly",
+      "command": "ptb-content generate --count 4"
+    },
+    "metrics-import": {
+      "description": "Import engagement metrics",
+      "schedule": "weekly",
+      "command": "ptb-content metrics --import"
+    },
+    "weekly-qa-report": {
+      "description": "Generate weekly QA report",
+      "schedule": "weekly",
+      "command": "ptb-content qa --report"
+    }
+  },
+  "cron_entries": [
+    "0 3 * * * cd /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory && ptb-content crawl --pilot >> /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/logs/catalog-refresh.log 2>&1",
+    "0 3 * * * cd /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory && ptb-content generate --count 4 >> /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/logs/weekly-generation.log 2>&1",
+    "0 3 * * * cd /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory && ptb-content metrics --import >> /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/logs/metrics-import.log 2>&1",
+    "0 3 * * * cd /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory && ptb-content qa --report >> /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/logs/weekly-qa-report.log 2>&1"
+  ],
+  "log_dir": "/home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/logs",
+  "note": "If computer is off, jobs will not run. This is a known limitation."
+}

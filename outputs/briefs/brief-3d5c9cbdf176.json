@@ -1,0 +1,171 @@
+{
+  "brief_id": "brief-3d5c9cbdf176",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/",
+    "title": "جعبه ابزار فارسی | ابزار آنلاین فارسی",
+    "summary": "ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها محلی در مرورگر.",
+    "category": "tool-demo",
+    "source_id": "",
+    "source_hash": "90532c67529d448e80bdef7699fce3bdc40dc43d8dbfe59d64978a164b10943c",
+    "crawled_at": "2026-07-31T17:21:41.586015+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"436390fa-c028-4218-9d85-83c2ae983790\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"436390fa-c028-4218-9d85-83c2ae983790\" href=\"/_next/static/chunks/0-",
+        "source_id": "",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"436390fa-c028-4218-9d85-83c2ae983790\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"436390fa-c028-4218-9d85-83c2ae983790\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"436390fa-c028-4218-9d85-83c2ae983790\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"436390fa-c028-4218-9d85-83c2ae983790\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"436390fa-c028-4218-9d85-83c2ae983790\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"436390fa-c028-4218-9d85-83c2ae983790\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"436390fa-c028-4218-9d85-83c2ae983790\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "tax",
+      "security",
+      "privacy",
+      "comparative",
+      "statistical"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "جعبه ابزار فارسی | ابزار آنلاین فارسی",
+      "og:description": "ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها محلی در مرورگر.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "فریلنسرها",
+    "pain_point": "وقت‌گیری کارهای ساده",
+    "desire": "خودکارسازی"
+  },
+  "content_strategy": {
+    "angle": "معرفی جعبه ابزار فارسی | ابزار آنلاین فارسی برای فریلنسرها",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "کمیابی",
+    "expected_effect": "افزایش فوریت (فقط برای محتوای فصلی)"
+  },
+  "caption": {
+    "primary": "جعبه ابزار فارسی | ابزار آنلاین فارسی — یه ابزار ساده برای ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها م\n\nابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها محلی در مرورگر.\n\nرایگان امتحان کن",
+    "variants": {
+      "direct_variant": "دیگه نیازی به ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، نیست\n\nابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها محلی در مرورگر.\n\nهمین حالا امتحان کن 👇",
+      "educational_variant": "یه ترفند ساده برای ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها م\n\nابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها محلی در مرورگر.\n\nسایت رو ببین 👇",
+      "curiosity_variant": "چطور بدون ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، می‌تونی ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها م؟\n\nابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها محلی در مرورگر.\n\nلینک در بیو",
+      "problem-solution_variant": "وقتی ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، داری، جعبه ابزار فارسی | ابزار آنلاین فارسی کمکت می‌کنه\n\nابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها محلی در مرورگر.\n\nسایت رو ببین 👇",
+      "before-after_variant": "از ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، تا ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها م در چند ثانیه\n\nابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها محلی در مرورگر.\n\nسایت رو ببین 👇"
+    },
+    "alt_text": "تصویر پست جعبه ابزار فارسی | ابزار آنلاین فارسی — ابزارهای آنلاین فارسی: وام، حقوق، تاریخ شمسی، PDF، فاکتور و رزومه. بدون ثبت‌نام؛ بسیاری از ابزارها م",
+    "cta": "رایگان امتحان کن"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": ""
+  },
+  "created_at": "2026-07-31T17:22:06.646108+00:00",
+  "version": 1
+}

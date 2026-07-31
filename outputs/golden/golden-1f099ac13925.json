@@ -1,0 +1,66 @@
+{
+  "brief_id": "golden-1f099ac13925",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/golden/golden-persian-10",
+    "title": "نکته نرم‌افزار فارسی",
+    "summary": "نکته مهم درباره نرم‌افزار فارسی",
+    "category": "persian-text",
+    "source_id": "golden-persian-10",
+    "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "crawled_at": "2026-07-31T17:27:23.109515+00:00",
+    "claims": [],
+    "risk_tags": [],
+    "http_metadata": {
+      "status_code": 0,
+      "content_type": "",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {}
+  },
+  "audience": {
+    "segment": "نویسندگان",
+    "pain_point": "مشکلات متن فارسی",
+    "desire": "متن تمیز"
+  },
+  "content_strategy": {
+    "angle": "نکته نرم‌افزار فارسی",
+    "hook_type": "problem-solution",
+    "template_type": "common-mistake"
+  },
+  "psychology_hypothesis": {
+    "principle": "تست",
+    "expected_effect": "تست"
+  },
+  "caption": {
+    "primary": "نکته نرم‌افزار فارسی — نکته مهم درباره نرم‌افزار فارسی",
+    "variants": {},
+    "alt_text": "",
+    "cta": "همین حالا امتحان کن"
+  },
+  "art_direction": {
+    "template": "common-mistake",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": ""
+  },
+  "risk_level": "LOW",
+  "risk_decision": "AUTO_APPROVE",
+  "utm": {},
+  "created_at": "2026-07-31T17:27:23.109523+00:00",
+  "version": 1
+}

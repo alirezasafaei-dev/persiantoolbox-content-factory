@@ -1,0 +1,784 @@
+[
+  {
+    "brief_id": "brief-8912e147f563",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 402 → 400 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.431796+00:00"
+  },
+  {
+    "brief_id": "brief-8b3385fb3e96",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 278 → 276 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.432295+00:00"
+  },
+  {
+    "brief_id": "brief-c37f61083278",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 285 → 283 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.432581+00:00"
+  },
+  {
+    "brief_id": "brief-dcab60a1e363",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 274 → 272 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.432831+00:00"
+  },
+  {
+    "brief_id": "brief-272059180580",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 245 → 243 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.433057+00:00"
+  },
+  {
+    "brief_id": "brief-c86e2622bdd5",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "FAIL",
+        "score": 0.3,
+        "details": "Arabic imposter characters found"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [
+      "persian_normalization: Arabic imposter characters found"
+    ],
+    "generated_at": "2026-07-31T17:22:10.433285+00:00"
+  },
+  {
+    "brief_id": "brief-c59fa7e53756",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 317 → 315 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.433541+00:00"
+  },
+  {
+    "brief_id": "brief-2161ca59c978",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 181 → 179 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.433752+00:00"
+  },
+  {
+    "brief_id": "brief-5021096f3deb",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 233 → 231 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.433972+00:00"
+  },
+  {
+    "brief_id": "brief-0fe8a2d317fd",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 374 → 372 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.434231+00:00"
+  },
+  {
+    "brief_id": "brief-3d5c9cbdf176",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 293 → 291 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "FAIL",
+        "score": 0.0,
+        "details": "Missing source_id"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [
+      "source_existence: Missing source_id"
+    ],
+    "generated_at": "2026-07-31T17:22:10.434462+00:00"
+  },
+  {
+    "brief_id": "brief-203ee68a50f7",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "FAIL",
+        "score": 0.3,
+        "details": "Arabic imposter characters found"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [
+      "persian_normalization: Arabic imposter characters found"
+    ],
+    "generated_at": "2026-07-31T17:22:10.434689+00:00"
+  },
+  {
+    "brief_id": "brief-a3038d06ef7c",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 333 → 331 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.434937+00:00"
+  },
+  {
+    "brief_id": "brief-e4cf5926d735",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "FAIL",
+        "score": 0.3,
+        "details": "Arabic imposter characters found"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [
+      "persian_normalization: Arabic imposter characters found"
+    ],
+    "generated_at": "2026-07-31T17:22:10.435152+00:00"
+  },
+  {
+    "brief_id": "brief-3b10c68bcb00",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 199 → 197 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.435362+00:00"
+  },
+  {
+    "brief_id": "brief-4ed94006829f",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 194 → 192 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.435579+00:00"
+  },
+  {
+    "brief_id": "brief-2f36d6bb411f",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 295 → 293 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.435810+00:00"
+  },
+  {
+    "brief_id": "brief-1b38bdc0cf28",
+    "checks": {
+      "factuality": {
+        "status": "WARN",
+        "score": 0.5,
+        "details": "No claims to verify"
+      },
+      "persian_normalization": {
+        "status": "WARN",
+        "score": 0.7,
+        "details": "Text needs normalization. Diff: 329 → 326 chars"
+      },
+      "persian_rtl": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "RTL and ZWNJ look correct"
+      },
+      "risk_assessment": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Risk assessment is consistent"
+      },
+      "source_existence": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Source record is complete"
+      },
+      "claim_traceability": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "No claims to trace"
+      },
+      "visual_render": {
+        "status": "PASS",
+        "score": 1.0,
+        "details": "Art direction is complete"
+      }
+    },
+    "decision": "ESCALATE",
+    "failure_reasons": [],
+    "generated_at": "2026-07-31T17:22:10.436056+00:00"
+  }
+]

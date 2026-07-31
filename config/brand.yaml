@@ -1,0 +1,110 @@
+# PersianToolbox Brand Identity
+# Extracted from https://persiantoolbox.ir/
+
+brand:
+  name: "PersianToolbox"
+  name_fa: "جعبه‌ابزار فارسی"
+  tagline_fa: "ابزارهای رایگان برای کار با متن فارسی"
+  url: "https://persiantoolbox.ir"
+
+colors:
+  primary: "#2563EB"        # Blue-600 — main brand
+  secondary: "#1E40AF"      # Blue-800 — dark accent
+  accent: "#F59E0B"         # Amber-500 — CTA highlights
+  background: "#FFFFFF"     # White — light mode
+  background_dark: "#0F172A" # Slate-900 — dark mode
+  text: "#1E293B"           # Slate-800 — primary text
+  text_light: "#64748B"     # Slate-500 — secondary text
+  text_inverse: "#F8FAFC"   # Slate-50 — on dark backgrounds
+  success: "#10B981"        # Emerald-500
+  warning: "#F59E0B"        # Amber-500
+  error: "#EF4444"          # Red-500
+  border: "#E2E8F0"         # Slate-200
+
+spacing:
+  xs: "4px"
+  sm: "8px"
+  md: "16px"
+  lg: "24px"
+  xl: "32px"
+  xxl: "48px"
+
+border_radius:
+  sm: "6px"
+  md: "12px"
+  lg: "16px"
+  xl: "24px"
+  full: "9999px"
+
+shadows:
+  sm: "0 1px 2px rgba(0,0,0,0.05)"
+  md: "0 4px 6px rgba(0,0,0,0.07)"
+  lg: "0 10px 15px rgba(0,0,0,0.1)"
+  xl: "0 20px 25px rgba(0,0,0,0.15)"
+
+typography:
+  heading_font: "Vazirmatn"
+  body_font: "Vazirmatn"
+  heading_weight: 700
+  body_weight: 400
+  heading_sizes:
+    h1: 32
+    h2: 24
+    h3: 20
+    h4: 18
+  body_size: 16
+  line_height: 1.75
+  rtl: true
+
+icon_style:
+  type: "outlined"
+  stroke_width: 1.5
+  size: "24px"
+  color: "primary"
+
+logo:
+  safe_area_px: 40
+  min_clearance_px: 20
+  position: "top-right"
+  opacity: 0.85
+
+content_density:
+  max_heading_chars_fa: 60
+  max_body_chars_fa: 200
+  max_caption_chars: 2200
+  max_alt_text_chars: 125
+
+tone_of_voice:
+  register: "semi-formal"
+  personality: "helpful, clear, trustworthy, modern"
+  language: "fa-IR"
+  avoid:
+    - "excessive enthusiasm"
+    - "clickbait"
+    - "unverifiable claims"
+    - "political content"
+    - "religious content"
+    - "medical advice"
+    - "financial advice"
+
+templates:
+  tool-demo:
+    name: "معرفی ابزار"
+    description: "Show a tool with a clear before/after or demo"
+    sizes: ["1080x1350", "1080x1080", "1080x1920"]
+  step-by-step:
+    name: "آموزش گام‌به‌گام"
+    description: "Step-by-step tutorial or walkthrough"
+    sizes: ["1080x1350", "1080x1080", "1080x1920"]
+  common-mistake:
+    name: "خطای رایج"
+    description: "Common mistake and how to fix it"
+    sizes: ["1080x1350", "1080x1080", "1080x1920"]
+  privacy-trust:
+    name: "حریم خصوصی و اعتماد"
+    description: "Privacy-first or trust-building content"
+    sizes: ["1080x1350", "1080x1080", "1080x1920"]
+  professional-seasonal:
+    name: "حرفه‌ای / فصلی"
+    description: "Professional audience or seasonal topic"
+    sizes: ["1080x1350", "1080x1080", "1080x1920"]

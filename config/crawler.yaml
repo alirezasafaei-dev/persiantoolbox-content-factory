@@ -1,0 +1,40 @@
+# Crawler Configuration
+
+crawler:
+  concurrency: 2
+  rate_limit_rps: 1.0
+  timeout_seconds: 60
+  max_retries: 3
+  retry_backoff_base: 2.0
+  user_agent: "PTBContentBot/0.1 (persiantoolbox.ir; +https://persiantoolbox.ir/bot)"
+  respect_robots_txt: true
+
+  # Pilot: 20-30 low-risk tools only
+  pilot_max_items: 30
+  pilot_categories:
+    - "tool-demo"
+    - "pdf-tutorial"
+    - "persian-text"
+    - "professional"
+
+  # Risk filters for pilot
+  exclude_risk_tags:
+    - "financial"
+    - "legal"
+    - "tax"
+    - "security"
+    - "testimonial"
+    - "comparative"
+    - "statistical"
+
+  # Source site
+  base_url: "https://persiantoolbox.ir"
+  sitemap_urls:
+    - "https://persiantoolbox.ir/sitemap.xml"
+
+  # Output
+  catalog_dir: "data/catalog"
+  tools_file: "data/catalog/tools.jsonl"
+  claims_file: "data/catalog/claims.jsonl"
+  report_file: "data/catalog/crawl-report.json"
+  review_file: "data/catalog/manual-review.csv"

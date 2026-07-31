@@ -1,0 +1,167 @@
+{
+  "brief_id": "brief-a3038d06ef7c",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/career-tools",
+    "title": "ابزارهای شغلی رایگان | رزومه ساز، گواهی سابقه کار و قرارداد اشتغال",
+    "summary": "ابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی PDF و Word با طراحی حرفه‌ای.",
+    "category": "tool-demo",
+    "source_id": "career-tools",
+    "source_hash": "663b3de8b18c03df5722ea7a0de5546c174f1b852e1be1cadaa7049a1e688d12",
+    "crawled_at": "2026-07-31T17:21:49.172915+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"2e30b856-b601-4cce-bc01-cd1625c58955\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"2e30b856-b601-4cce-bc01-cd1625c58955\" href=\"/_next/static/chunks/0-",
+        "source_id": "career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"2e30b856-b601-4cce-bc01-cd1625c58955\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"2e30b856-b601-4cce-bc01-cd1625c58955\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"2e30b856-b601-4cce-bc01-cd1625c58955\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"2e30b856-b601-4cce-bc01-cd1625c58955\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"2e30b856-b601-4cce-bc01-cd1625c58955\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"2e30b856-b601-4cce-bc01-cd1625c58955\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"2e30b856-b601-4cce-bc01-cd1625c58955\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "career-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "privacy"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "ابزارهای شغلی رایگان | رزومه ساز، گواهی سابقه کار و قرارداد اشتغال",
+      "og:description": "ابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی PDF و Word با طراحی حرفه‌ای.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "فریلنسرها",
+    "pain_point": "وقت‌گیری کارهای ساده",
+    "desire": "خودکارسازی"
+  },
+  "content_strategy": {
+    "angle": "معرفی ابزارهای شغلی رایگان | رزومه ساز، گواهی سابقه کار و قرارداد اشتغال برای فریلنسرها",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "اثبات اجتماعی",
+    "expected_effect": "افزایش اعتماد"
+  },
+  "caption": {
+    "primary": "ابزارهای شغلی رایگان | رزومه ساز، گواهی سابقه کار و قرارداد اشتغال — یه ابزار ساده برای ابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی P\n\nابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی PDF و Word با طراحی حرفه‌ای.\n\nسایت رو ببین 👇",
+    "variants": {
+      "direct_variant": "با این ابزار رایگان ابزارهای شغلی رایگان | رزومه ساز، گواهی سابقه کار و قرارداد اشتغال کارت رو سریع‌تر انجام بده\n\nابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی PDF و Word با طراحی حرفه‌ای.\n\nسایت رو ببین 👇",
+      "educational_variant": "یه ترفند ساده برای ابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی P\n\nابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی PDF و Word با طراحی حرفه‌ای.\n\nهمین حالا امتحان کن 👇",
+      "curiosity_variant": "یه راه‌حل ساده برای یه مشکل قدیمی\n\nابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی PDF و Word با طراحی حرفه‌ای.\n\nهمین حالا امتحان کن 👇",
+      "problem-solution_variant": "وقتی ابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی،  داری، ابزارهای شغلی رایگان | رزومه ساز، گواهی سابقه کار و قرارداد اشتغال کمکت می‌کنه\n\nابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی PDF و Word با طراحی حرفه‌ای.\n\nشروع کن 👇",
+      "before-after_variant": "از ابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی،  تا ابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی P در چند ثانیه\n\nابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی PDF و Word با طراحی حرفه‌ای.\n\nسایت رو ببین 👇"
+    },
+    "alt_text": "تصویر پست ابزارهای شغلی رایگان | رزومه ساز، گواهی سابقه کار و قرارداد اشتغال — ابزارهای حرفه‌ای شغلی: رزومه ساز فارسی و انگلیسی، کاورلتر، گواهی سابقه کار و قرارداد اشتغال. خروجی P",
+    "cta": "سایت رو ببین 👇"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "career-tools"
+  },
+  "created_at": "2026-07-31T17:22:06.663333+00:00",
+  "version": 1
+}

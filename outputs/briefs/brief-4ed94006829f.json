@@ -1,0 +1,171 @@
+{
+  "brief_id": "brief-4ed94006829f",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/tools/specialized",
+    "title": "ابزارهای تخصصی - جعبه ابزار فارسی",
+    "summary": "لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی",
+    "category": "tool-demo",
+    "source_id": "tools-specialized",
+    "source_hash": "1c35282acaa2b093b5e48e53357490456e169fc2a7c05f90c23bf09802ae34cf",
+    "crawled_at": "2026-07-31T17:21:45.218488+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "tools-specialized",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"5103da10-7ee2-4427-88bb-2736a1daa735\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"5103da10-7ee2-4427-88bb-2736a1daa735\" href=\"/_next/static/chunks/0-",
+        "source_id": "tools-specialized",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "tools-specialized",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"5103da10-7ee2-4427-88bb-2736a1daa735\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "tools-specialized",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"5103da10-7ee2-4427-88bb-2736a1daa735\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "tools-specialized",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"5103da10-7ee2-4427-88bb-2736a1daa735\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "tools-specialized",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"5103da10-7ee2-4427-88bb-2736a1daa735\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "tools-specialized",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"5103da10-7ee2-4427-88bb-2736a1daa735\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "tools-specialized",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"5103da10-7ee2-4427-88bb-2736a1daa735\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "tools-specialized",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"5103da10-7ee2-4427-88bb-2736a1daa735\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "tools-specialized",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "tax",
+      "security",
+      "privacy",
+      "comparative",
+      "statistical"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "ابزارهای تخصصی - جعبه ابزار فارسی",
+      "og:description": "لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "فریلنسرها",
+    "pain_point": "وقت‌گیری کارهای ساده",
+    "desire": "خودکارسازی"
+  },
+  "content_strategy": {
+    "angle": "معرفی ابزارهای تخصصی - جعبه ابزار فارسی برای فریلنسرها",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "کمیابی",
+    "expected_effect": "افزایش فوریت (فقط برای محتوای فصلی)"
+  },
+  "caption": {
+    "primary": "ابزارهای تخصصی - جعبه ابزار فارسی — یه ابزار ساده برای لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی\n\nلیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی\n\nشروع کن 👇",
+    "variants": {
+      "direct_variant": "دیگه نیازی به لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعب نیست\n\nلیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی\n\nرایگان امتحان کن",
+      "educational_variant": "روش لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی رو قدم‌به‌قدم یاد بگیر\n\nلیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی\n\nلینک در بیو",
+      "curiosity_variant": "چطور بدون لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعب می‌تونی لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی؟\n\nلیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی\n\nرایگان امتحان کن",
+      "problem-solution_variant": "وقتی لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعب داری، ابزارهای تخصصی - جعبه ابزار فارسی کمکت می‌کنه\n\nلیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی\n\nرایگان امتحان کن",
+      "before-after_variant": "قبل: لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعب | بعد: لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی آسان\n\nلیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی\n\nشروع کن 👇"
+    },
+    "alt_text": "تصویر پست ابزارهای تخصصی - جعبه ابزار فارسی — لیست واقعی ابزارهای تخصصی در همه دسته‌بندی‌های جعبه ابزار فارسی",
+    "cta": "شروع کن 👇"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "tools-specialized"
+  },
+  "created_at": "2026-07-31T17:22:06.654448+00:00",
+  "version": 1
+}

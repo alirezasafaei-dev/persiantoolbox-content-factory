@@ -1,0 +1,168 @@
+{
+  "brief_id": "brief-e4cf5926d735",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/writing-tools",
+    "title": "ابزارهای نگارش فارسی رایگان | پاک‌سازی و استانداردسازی متن",
+    "summary": "ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری.",
+    "category": "tool-demo",
+    "source_id": "writing-tools",
+    "source_hash": "d87b456e460fc0837fbaf429ca3b2394b57e2cdaa119f6b21622c6eb7b057a18",
+    "crawled_at": "2026-07-31T17:21:51.166192+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"0badf546-513e-4e34-8420-8a9e284268d9\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"0badf546-513e-4e34-8420-8a9e284268d9\" href=\"/_next/static/chunks/0-",
+        "source_id": "writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"0badf546-513e-4e34-8420-8a9e284268d9\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"0badf546-513e-4e34-8420-8a9e284268d9\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"0badf546-513e-4e34-8420-8a9e284268d9\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"0badf546-513e-4e34-8420-8a9e284268d9\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"0badf546-513e-4e34-8420-8a9e284268d9\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"0badf546-513e-4e34-8420-8a9e284268d9\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"0badf546-513e-4e34-8420-8a9e284268d9\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "writing-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "privacy",
+      "statistical"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "ابزارهای نگارش فارسی رایگان | پاک‌سازی و استانداردسازی متن",
+      "og:description": "ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "فریلنسرها",
+    "pain_point": "وقت‌گیری کارهای ساده",
+    "desire": "خودکارسازی"
+  },
+  "content_strategy": {
+    "angle": "معرفی ابزارهای نگارش فارسی رایگان | پاک‌سازی و استانداردسازی متن برای فریلنسرها",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "اثبات اجتماعی",
+    "expected_effect": "افزایش اعتماد"
+  },
+  "caption": {
+    "primary": "دیگه نیازی به ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی  نیست\n\nابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری.\n\nلینک در بیو",
+    "variants": {
+      "direct_variant": "ابزارهای نگارش فارسی رایگان | پاک‌سازی و استانداردسازی متن — یه ابزار ساده برای ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علا\n\nابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری.\n\nشروع کن 👇",
+      "educational_variant": "روش ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علا رو قدم‌به‌قدم یاد بگیر\n\nابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری.\n\nسایت رو ببین 👇",
+      "curiosity_variant": "چطور بدون ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی  می‌تونی ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علا؟\n\nابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری.\n\nسایت رو ببین 👇",
+      "problem-solution_variant": "وقتی ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی  داری، ابزارهای نگارش فارسی رایگان | پاک‌سازی و استانداردسازی متن کمکت می‌کنه\n\nابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری.\n\nهمین حالا امتحان کن 👇",
+      "before-after_variant": "از ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی  تا ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علا در چند ثانیه\n\nابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری.\n\nلینک در بیو"
+    },
+    "alt_text": "تصویر پست ابزارهای نگارش فارسی رایگان | پاک‌سازی و استانداردسازی متن — ابزارهای نگارش فارسی برای پاک‌سازی، استانداردسازی و بهبود متن فارسی. اصلاح حروف عربی، نیم‌فاصله، علا",
+    "cta": "لینک در بیو"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "writing-tools"
+  },
+  "created_at": "2026-07-31T17:22:06.667363+00:00",
+  "version": 1
+}

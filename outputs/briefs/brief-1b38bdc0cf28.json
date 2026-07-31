@@ -1,0 +1,167 @@
+{
+  "brief_id": "brief-1b38bdc0cf28",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/topics/contract-tools",
+    "title": "ابزارهای قرارداد — 6 ابزار رایگان فارسی | جعبه ابزار فارسی",
+    "summary": "ابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نامه ملک | ساخت مبایعه‌نامه خرید و فروش ملک آنلاین، اجاره‌نامه مسکونی | ساخت آنلاین قرارداد اجاره ملک، قرارداد سالن زیبایی | ساخت آنلاین قرارداد خدمات زیبایی و 1 ابزار دیگر. تمام پردازش‌ها محلی و بدون ثبت‌نام.",
+    "category": "tool-demo",
+    "source_id": "topics-contract-tools",
+    "source_hash": "084e64040cfca58ceec0bbd16ae2408f1bcdfdcd3a23f9b30ea016663d606d38",
+    "crawled_at": "2026-07-31T17:21:54.195618+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "topics-contract-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"a6ebaf5a-a1e2-4634-8164-014bd3c94c45\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"a6ebaf5a-a1e2-4634-8164-014bd3c94c45\" href=\"/_next/static/chunks/0-",
+        "source_id": "topics-contract-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "topics-contract-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"a6ebaf5a-a1e2-4634-8164-014bd3c94c45\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "topics-contract-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"a6ebaf5a-a1e2-4634-8164-014bd3c94c45\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "topics-contract-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"a6ebaf5a-a1e2-4634-8164-014bd3c94c45\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "topics-contract-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"a6ebaf5a-a1e2-4634-8164-014bd3c94c45\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "topics-contract-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"a6ebaf5a-a1e2-4634-8164-014bd3c94c45\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "topics-contract-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"a6ebaf5a-a1e2-4634-8164-014bd3c94c45\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "topics-contract-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"a6ebaf5a-a1e2-4634-8164-014bd3c94c45\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "topics-contract-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "privacy"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "ابزارهای قرارداد — 6 ابزار رایگان فارسی | جعبه ابزار فارسی",
+      "og:description": "ابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نامه ملک | ساخت مبایعه‌نامه خرید و فروش ملک آنلاین، اجاره‌نامه مسکونی | ساخت آنلاین قرارداد اجاره ملک، قرارداد سالن زیبایی | ساخت آنلاین قرارداد خدمات زیبایی و 1 ابزار دیگر. تمام پردازش‌ها محلی و بدون ثبت‌نام.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "دانشجویان",
+    "pain_point": "نیاز به ابزارهای متنی",
+    "desire": "ابزار رایگان و سریع"
+  },
+  "content_strategy": {
+    "angle": "معرفی ابزارهای قرارداد — 6 ابزار رایگان فارسی | جعبه ابزار فارسی برای دانشجویان",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "تعهد",
+    "expected_effect": "پیگیری و بازگشت"
+  },
+  "caption": {
+    "primary": "با این ابزار رایگان ابزارهای قرارداد — 6 ابزار رایگان فارسی | جعبه ابزار فارسی کارت رو سریع‌تر انجام بده\n\nابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نامه ملک | ساخت مبایعه‌نامه خرید و فروش ملک آنلاین، اجاره‌نامه مسکونی | ساخت آنلاین قرارداد اجاره ملک، \n\nهمین حالا امتحان کن 👇",
+    "variants": {
+      "direct_variant": "ابزارهای قرارداد — 6 ابزار رایگان فارسی | جعبه ابزار فارسی — یه ابزار ساده برای ابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نام\n\nابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نامه ملک | ساخت مبایعه‌نامه خرید و فروش ملک آنلاین، اجاره‌نامه مسکونی | ساخت آنلاین قرارداد اجاره ملک، \n\nسایت رو ببین 👇",
+      "educational_variant": "آیا می‌دونستی می‌تونی ابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نام رو رایگان انجام بدی؟\n\nابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نامه ملک | ساخت مبایعه‌نامه خرید و فروش ملک آنلاین، اجاره‌نامه مسکونی | ساخت آنلاین قرارداد اجاره ملک، \n\nرایگان امتحان کن",
+      "curiosity_variant": "چطور بدون ابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرا می‌تونی ابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نام؟\n\nابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نامه ملک | ساخت مبایعه‌نامه خرید و فروش ملک آنلاین، اجاره‌نامه مسکونی | ساخت آنلاین قرارداد اجاره ملک، \n\nرایگان امتحان کن",
+      "problem-solution_variant": "وقتی ابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرا داری، ابزارهای قرارداد — 6 ابزار رایگان فارسی | جعبه ابزار فارسی کمکت می‌کنه\n\nابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نامه ملک | ساخت مبایعه‌نامه خرید و فروش ملک آنلاین، اجاره‌نامه مسکونی | ساخت آنلاین قرارداد اجاره ملک، \n\nهمین حالا امتحان کن 👇",
+      "before-after_variant": "قبل: ابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرا | بعد: ابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نام آسان\n\nابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نامه ملک | ساخت مبایعه‌نامه خرید و فروش ملک آنلاین، اجاره‌نامه مسکونی | ساخت آنلاین قرارداد اجاره ملک، \n\nلینک در بیو"
+    },
+    "alt_text": "تصویر پست ابزارهای قرارداد — 6 ابزار رایگان فارسی | جعبه ابزار فارسی — ابزارهای قرارداد: قرارداد اجاره مسکونی رایگان، قرارداد پیمانکاری / معماری ساختمان رایگان، مبایعه‌نام",
+    "cta": "همین حالا امتحان کن 👇"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "topics-contract-tools"
+  },
+  "created_at": "2026-07-31T17:22:06.673440+00:00",
+  "version": 1
+}

@@ -1,0 +1,168 @@
+{
+  "brief_id": "brief-c37f61083278",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/topics/validation-tools",
+    "title": "ابزارهای اعتبارسنجی — 8 ابزار رایگان فارسی | جعبه ابزار فارسی",
+    "summary": "ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبارسنجی کارت بانکی رایگان، اعتبارسنجی شبا رایگان و 3 ابزار دیگر. تمام پردازش‌ها محلی و بدون ثبت‌نام.",
+    "category": "tool-demo",
+    "source_id": "topics-validation-tools",
+    "source_hash": "f34303e5153966f84cb3b960bea1e8d739c990fefc8ff7742689e05b90531863",
+    "crawled_at": "2026-07-31T17:21:53.172225+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "topics-validation-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"38490274-03eb-4628-9b30-ef9a15fe92f5\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"38490274-03eb-4628-9b30-ef9a15fe92f5\" href=\"/_next/static/chunks/0-",
+        "source_id": "topics-validation-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "topics-validation-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"38490274-03eb-4628-9b30-ef9a15fe92f5\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "topics-validation-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"38490274-03eb-4628-9b30-ef9a15fe92f5\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "topics-validation-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"38490274-03eb-4628-9b30-ef9a15fe92f5\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "topics-validation-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"38490274-03eb-4628-9b30-ef9a15fe92f5\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "topics-validation-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"38490274-03eb-4628-9b30-ef9a15fe92f5\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "topics-validation-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"38490274-03eb-4628-9b30-ef9a15fe92f5\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "topics-validation-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"38490274-03eb-4628-9b30-ef9a15fe92f5\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "topics-validation-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "security",
+      "privacy"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "ابزارهای اعتبارسنجی — 8 ابزار رایگان فارسی | جعبه ابزار فارسی",
+      "og:description": "ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبارسنجی کارت بانکی رایگان، اعتبارسنجی شبا رایگان و 3 ابزار دیگر. تمام پردازش‌ها محلی و بدون ثبت‌نام.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "کاربران عمومی",
+    "pain_point": "ابزارهای پیچیده",
+    "desire": "سادگی و سرعت"
+  },
+  "content_strategy": {
+    "angle": "معرفی ابزارهای اعتبارسنجی — 8 ابزار رایگان فارسی | جعبه ابزار فارسی برای کاربران عمومی",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "کمیابی",
+    "expected_effect": "افزایش فوریت (فقط برای محتوای فصلی)"
+  },
+  "caption": {
+    "primary": "دیگه نیازی به ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارس نیست\n\nابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبارسنجی کارت بانکی رایگان، اعتبارسنجی شبا رایگان و 3 ابزار دیگر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nسایت رو ببین 👇",
+    "variants": {
+      "direct_variant": "ابزارهای اعتبارسنجی — 8 ابزار رایگان فارسی | جعبه ابزار فارسی — یه ابزار ساده برای ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبا\n\nابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبارسنجی کارت بانکی رایگان، اعتبارسنجی شبا رایگان و 3 ابزار دیگر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nرایگان امتحان کن",
+      "educational_variant": "آیا می‌دونستی می‌تونی ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبا رو رایگان انجام بدی؟\n\nابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبارسنجی کارت بانکی رایگان، اعتبارسنجی شبا رایگان و 3 ابزار دیگر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nشروع کن 👇",
+      "curiosity_variant": "چطور بدون ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارس می‌تونی ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبا؟\n\nابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبارسنجی کارت بانکی رایگان، اعتبارسنجی شبا رایگان و 3 ابزار دیگر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nلینک در بیو",
+      "problem-solution_variant": "مشکل ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارس؟ این راه‌حل رو امتحان کن\n\nابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبارسنجی کارت بانکی رایگان، اعتبارسنجی شبا رایگان و 3 ابزار دیگر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nلینک در بیو",
+      "before-after_variant": "قبل: ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارس | بعد: ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبا آسان\n\nابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبارسنجی کارت بانکی رایگان، اعتبارسنجی شبا رایگان و 3 ابزار دیگر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nشروع کن 👇"
+    },
+    "alt_text": "تصویر پست ابزارهای اعتبارسنجی — 8 ابزار رایگان فارسی | جعبه ابزار فارسی — ابزارهای اعتبارسنجی: تولید QR Code رایگان، اعتبارسنجی کد ملی رایگان، اعتبارسنجی موبایل رایگان، اعتبا",
+    "cta": "سایت رو ببین 👇"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "topics-validation-tools"
+  },
+  "created_at": "2026-07-31T17:22:06.671416+00:00",
+  "version": 1
+}

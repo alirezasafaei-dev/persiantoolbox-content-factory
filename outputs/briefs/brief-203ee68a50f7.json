@@ -1,0 +1,168 @@
+{
+  "brief_id": "brief-203ee68a50f7",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/writing-tools/persian-writing-studio",
+    "title": "ویرایشگر فارسی پیشرفته | پاک‌سازی و اصلاح متن آنلاین رایگان",
+    "summary": "ویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محلی در مرورگر. بدون اشتراک ماهانه.",
+    "category": "tool-demo",
+    "source_id": "writing-tools-persian-writing-studio",
+    "source_hash": "e183be966a0f5e2d054ada0926df65b96ae2247ba2bead8eb69a0102b829c1a0",
+    "crawled_at": "2026-07-31T17:21:52.146662+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "writing-tools-persian-writing-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"ac225f1f-a014-44c4-81c3-90eea26bcf7d\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"ac225f1f-a014-44c4-81c3-90eea26bcf7d\" href=\"/_next/static/chunks/0-",
+        "source_id": "writing-tools-persian-writing-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "writing-tools-persian-writing-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"ac225f1f-a014-44c4-81c3-90eea26bcf7d\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "writing-tools-persian-writing-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"ac225f1f-a014-44c4-81c3-90eea26bcf7d\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "writing-tools-persian-writing-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"ac225f1f-a014-44c4-81c3-90eea26bcf7d\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "writing-tools-persian-writing-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"ac225f1f-a014-44c4-81c3-90eea26bcf7d\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "writing-tools-persian-writing-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"ac225f1f-a014-44c4-81c3-90eea26bcf7d\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "writing-tools-persian-writing-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"ac225f1f-a014-44c4-81c3-90eea26bcf7d\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "writing-tools-persian-writing-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"ac225f1f-a014-44c4-81c3-90eea26bcf7d\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "writing-tools-persian-writing-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "privacy",
+      "statistical"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "ویرایشگر فارسی پیشرفته | پاک‌سازی و اصلاح متن آنلاین رایگان",
+      "og:description": "ویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محلی در مرورگر. بدون اشتراک ماهانه.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "کاربران عمومی",
+    "pain_point": "ابزارهای پیچیده",
+    "desire": "سادگی و سرعت"
+  },
+  "content_strategy": {
+    "angle": "معرفی ویرایشگر فارسی پیشرفته | پاک‌سازی و اصلاح متن آنلاین رایگان برای کاربران عمومی",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "پاداش",
+    "expected_effect": "ارزش درک‌شده بالاتر"
+  },
+  "caption": {
+    "primary": "دیگه نیازی به ویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌ نیست\n\nویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محلی در مرورگر. بدون اشتراک ماهانه.\n\nهمین حالا امتحان کن 👇",
+    "variants": {
+      "direct_variant": "ویرایشگر فارسی پیشرفته | پاک‌سازی و اصلاح متن آنلاین رایگان — یه ابزار ساده برای ویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محل\n\nویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محلی در مرورگر. بدون اشتراک ماهانه.\n\nهمین حالا امتحان کن 👇",
+      "educational_variant": "آیا می‌دونستی می‌تونی ویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محل رو رایگان انجام بدی؟\n\nویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محلی در مرورگر. بدون اشتراک ماهانه.\n\nشروع کن 👇",
+      "curiosity_variant": "یه راه‌حل ساده برای یه مشکل قدیمی\n\nویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محلی در مرورگر. بدون اشتراک ماهانه.\n\nرایگان امتحان کن",
+      "problem-solution_variant": "دیگه درگیر ویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌ نباش\n\nویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محلی در مرورگر. بدون اشتراک ماهانه.\n\nلینک در بیو",
+      "before-after_variant": "قبل: ویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌ | بعد: ویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محل آسان\n\nویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محلی در مرورگر. بدون اشتراک ماهانه.\n\nهمین حالا امتحان کن 👇"
+    },
+    "alt_text": "تصویر پست ویرایشگر فارسی پیشرفته | پاک‌سازی و اصلاح متن آنلاین رایگان — ویرایشگر متن فارسی با اصلاح خودکار حروف عربی، نیم‌فاصله، علائم نگارشی و فاصله‌گذاری. پردازش ۱۰۰٪ محل",
+    "cta": "همین حالا امتحان کن 👇"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "writing-tools-persian-writing-studio"
+  },
+  "created_at": "2026-07-31T17:22:06.669375+00:00",
+  "version": 1
+}

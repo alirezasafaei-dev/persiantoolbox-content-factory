@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-07-31T00:00:00+03:30",
+  "os": {
+    "name": "Ubuntu 24.04.4 LTS (Noble Numbat)",
+    "kernel": "Linux asdev 7.0.0-28-generic #28~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC",
+    "arch": "x86_64"
+  },
+  "python": {
+    "version": "3.12.3",
+    "path": "/usr/bin/python3"
+  },
+  "cpu": {
+    "cores": 12,
+    "model": "x86_64"
+  },
+  "ram": {
+    "total_gb": 23,
+    "available_gb": 17,
+    "used_gb": 6.3
+  },
+  "gpu": {
+    "available": false,
+    "type": "none"
+  },
+  "disk": {
+    "total_gb": 216,
+    "free_gb": 104,
+    "used_percent": 50
+  },
+  "docker": {
+    "available": true,
+    "version": "29.1.3"
+  },
+  "chromium": {
+    "path": "/snap/bin/chromium",
+    "version": "150.0.7871.46"
+  },
+  "playwright": {
+    "installed": false,
+    "note": "Will install via uv in project setup"
+  },
+  "tools": {
+    "uv": {"available": true, "version": "0.11.16"},
+    "ruff": {"available": true, "version": "0.15.14"},
+    "pytest": {"available": false, "note": "Will install via uv"},
+    "git": {"available": true}
+  },
+  "network": {
+    "site_reachable": true,
+    "site_http_code": 200,
+    "site_url": "https://persiantoolbox.ir/"
+  },
+  "iran_api_reachability": {
+    "note": "Cannot test from this machine (not in Iran). Will probe at runtime.",
+    "assumption": "Some APIs may be unreachable from Iran; deterministic fallback required."
+  }
+}

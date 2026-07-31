@@ -1,0 +1,168 @@
+{
+  "brief_id": "brief-5021096f3deb",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/pricing",
+    "title": "قیمت‌گذاری و خرید خروجی حرفه‌ای — جعبه ابزار فارسی",
+    "summary": "خرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فاکتور، رزومه و قرارداد.",
+    "category": "tool-demo",
+    "source_id": "pricing",
+    "source_hash": "e819251d486af711d0bf0f461e89c0edc17f8d3c8949efc9ea55279e91806e07",
+    "crawled_at": "2026-07-31T17:21:44.164785+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "pricing",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"821fae96-0090-4bfc-8f01-31caaf9568ba\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"821fae96-0090-4bfc-8f01-31caaf9568ba\" href=\"/_next/static/chunks/0-",
+        "source_id": "pricing",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "pricing",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"821fae96-0090-4bfc-8f01-31caaf9568ba\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "pricing",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"821fae96-0090-4bfc-8f01-31caaf9568ba\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "pricing",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"821fae96-0090-4bfc-8f01-31caaf9568ba\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "pricing",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"821fae96-0090-4bfc-8f01-31caaf9568ba\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "pricing",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"821fae96-0090-4bfc-8f01-31caaf9568ba\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "pricing",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"821fae96-0090-4bfc-8f01-31caaf9568ba\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "pricing",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"821fae96-0090-4bfc-8f01-31caaf9568ba\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "pricing",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "privacy",
+      "comparative"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "قیمت‌گذاری و خرید خروجی حرفه‌ای — جعبه ابزار فارسی",
+      "og:description": "خرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فاکتور، رزومه و قرارداد.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "کاربران عمومی",
+    "pain_point": "ابزارهای پیچیده",
+    "desire": "سادگی و سرعت"
+  },
+  "content_strategy": {
+    "angle": "معرفی قیمت‌گذاری و خرید خروجی حرفه‌ای — جعبه ابزار فارسی برای کاربران عمومی",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "تعهد",
+    "expected_effect": "پیگیری و بازگشت"
+  },
+  "caption": {
+    "primary": "با این ابزار رایگان قیمت‌گذاری و خرید خروجی حرفه‌ای — جعبه ابزار فارسی کارت رو سریع‌تر انجام بده\n\nخرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فاکتور، رزومه و قرارداد.\n\nلینک در بیو",
+    "variants": {
+      "direct_variant": "قیمت‌گذاری و خرید خروجی حرفه‌ای — جعبه ابزار فارسی — یه ابزار ساده برای خرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فا\n\nخرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فاکتور، رزومه و قرارداد.\n\nرایگان امتحان کن",
+      "educational_variant": "یه ترفند ساده برای خرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فا\n\nخرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فاکتور، رزومه و قرارداد.\n\nهمین حالا امتحان کن 👇",
+      "curiosity_variant": "یه راه‌حل ساده برای یه مشکل قدیمی\n\nخرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فاکتور، رزومه و قرارداد.\n\nشروع کن 👇",
+      "problem-solution_variant": "وقتی خرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه داری، قیمت‌گذاری و خرید خروجی حرفه‌ای — جعبه ابزار فارسی کمکت می‌کنه\n\nخرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فاکتور، رزومه و قرارداد.\n\nشروع کن 👇",
+      "before-after_variant": "از خرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه تا خرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فا در چند ثانیه\n\nخرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فاکتور، رزومه و قرارداد.\n\nلینک در بیو"
+    },
+    "alt_text": "تصویر پست قیمت‌گذاری و خرید خروجی حرفه‌ای — جعبه ابزار فارسی — خرید بسته ۳ خروجی از ۴۹٬۰۰۰ تومان یا اشتراک ماهانه. پرداخت امن زرین‌پال. خروجی بدون واترمارک برای فا",
+    "cta": "لینک در بیو"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "pricing"
+  },
+  "created_at": "2026-07-31T17:22:06.652370+00:00",
+  "version": 1
+}

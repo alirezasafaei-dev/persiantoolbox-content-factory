@@ -1,0 +1,66 @@
+{
+  "brief_id": "golden-9017f4e5769a",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/golden/golden-persian-3",
+    "title": "نکته تبدیل اعداد",
+    "summary": "نکته مهم درباره تبدیل اعداد",
+    "category": "persian-text",
+    "source_id": "golden-persian-3",
+    "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "crawled_at": "2026-07-31T17:27:23.109433+00:00",
+    "claims": [],
+    "risk_tags": [],
+    "http_metadata": {
+      "status_code": 0,
+      "content_type": "",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {}
+  },
+  "audience": {
+    "segment": "نویسندگان",
+    "pain_point": "مشکلات متن فارسی",
+    "desire": "متن تمیز"
+  },
+  "content_strategy": {
+    "angle": "نکته تبدیل اعداد",
+    "hook_type": "problem-solution",
+    "template_type": "common-mistake"
+  },
+  "psychology_hypothesis": {
+    "principle": "تست",
+    "expected_effect": "تست"
+  },
+  "caption": {
+    "primary": "نکته تبدیل اعداد — نکته مهم درباره تبدیل اعداد",
+    "variants": {},
+    "alt_text": "",
+    "cta": "همین حالا امتحان کن"
+  },
+  "art_direction": {
+    "template": "common-mistake",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": ""
+  },
+  "risk_level": "LOW",
+  "risk_decision": "AUTO_APPROVE",
+  "utm": {},
+  "created_at": "2026-07-31T17:27:23.109443+00:00",
+  "version": 1
+}

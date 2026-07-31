@@ -1,0 +1,171 @@
+{
+  "brief_id": "brief-3b10c68bcb00",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/blog",
+    "title": "بلاگ جعبه ابزار فارسی | راهنما و آموزش",
+    "summary": "مقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزارهای رایگان.",
+    "category": "tool-demo",
+    "source_id": "blog",
+    "source_hash": "c01a6fa5bd3ef2479b5819220e918ea339de4d2369176c9929981a2c704e21cf",
+    "crawled_at": "2026-07-31T17:21:42.137582+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "blog",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"726908fd-2a3b-4c22-9b5a-f64a3b365bd5\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"726908fd-2a3b-4c22-9b5a-f64a3b365bd5\" href=\"/_next/static/chunks/0-",
+        "source_id": "blog",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "blog",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"726908fd-2a3b-4c22-9b5a-f64a3b365bd5\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "blog",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"726908fd-2a3b-4c22-9b5a-f64a3b365bd5\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "blog",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"726908fd-2a3b-4c22-9b5a-f64a3b365bd5\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "blog",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"726908fd-2a3b-4c22-9b5a-f64a3b365bd5\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "blog",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"726908fd-2a3b-4c22-9b5a-f64a3b365bd5\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "blog",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"726908fd-2a3b-4c22-9b5a-f64a3b365bd5\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "blog",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"726908fd-2a3b-4c22-9b5a-f64a3b365bd5\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "blog",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "tax",
+      "security",
+      "privacy",
+      "comparative",
+      "statistical"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "بلاگ جعبه ابزار فارسی | راهنما و آموزش",
+      "og:description": "مقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزارهای رایگان.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "دانشجویان",
+    "pain_point": "نیاز به ابزارهای متنی",
+    "desire": "ابزار رایگان و سریع"
+  },
+  "content_strategy": {
+    "angle": "معرفی بلاگ جعبه ابزار فارسی | راهنما و آموزش برای دانشجویان",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "سادگی",
+    "expected_effect": "کاهش اصطکاک و افزایش تبدیل"
+  },
+  "caption": {
+    "primary": "دیگه نیازی به مقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، نیست\n\nمقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزارهای رایگان.\n\nسایت رو ببین 👇",
+    "variants": {
+      "direct_variant": "دیگه نیازی به مقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، نیست\n\nمقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزارهای رایگان.\n\nلینک در بیو",
+      "educational_variant": "یه ترفند ساده برای مقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزا\n\nمقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزارهای رایگان.\n\nلینک در بیو",
+      "curiosity_variant": "این ابزار رایگان یه چیزی داره که بقیه ندارن\n\nمقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزارهای رایگان.\n\nشروع کن 👇",
+      "problem-solution_variant": "دیگه درگیر مقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، نباش\n\nمقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزارهای رایگان.\n\nشروع کن 👇",
+      "before-after_variant": "از مقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، تا مقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزا در چند ثانیه\n\nمقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزارهای رایگان.\n\nسایت رو ببین 👇"
+    },
+    "alt_text": "تصویر پست بلاگ جعبه ابزار فارسی | راهنما و آموزش — مقاله‌ها و راهنماهای کاربردی: حقوق، وام، PDF، OCR، رزومه و ویرایش متن فارسی — با مسیر مستقیم به ابزا",
+    "cta": "سایت رو ببین 👇"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "blog"
+  },
+  "created_at": "2026-07-31T17:22:06.648202+00:00",
+  "version": 1
+}

@@ -1,0 +1,168 @@
+{
+  "brief_id": "brief-2f36d6bb411f",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/business-tools/document-studio",
+    "title": "فاکتورساز و رسیدساز آنلاین رایگان | ساخت فاکتور و رسید",
+    "summary": "ساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حرفه‌ای.",
+    "category": "tool-demo",
+    "source_id": "business-tools-document-studio",
+    "source_hash": "a8e7e4c6a85e6659121832d47aa8a430382602581bc2af43949a8c011b311471",
+    "crawled_at": "2026-07-31T17:21:48.142739+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "business-tools-document-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"7e20acc1-c4be-4ff8-89d1-898f9eb56308\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"7e20acc1-c4be-4ff8-89d1-898f9eb56308\" href=\"/_next/static/chunks/0-",
+        "source_id": "business-tools-document-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "business-tools-document-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"7e20acc1-c4be-4ff8-89d1-898f9eb56308\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "business-tools-document-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"7e20acc1-c4be-4ff8-89d1-898f9eb56308\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "business-tools-document-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"7e20acc1-c4be-4ff8-89d1-898f9eb56308\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "business-tools-document-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"7e20acc1-c4be-4ff8-89d1-898f9eb56308\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "business-tools-document-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"7e20acc1-c4be-4ff8-89d1-898f9eb56308\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "business-tools-document-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"7e20acc1-c4be-4ff8-89d1-898f9eb56308\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "business-tools-document-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"7e20acc1-c4be-4ff8-89d1-898f9eb56308\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "business-tools-document-studio",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "tax",
+      "privacy"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "فاکتورساز و رسیدساز آنلاین رایگان | ساخت فاکتور و رسید",
+      "og:description": "ساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حرفه‌ای.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "دانشجویان",
+    "pain_point": "نیاز به ابزارهای متنی",
+    "desire": "ابزار رایگان و سریع"
+  },
+  "content_strategy": {
+    "angle": "معرفی فاکتورساز و رسیدساز آنلاین رایگان | ساخت فاکتور و رسید برای دانشجویان",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "کمیابی",
+    "expected_effect": "افزایش فوریت (فقط برای محتوای فصلی)"
+  },
+  "caption": {
+    "primary": "فاکتورساز و رسیدساز آنلاین رایگان | ساخت فاکتور و رسید — یه ابزار ساده برای ساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حر\n\nساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حرفه‌ای.\n\nشروع کن 👇",
+    "variants": {
+      "direct_variant": "فاکتورساز و رسیدساز آنلاین رایگان | ساخت فاکتور و رسید — یه ابزار ساده برای ساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حر\n\nساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حرفه‌ای.\n\nلینک در بیو",
+      "educational_variant": "آیا می‌دونستی می‌تونی ساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حر رو رایگان انجام بدی؟\n\nساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حرفه‌ای.\n\nلینک در بیو",
+      "curiosity_variant": "این ابزار رایگان یه چیزی داره که بقیه ندارن\n\nساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حرفه‌ای.\n\nرایگان امتحان کن",
+      "problem-solution_variant": "مشکل ساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به ؟ این راه‌حل رو امتحان کن\n\nساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حرفه‌ای.\n\nرایگان امتحان کن",
+      "before-after_variant": "قبل: ساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به  | بعد: ساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حر آسان\n\nساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حرفه‌ای.\n\nشروع کن 👇"
+    },
+    "alt_text": "تصویر پست فاکتورساز و رسیدساز آنلاین رایگان | ساخت فاکتور و رسید — ساخت فاکتور فروش، پیش‌فاکتور و رسید دریافت وجه به صورت آنلاین و رایگان. خروجی PDF و Word با طراحی حر",
+    "cta": "شروع کن 👇"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "business-tools-document-studio"
+  },
+  "created_at": "2026-07-31T17:22:06.661304+00:00",
+  "version": 1
+}

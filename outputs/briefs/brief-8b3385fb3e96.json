@@ -1,0 +1,170 @@
+{
+  "brief_id": "brief-8b3385fb3e96",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/about",
+    "title": "درباره ما - جعبه ابزار فارسی",
+    "summary": "درباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کاربران فارسی‌زبان.",
+    "category": "tool-demo",
+    "source_id": "about",
+    "source_hash": "7cdc7f228f9160ff0bc780b548a1946071a14b3311b35117daf332309dc709d5",
+    "crawled_at": "2026-07-31T17:21:43.143945+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "about",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"8affdc04-61ec-4426-8d32-1d7b4ea4e8f6\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"8affdc04-61ec-4426-8d32-1d7b4ea4e8f6\" href=\"/_next/static/chunks/0-",
+        "source_id": "about",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "about",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"8affdc04-61ec-4426-8d32-1d7b4ea4e8f6\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "about",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"8affdc04-61ec-4426-8d32-1d7b4ea4e8f6\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "about",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"8affdc04-61ec-4426-8d32-1d7b4ea4e8f6\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "about",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"8affdc04-61ec-4426-8d32-1d7b4ea4e8f6\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "about",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"8affdc04-61ec-4426-8d32-1d7b4ea4e8f6\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "about",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"8affdc04-61ec-4426-8d32-1d7b4ea4e8f6\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "about",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"8affdc04-61ec-4426-8d32-1d7b4ea4e8f6\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "about",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "tax",
+      "security",
+      "privacy",
+      "statistical"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "درباره ما - جعبه ابزار فارسی",
+      "og:description": "درباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کاربران فارسی‌زبان.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "فریلنسرها",
+    "pain_point": "وقت‌گیری کارهای ساده",
+    "desire": "خودکارسازی"
+  },
+  "content_strategy": {
+    "angle": "معرفی درباره ما - جعبه ابزار فارسی برای فریلنسرها",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "اثبات اجتماعی",
+    "expected_effect": "افزایش اعتماد"
+  },
+  "caption": {
+    "primary": "درباره ما - جعبه ابزار فارسی — یه ابزار ساده برای درباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کارب\n\nدرباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کاربران فارسی‌زبان.\n\nشروع کن 👇",
+    "variants": {
+      "direct_variant": "دیگه نیازی به درباره ماموریت، معماری local-first و استانداردهای  نیست\n\nدرباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کاربران فارسی‌زبان.\n\nهمین حالا امتحان کن 👇",
+      "educational_variant": "یه ترفند ساده برای درباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کارب\n\nدرباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کاربران فارسی‌زبان.\n\nسایت رو ببین 👇",
+      "curiosity_variant": "یه راه‌حل ساده برای یه مشکل قدیمی\n\nدرباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کاربران فارسی‌زبان.\n\nرایگان امتحان کن",
+      "problem-solution_variant": "دیگه درگیر درباره ماموریت، معماری local-first و استانداردهای  نباش\n\nدرباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کاربران فارسی‌زبان.\n\nلینک در بیو",
+      "before-after_variant": "از درباره ماموریت، معماری local-first و استانداردهای  تا درباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کارب در چند ثانیه\n\nدرباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کاربران فارسی‌زبان.\n\nهمین حالا امتحان کن 👇"
+    },
+    "alt_text": "تصویر پست درباره ما - جعبه ابزار فارسی — درباره ماموریت، معماری local-first و استانداردهای جعبه ابزار فارسی. ابزارهای آنلاین رایگان برای کارب",
+    "cta": "شروع کن 👇"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "about"
+  },
+  "created_at": "2026-07-31T17:22:06.650241+00:00",
+  "version": 1
+}

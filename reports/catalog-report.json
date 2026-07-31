@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-07-31T17:22:37.374242+00:00",
+  "catalog_items": 18,
+  "briefs_generated": 18,
+  "qa_results": {
+    "total": 18,
+    "passed": 0,
+    "failed": 0,
+    "escalated": 18
+  }
+}

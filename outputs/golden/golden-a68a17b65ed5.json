@@ -1,0 +1,66 @@
+{
+  "brief_id": "golden-a68a17b65ed5",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/golden/golden-pdf-4",
+    "title": "آموزش ویرایش PDF",
+    "summary": "راهنمای ویرایش فایل PDF",
+    "category": "pdf-tutorial",
+    "source_id": "golden-pdf-4",
+    "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "crawled_at": "2026-07-31T17:27:23.109329+00:00",
+    "claims": [],
+    "risk_tags": [],
+    "http_metadata": {
+      "status_code": 0,
+      "content_type": "",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {}
+  },
+  "audience": {
+    "segment": "کاربران اداری",
+    "pain_point": "پیچیدگی PDF",
+    "desire": "آموزش ساده"
+  },
+  "content_strategy": {
+    "angle": "آموزش ویرایش PDF",
+    "hook_type": "educational",
+    "template_type": "step-by-step"
+  },
+  "psychology_hypothesis": {
+    "principle": "تست",
+    "expected_effect": "تست"
+  },
+  "caption": {
+    "primary": "آموزش ویرایش PDF — راهنمای ویرایش فایل PDF",
+    "variants": {},
+    "alt_text": "",
+    "cta": "همین حالا امتحان کن"
+  },
+  "art_direction": {
+    "template": "step-by-step",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": ""
+  },
+  "risk_level": "LOW",
+  "risk_decision": "AUTO_APPROVE",
+  "utm": {},
+  "created_at": "2026-07-31T17:27:23.109341+00:00",
+  "version": 1
+}

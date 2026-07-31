@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://persiantoolbox.ir/schemas/brief.json",
+  "title": "Content Brief",
+  "description": "A complete brief for generating a social media post",
+  "type": "object",
+  "required": ["brief_id", "catalog_record", "audience", "content_strategy", "psychology_hypothesis", "caption", "art_direction", "risk_level", "created_at"],
+  "properties": {
+    "brief_id": {"type": "string", "pattern": "^brief-[a-z0-9-]+$"},
+    "catalog_record": {"$ref": "catalog-record.schema.json"},
+    "audience": {
+      "type": "object",
+      "required": ["segment", "pain_point", "desire"],
+      "properties": {
+        "segment": {"type": "string"},
+        "pain_point": {"type": "string"},
+        "desire": {"type": "string"}
+      }
+    },
+    "content_strategy": {
+      "type": "object",
+      "required": ["angle", "hook_type", "template_type"],
+      "properties": {
+        "angle": {"type": "string"},
+        "hook_type": {"type": "string", "enum": ["direct", "educational", "curiosity", "problem-solution", "before-after"]},
+        "template_type": {"type": "string", "enum": ["tool-demo", "step-by-step", "common-mistake", "privacy-trust", "professional-seasonal"]}
+      }
+    },
+    "psychology_hypothesis": {
+      "type": "object",
+      "required": ["principle", "expected_effect"],
+      "properties": {
+        "principle": {"type": "string"},
+        "expected_effect": {"type": "string"}
+      }
+    },
+    "caption": {
+      "type": "object",
+      "required": ["primary", "variants"],
+      "properties": {
+        "primary": {"type": "string", "minLength": 20},
+        "variants": {
+          "type": "object",
+          "properties": {
+            "A_direct": {"type": "string"},
+            "B_educational": {"type": "string"},
+            "C_curiosity": {"type": "string"}
+          }
+        },
+        "alt_text": {"type": "string"},
+        "cta": {"type": "string"}
+      }
+    },
+    "art_direction": {
+      "type": "object",
+      "required": ["template", "color_palette", "typography", "layout_notes"],
+      "properties": {
+        "template": {"type": "string"},
+        "color_palette": {
+          "type": "object",
+          "properties": {
+            "primary": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"},
+            "secondary": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"},
+            "accent": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"},
+            "background": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"},
+            "text": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"}
+          }
+        },
+        "typography": {
+          "type": "object",
+          "properties": {
+            "heading_font": {"type": "string"},
+            "body_font": {"type": "string"},
+            "heading_size_px": {"type": "integer"},
+            "body_size_px": {"type": "integer"}
+          }
+        },
+        "layout_notes": {"type": "string"}
+      }
+    },
+    "risk_level": {"type": "string", "enum": ["LOW", "MEDIUM", "HIGH"]},
+    "risk_decision": {"type": "string", "enum": ["AUTO_APPROVE", "REVIEW_REQUIRED", "ESCALATE"]},
+    "utm": {
+      "type": "object",
+      "properties": {
+        "source": {"type": "string"},
+        "medium": {"type": "string"},
+        "campaign": {"type": "string"},
+        "content": {"type": "string"}
+      }
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "version": {"type": "integer", "minimum": 1}
+  }
+}

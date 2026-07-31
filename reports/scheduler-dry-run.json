@@ -1,0 +1,37 @@
+{
+  "dry_run": true,
+  "project_dir": "/home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory",
+  "python_path": "/home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/.venv/bin/python",
+  "log_dir": "/home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/logs",
+  "jobs": {
+    "catalog-refresh": {
+      "schedule": "0 3 * * 0",
+      "description": "Refresh tool catalog from persiantoolbox.ir",
+      "command": "ptb-content crawl --pilot",
+      "cron_entry": "0 3 * * 0 test ! -f /tmp/ptb-content-factory/catalog-refresh.lock || exit 0 && touch /tmp/ptb-content-factory/catalog-refresh.lock && cd /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory && /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/.venv/bin/python -m ptb_content.cli crawl --pilot >> /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/logs/catalog-refresh.log 2>&1; rm -f /tmp/ptb-content-factory/catalog-refresh.lock",
+      "valid": true
+    },
+    "weekly-generation": {
+      "schedule": "0 3 * * 1",
+      "description": "Generate weekly content briefs",
+      "command": "ptb-content generate --count 4",
+      "cron_entry": "0 3 * * 1 test ! -f /tmp/ptb-content-factory/weekly-generation.lock || exit 0 && touch /tmp/ptb-content-factory/weekly-generation.lock && cd /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory && /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/.venv/bin/python -m ptb_content.cli generate --count 4 >> /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/logs/weekly-generation.log 2>&1; rm -f /tmp/ptb-content-factory/weekly-generation.lock",
+      "valid": true
+    },
+    "weekly-render": {
+      "schedule": "0 4 * * 1",
+      "description": "Render weekly content PNGs",
+      "command": "ptb-content render",
+      "cron_entry": "0 4 * * 1 test ! -f /tmp/ptb-content-factory/weekly-render.lock || exit 0 && touch /tmp/ptb-content-factory/weekly-render.lock && cd /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory && /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/.venv/bin/python -m ptb_content.cli render >> /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/logs/weekly-render.log 2>&1; rm -f /tmp/ptb-content-factory/weekly-render.lock",
+      "valid": true
+    },
+    "weekly-qa-report": {
+      "schedule": "0 5 * * 2",
+      "description": "Generate weekly QA report",
+      "command": "ptb-content qa --report",
+      "cron_entry": "0 5 * * 2 test ! -f /tmp/ptb-content-factory/weekly-qa-report.lock || exit 0 && touch /tmp/ptb-content-factory/weekly-qa-report.lock && cd /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory && /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/.venv/bin/python -m ptb_content.cli qa --report >> /home/dev13/alirezasafaeisystems/sites/persiantoolbox-content-factory/logs/weekly-qa-report.log 2>&1; rm -f /tmp/ptb-content-factory/weekly-qa-report.lock",
+      "valid": true
+    }
+  },
+  "all_valid": true
+}

@@ -1,0 +1,66 @@
+{
+  "brief_id": "golden-f4007993b0e1",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/golden/golden-pdf-6",
+    "title": "آموزش ادغام PDF",
+    "summary": "راهنمای ادغام فایل PDF",
+    "category": "pdf-tutorial",
+    "source_id": "golden-pdf-6",
+    "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "crawled_at": "2026-07-31T17:27:23.109356+00:00",
+    "claims": [],
+    "risk_tags": [],
+    "http_metadata": {
+      "status_code": 0,
+      "content_type": "",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {}
+  },
+  "audience": {
+    "segment": "کاربران اداری",
+    "pain_point": "پیچیدگی PDF",
+    "desire": "آموزش ساده"
+  },
+  "content_strategy": {
+    "angle": "آموزش ادغام PDF",
+    "hook_type": "educational",
+    "template_type": "step-by-step"
+  },
+  "psychology_hypothesis": {
+    "principle": "تست",
+    "expected_effect": "تست"
+  },
+  "caption": {
+    "primary": "آموزش ادغام PDF — راهنمای ادغام فایل PDF",
+    "variants": {},
+    "alt_text": "",
+    "cta": "همین حالا امتحان کن"
+  },
+  "art_direction": {
+    "template": "step-by-step",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": ""
+  },
+  "risk_level": "LOW",
+  "risk_decision": "AUTO_APPROVE",
+  "utm": {},
+  "created_at": "2026-07-31T17:27:23.109364+00:00",
+  "version": 1
+}

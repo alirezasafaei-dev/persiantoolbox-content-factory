@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://persiantoolbox.ir/schemas/qa-result.json",
+  "title": "QA Result",
+  "description": "Quality assurance check result for a content brief",
+  "type": "object",
+  "required": ["brief_id", "checks", "decision", "generated_at"],
+  "properties": {
+    "brief_id": {"type": "string"},
+    "checks": {
+      "type": "object",
+      "properties": {
+        "factuality": {"$ref": "#/$defs/CheckResult"},
+        "persian_normalization": {"$ref": "#/$defs/CheckResult"},
+        "persian_rtl": {"$ref": "#/$defs/CheckResult"},
+        "risk_assessment": {"$ref": "#/$defs/CheckResult"},
+        "visual_render": {"$ref": "#/$defs/CheckResult"},
+        "claim_traceability": {"$ref": "#/$defs/CheckResult"},
+        "source_existence": {"$ref": "#/$defs/CheckResult"},
+        "duplicate_check": {"$ref": "#/$defs/CheckResult"}
+      }
+    },
+    "decision": {"type": "string", "enum": ["PASS", "FAIL", "ESCALATE"]},
+    "failure_reasons": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "generated_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "CheckResult": {
+      "type": "object",
+      "required": ["status", "score"],
+      "properties": {
+        "status": {"type": "string", "enum": ["PASS", "FAIL", "WARN"]},
+        "score": {"type": "number", "minimum": 0, "maximum": 1},
+        "details": {"type": "string"}
+      }
+    }
+  }
+}

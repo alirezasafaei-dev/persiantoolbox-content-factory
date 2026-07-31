@@ -1,0 +1,168 @@
+{
+  "brief_id": "brief-c59fa7e53756",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/topics/business-tools",
+    "title": "ابزارهای کسب‌وکار — 1 ابزار رایگان فارسی | جعبه ابزار فارسی",
+    "summary": "ابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.",
+    "category": "tool-demo",
+    "source_id": "topics-business-tools",
+    "source_hash": "64dc42dd19ba55263072f65b724d427951a13b7fceef6a3f4ee6790680cc08fe",
+    "crawled_at": "2026-07-31T17:21:55.173598+00:00",
+    "claims": [
+      {
+        "text": "DOCTYPE html><html lang=\"fa\" dir=\"rtl\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/21ebrt1uadu1m",
+        "source_id": "topics-business-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "css\" nonce=\"1df485fc-8fc5-4ce7-ba66-e7de6290a509\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"1df485fc-8fc5-4ce7-ba66-e7de6290a509\" href=\"/_next/static/chunks/0-",
+        "source_id": "topics-business-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\"/><script src=\"/_next/static/chunks/0-52qqhjy766e",
+        "source_id": "topics-business-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"1df485fc-8fc5-4ce7-ba66-e7de6290a509\"></script><script src=\"/_next/static/chunks/2njsu4p7tspr7",
+        "source_id": "topics-business-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"1df485fc-8fc5-4ce7-ba66-e7de6290a509\"></script><script src=\"/_next/static/chunks/2lcsmgny2bh0o",
+        "source_id": "topics-business-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"1df485fc-8fc5-4ce7-ba66-e7de6290a509\"></script><script src=\"/_next/static/chunks/1e0w62lynl1-m",
+        "source_id": "topics-business-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"1df485fc-8fc5-4ce7-ba66-e7de6290a509\"></script><script src=\"/_next/static/chunks/turbopack-2setjja8lgbmv",
+        "source_id": "topics-business-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"1df485fc-8fc5-4ce7-ba66-e7de6290a509\"></script><script src=\"/_next/static/chunks/10ise4fnrgqs0",
+        "source_id": "topics-business-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"1df485fc-8fc5-4ce7-ba66-e7de6290a509\"></script><script src=\"/_next/static/chunks/0p06jnm5n7s2w",
+        "source_id": "topics-business-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      },
+      {
+        "text": "js\" async=\"\" nonce=\"1df485fc-8fc5-4ce7-ba66-e7de6290a509\"></script><script src=\"/_next/static/chunks/3d2x-w4y0eb9k",
+        "source_id": "topics-business-tools",
+        "verifiable": true,
+        "confidence": 0.6,
+        "verdict": "UNVERIFIED",
+        "evidence_url": null
+      }
+    ],
+    "risk_tags": [
+      "financial",
+      "legal",
+      "tax",
+      "privacy"
+    ],
+    "http_metadata": {
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {
+      "og:title": "ابزارهای کسب‌وکار — 1 ابزار رایگان فارسی | جعبه ابزار فارسی",
+      "og:description": "ابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.",
+      "og:image": "https://persiantoolbox.ir/og-default.png",
+      "og:type": "website"
+    }
+  },
+  "audience": {
+    "segment": "فریلنسرها",
+    "pain_point": "وقت‌گیری کارهای ساده",
+    "desire": "خودکارسازی"
+  },
+  "content_strategy": {
+    "angle": "معرفی ابزارهای کسب‌وکار — 1 ابزار رایگان فارسی | جعبه ابزار فارسی برای فریلنسرها",
+    "hook_type": "direct",
+    "template_type": "tool-demo"
+  },
+  "psychology_hypothesis": {
+    "principle": "سادگی",
+    "expected_effect": "کاهش اصطکاک و افزایش تبدیل"
+  },
+  "caption": {
+    "primary": "ابزارهای کسب‌وکار — 1 ابزار رایگان فارسی | جعبه ابزار فارسی — یه ابزار ساده برای ابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها مح\n\nابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nسایت رو ببین 👇",
+    "variants": {
+      "direct_variant": "با این ابزار رایگان ابزارهای کسب‌وکار — 1 ابزار رایگان فارسی | جعبه ابزار فارسی کارت رو سریع‌تر انجام بده\n\nابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nرایگان امتحان کن",
+      "educational_variant": "روش ابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها مح رو قدم‌به‌قدم یاد بگیر\n\nابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nلینک در بیو",
+      "curiosity_variant": "یه راه‌حل ساده برای یه مشکل قدیمی\n\nابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nلینک در بیو",
+      "problem-solution_variant": "وقتی ابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | سا داری، ابزارهای کسب‌وکار — 1 ابزار رایگان فارسی | جعبه ابزار فارسی کمکت می‌کنه\n\nابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nهمین حالا امتحان کن 👇",
+      "before-after_variant": "از ابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | سا تا ابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها مح در چند ثانیه\n\nابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها محلی و بدون ثبت‌نام.\n\nرایگان امتحان کن"
+    },
+    "alt_text": "تصویر پست ابزارهای کسب‌وکار — 1 ابزار رایگان فارسی | جعبه ابزار فارسی — ابزارهای کسب‌وکار: فاکتورساز و رسیدساز آنلاین | ساخت فاکتور و رسید رایگان و بیشتر. تمام پردازش‌ها مح",
+    "cta": "سایت رو ببین 👇"
+  },
+  "art_direction": {
+    "template": "tool-demo",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": "Template: tool-demo. RTL layout. Persian text prominent."
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {
+    "source": "instagram",
+    "medium": "social",
+    "campaign": "content-factory-pilot",
+    "content": "topics-business-tools"
+  },
+  "created_at": "2026-07-31T17:22:06.675462+00:00",
+  "version": 1
+}

@@ -1,0 +1,68 @@
+{
+  "providers": [
+    {
+      "provider": "deterministic",
+      "reachable": true,
+      "authentication_ok": true,
+      "free_without_payment": true,
+      "open_weight_model": true,
+      "persian_score": 0.9,
+      "json_score": 1.0,
+      "latency_p50_ms": 1,
+      "latency_p95_ms": 2,
+      "failure_rate": 0.0,
+      "selected_for": [
+        "text",
+        "template",
+        "fallback"
+      ]
+    },
+    {
+      "provider": "ai-horde",
+      "reachable": true,
+      "authentication_ok": false,
+      "free_without_payment": true,
+      "open_weight_model": true,
+      "persian_score": 0.4,
+      "json_score": 0.3,
+      "latency_p50_ms": 1534,
+      "latency_p95_ms": 2301,
+      "failure_rate": 0.3,
+      "selected_for": []
+    },
+    {
+      "provider": "ollama-local",
+      "reachable": true,
+      "authentication_ok": true,
+      "free_without_payment": true,
+      "open_weight_model": true,
+      "persian_score": 0.6,
+      "json_score": 0.5,
+      "latency_p50_ms": 64,
+      "latency_p95_ms": 128,
+      "failure_rate": 0.0,
+      "selected_for": [
+        "text"
+      ]
+    },
+    {
+      "provider": "llama-cpp",
+      "reachable": false,
+      "authentication_ok": true,
+      "free_without_payment": true,
+      "open_weight_model": true,
+      "persian_score": 0.0,
+      "json_score": 0.0,
+      "latency_p50_ms": 8,
+      "latency_p95_ms": 17,
+      "failure_rate": 1.0,
+      "selected_for": []
+    }
+  ],
+  "selected": {
+    "text": "deterministic",
+    "image": "deterministic",
+    "template": "deterministic",
+    "fallback": "deterministic"
+  }
+}

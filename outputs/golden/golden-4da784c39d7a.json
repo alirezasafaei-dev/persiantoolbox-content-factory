@@ -1,0 +1,68 @@
+{
+  "brief_id": "golden-4da784c39d7a",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/golden/golden-financial-2",
+    "title": "قانون کار",
+    "summary": "مروری بر مهم‌ترین مفاد قانون کار",
+    "category": "financial",
+    "source_id": "golden-financial-2",
+    "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "crawled_at": "2026-07-31T17:27:23.109704+00:00",
+    "claims": [],
+    "risk_tags": [
+      "legal"
+    ],
+    "http_metadata": {
+      "status_code": 0,
+      "content_type": "",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {}
+  },
+  "audience": {
+    "segment": "حسابداران",
+    "pain_point": "پیچیدگی مالی",
+    "desire": "دقت"
+  },
+  "content_strategy": {
+    "angle": "قانون کار",
+    "hook_type": "educational",
+    "template_type": "professional-seasonal"
+  },
+  "psychology_hypothesis": {
+    "principle": "تست",
+    "expected_effect": "تست"
+  },
+  "caption": {
+    "primary": "قانون کار — مروری بر مهم‌ترین مفاد قانون کار",
+    "variants": {},
+    "alt_text": "",
+    "cta": "همین حالا امتحان کن"
+  },
+  "art_direction": {
+    "template": "professional-seasonal",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": ""
+  },
+  "risk_level": "HIGH",
+  "risk_decision": "ESCALATE",
+  "utm": {},
+  "created_at": "2026-07-31T17:27:23.109712+00:00",
+  "version": 1
+}

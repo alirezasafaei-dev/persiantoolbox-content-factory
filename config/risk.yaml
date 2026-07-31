@@ -1,0 +1,63 @@
+# Risk Engine Configuration
+
+risk_engine:
+  levels:
+    LOW:
+      description: "General introduction and evergreen educational content"
+      auto_approve: true
+      requires_human_review: false
+      categories:
+        - "tool-demo"
+        - "step-by-step"
+        - "common-mistake"
+        - "privacy-trust"
+
+    MEDIUM:
+      description: "New claims, new templates, or non-numerical comparisons"
+      auto_approve: false
+      requires_human_review: true
+      categories:
+        - "professional-seasonal"
+        - "comparison"
+      triggers:
+        - "new_claim"
+        - "new_template"
+        - "non_numerical_comparison"
+
+    HIGH:
+      description: "Financial, legal, tax, security, privacy, statistical, testimonial, price, competitor comparison"
+      auto_approve: false
+      requires_human_review: true
+      always_escalate: true
+      categories:
+        - "financial"
+      triggers:
+        - "financial"
+        - "legal"
+        - "tax"
+        - "security"
+        - "privacy"
+        - "testimonial"
+        - "statistical"
+        - "price"
+        - "competitor_comparison"
+
+  # Risk tags that always escalate to HIGH
+  escalate_tags:
+    - "financial"
+    - "legal"
+    - "tax"
+    - "security"
+    - "privacy"
+    - "testimonial"
+    - "statistical"
+    - "medical"
+    - "comparative"
+
+  # Content types that always require human review
+  always_review:
+    - "testimonial"
+    - "price_comparison"
+    - "medical_advice"
+    - "financial_advice"
+    - "legal_advice"

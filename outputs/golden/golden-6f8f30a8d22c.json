@@ -1,0 +1,66 @@
+{
+  "brief_id": "golden-6f8f30a8d22c",
+  "catalog_record": {
+    "canonical_url": "https://persiantoolbox.ir/golden/golden-pro-3",
+    "title": "ابزار حرفه‌ای فریلنسرها",
+    "summary": "ابزار مناسب فریلنسرها",
+    "category": "professional",
+    "source_id": "golden-pro-3",
+    "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "crawled_at": "2026-07-31T17:27:23.109549+00:00",
+    "claims": [],
+    "risk_tags": [],
+    "http_metadata": {
+      "status_code": 0,
+      "content_type": "",
+      "content_length": 0,
+      "last_modified": null,
+      "etag": null
+    },
+    "verified_at": null,
+    "expires_at": null,
+    "meta": {}
+  },
+  "audience": {
+    "segment": "مدیران",
+    "pain_point": "زمان محدود",
+    "desire": "ابزار سریع"
+  },
+  "content_strategy": {
+    "angle": "ابزار حرفه‌ای فریلنسرها",
+    "hook_type": "direct",
+    "template_type": "professional-seasonal"
+  },
+  "psychology_hypothesis": {
+    "principle": "تست",
+    "expected_effect": "تست"
+  },
+  "caption": {
+    "primary": "ابزار حرفه‌ای فریلنسرها — ابزار مناسب فریلنسرها",
+    "variants": {},
+    "alt_text": "",
+    "cta": "همین حالا امتحان کن"
+  },
+  "art_direction": {
+    "template": "professional-seasonal",
+    "color_palette": {
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#F59E0B",
+      "background": "#FFFFFF",
+      "text": "#1E293B"
+    },
+    "typography": {
+      "heading_font": "Vazirmatn",
+      "body_font": "Vazirmatn",
+      "heading_size_px": 28,
+      "body_size_px": 16
+    },
+    "layout_notes": ""
+  },
+  "risk_level": "LOW",
+  "risk_decision": "AUTO_APPROVE",
+  "utm": {},
+  "created_at": "2026-07-31T17:27:23.109556+00:00",
+  "version": 1
+}
