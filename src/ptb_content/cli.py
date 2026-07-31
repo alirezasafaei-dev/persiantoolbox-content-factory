@@ -302,29 +302,6 @@ def publish(brief_id: str) -> None:
 
 
 @main.command()
-def status() -> None:
-    """Show current project status."""
-    briefs_dir = project_root() / "outputs" / "briefs"
-    golden_dir = project_root() / "outputs" / "golden"
-    approvals_dir = project_root() / "data" / "approvals"
-    baselines_dir = Path("tests/baselines")
-
-    briefs_count = len(list(briefs_dir.glob("*.json"))) if briefs_dir.exists() else 0
-    golden_count = len(list(golden_dir.glob("*.json"))) if golden_dir.exists() else 0
-    approvals_count = len(list(approvals_dir.glob("*.json"))) if approvals_dir.exists() else 0
-    pngs = sum(1 for _ in (project_root() / "outputs").rglob("*.png")) if (project_root() / "outputs").exists() else 0
-    baselines = len(list((baselines_dir / "snapshot-test").glob("*.png"))) if baselines_dir.exists() else 0
-
-    click.echo("=== PersianToolbox Content Factory ===")
-    click.echo(f"  Briefs:      {briefs_count}")
-    click.echo(f"  Golden:      {golden_count}")
-    click.echo(f"  Approvals:   {approvals_count}")
-    click.echo(f"  PNGs:        {pngs}")
-    click.echo(f"  Snapshots:   {baselines}")
-    click.echo("  Publish:     disabled")
-
-
-@main.command()
 def report() -> None:
     """Generate final reports."""
     from datetime import UTC, datetime
@@ -357,6 +334,178 @@ def report() -> None:
 
     write_json(report_data, project_root() / "reports" / "catalog-report.json")
     click.echo(json.dumps(report_data, indent=2, ensure_ascii=False))
+
+
+# --- Semi-Automated Instagram Commands ---
+
+
+@main.command()
+@click.argument("brief_id")
+def export_instagram(brief_id: str) -> None:
+    """Export a brief as a publish-ready Instagram bundle."""
+    from .publisher.instagram_export import InstagramExporter
+    from .publisher.manual_queue import ManualQueue
+
+    # Load brief
+    brief_path = project_root() / "outputs" / "briefs" / f"{brief_id}.json"
+    if not brief_path.exists():
+        click.echo(f"Brief not found: {brief_id}")
+        sys.exit(1)
+
+    data = json.loads(brief_path.read_text(encoding="utf-8"))
+    brief = _reconstruct_brief(data)
+
+    # Export bundle
+    exporter = InstagramExporter()
+    try:
+        bundle_dir = exporter.export(brief)
+    except Exception as e:
+        click.echo(f"Export failed: {e}")
+        sys.exit(1)
+
+    # Add to manual queue
+    from .publisher import ApprovalGate
+
+    gate = ApprovalGate()
+    loaded = gate.load_approval(brief_id)
+    approval_id = loaded[0].brief_id if loaded else ""
+    checksum = gate.compute_brief_checksum(brief)
+
+    queue = ManualQueue()
+    try:
+        queue.add(
+            brief_id=brief_id,
+            approval_id=approval_id,
+            image_checksum=checksum,
+            bundle_path=str(bundle_dir),
+        )
+    except Exception as e:
+        click.echo(f"Queue add failed: {e}")
+        sys.exit(1)
+
+    click.echo(f"Exported: {bundle_dir}")
+    click.echo(f"  Brief: {brief_id}")
+    click.echo(f"  Files: {len(list(bundle_dir.iterdir()))}")
+    click.echo("  Queue: READY_FOR_REVIEW")
+
+
+@main.command("manual-queue")
+@click.option("--state", default=None, help="Filter by state")
+def manual_queue_list(state: str | None) -> None:
+    """List items in the manual publish queue."""
+    from .publisher.manual_queue import ManualQueue
+
+    queue = ManualQueue()
+    if state:
+        items = queue.list_by_state(state)
+    else:
+        items = queue.list_all()
+
+    if not items:
+        click.echo("Queue is empty.")
+        return
+
+    click.echo(f"{'Brief ID':<25} {'State':<35} {'Created'}")
+    click.echo("-" * 85)
+    for item in items:
+        click.echo(
+            f"{item['brief_id']:<25} {item['state']:<35} {item['created_at'][:19]}"
+        )
+    click.echo(f"\nTotal: {len(items)}")
+
+
+@main.command("manual-scheduled")
+@click.argument("brief_id")
+@click.option("--at", required=True, help="ISO8601 schedule time")
+def manual_scheduled(brief_id: str, at: str) -> None:
+    """Mark a brief as manually scheduled in Instagram."""
+    from .publisher.manual_queue import ManualQueue
+
+    queue = ManualQueue()
+    try:
+        queue.transition(
+            brief_id,
+            "MANUALLY_SCHEDULED",
+            scheduled_at=at,
+        )
+        click.echo(f"Scheduled: {brief_id} at {at}")
+    except Exception as e:
+        click.echo(f"Failed: {e}")
+        sys.exit(1)
+
+
+@main.command("manual-published")
+@click.argument("brief_id")
+@click.option("--permalink", required=True, help="Instagram post URL")
+def manual_published(brief_id: str, permalink: str) -> None:
+    """Confirm a brief was published on Instagram."""
+    from .publisher.manual_queue import ManualQueue
+    from .types import utcnow
+
+    queue = ManualQueue()
+    try:
+        queue.transition(
+            brief_id,
+            "PUBLISHED_CONFIRMED",
+            permalink=permalink,
+            published_at=utcnow(),
+        )
+        click.echo(f"Published: {brief_id}")
+        click.echo(f"  Permalink: {permalink}")
+    except Exception as e:
+        click.echo(f"Failed: {e}")
+        sys.exit(1)
+
+
+@main.command("manual-cancel")
+@click.argument("brief_id")
+def manual_cancel(brief_id: str) -> None:
+    """Cancel a brief in the manual queue."""
+    from .publisher.manual_queue import ManualQueue
+
+    queue = ManualQueue()
+    try:
+        queue.transition(brief_id, "CANCELLED")
+        click.echo(f"Cancelled: {brief_id}")
+    except Exception as e:
+        click.echo(f"Failed: {e}")
+        sys.exit(1)
+
+
+@main.command()
+def status() -> None:
+    """Show current project status."""
+    briefs_dir = project_root() / "outputs" / "briefs"
+    golden_dir = project_root() / "outputs" / "golden"
+    approvals_dir = project_root() / "data" / "approvals"
+    bundles_dir = project_root() / "outputs" / "bundles"
+    baselines_dir = Path("tests/baselines")
+
+    briefs_count = len(list(briefs_dir.glob("*.json"))) if briefs_dir.exists() else 0
+    golden_count = len(list(golden_dir.glob("*.json"))) if golden_dir.exists() else 0
+    approvals_count = len(list(approvals_dir.glob("*.json"))) if approvals_dir.exists() else 0
+    bundles_count = len(list(bundles_dir.glob("*/manifest.json"))) if bundles_dir.exists() else 0
+    pngs = sum(1 for _ in (project_root() / "outputs").rglob("*.png")) if (project_root() / "outputs").exists() else 0
+    baselines = len(list((baselines_dir / "snapshot-test").glob("*.png"))) if baselines_dir.exists() else 0
+
+    # Manual queue stats
+    from .publisher.manual_queue import ManualQueue
+
+    queue = ManualQueue()
+    queue_total = queue.count()
+    queue_scheduled = queue.count("MANUALLY_SCHEDULED")
+    queue_published = queue.count("PUBLISHED_CONFIRMED")
+
+    click.echo("=== PersianToolbox Content Factory ===")
+    click.echo(f"  Briefs:      {briefs_count}")
+    click.echo(f"  Golden:      {golden_count}")
+    click.echo(f"  Approvals:   {approvals_count}")
+    click.echo(f"  Bundles:     {bundles_count}")
+    click.echo(f"  PNGs:        {pngs}")
+    click.echo(f"  Snapshots:   {baselines}")
+    click.echo(f"  Queue:       {queue_total} total, {queue_scheduled} scheduled, {queue_published} published")
+    click.echo("  API:         BLOCKED_BY_META_DEVELOPER_VERIFICATION")
+    click.echo("  Mode:        SEMI_AUTOMATED")
 
 
 if __name__ == "__main__":

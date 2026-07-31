@@ -5,3 +5,8 @@ __pycache__/
 logs/
 backups/
 outputs/tmp/
+outputs/brief-*/
+outputs/bundles/
+data/approvals/
+data/publish-queue.db
+reports/

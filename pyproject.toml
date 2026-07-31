@@ -54,7 +54,7 @@ select = ["E", "F", "W", "I", "N", "UP", "S", "B", "A", "C4", "PT", "RUF"]
 ignore = [
     "S603", "S607", "B008", "E501", "UP042", "S101",
     "RUF001", "RUF003", "RUF012", "RUF022", "RUF034", "RUF059",
-    "S311", "S105", "S110",
+    "S311", "S105", "S110", "S608",
 ]
 
 [tool.pytest.ini_options]
