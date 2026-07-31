@@ -48,7 +48,6 @@ EnvironmentFile=/etc/ptb-content/production.env
 # Hardening
 NoNewPrivileges=true
 ProtectSystem=strict
-ProtectHome=read-only
 PrivateTmp=true
 PrivateDevices=true
 ProtectKernelTunables=true
@@ -59,7 +58,6 @@ RestrictNamespaces=true
 LockPersonality=true
 MemoryDenyWriteExecute=false
 RestrictRealtime=true
-RestrictFileSystems=ptb-content-factory:ro
 ReadWritePaths=/var/lib/ptb-content/data
 ReadWritePaths=/var/log/ptb-content
 
@@ -117,7 +115,7 @@ META_HOST_URL=https://graph.facebook.com
 PTB_AUTO_PUBLISH=false
 PTB_LIVE_CANARY_APPROVED=false
 PTB_GENERATION_ENABLED=true
-PTB_SCHEDULER_ENABLED=true
+PTB_SCHEDULER_ENABLED=false
 PTB_REAL_PUBLISH_ENABLED=false
 PTB_PUBLISHER=mock
 
