@@ -36,12 +36,13 @@ if [ ! -f /etc/ptb-content/production.env ]; then
 # NEVER commit this file to Git.
 
 # Meta Instagram API
+# BLOCKED: Semi-automated mode does NOT require these.
 META_INSTAGRAM_APP_ID=
 META_INSTAGRAM_APP_SECRET=
 META_INSTAGRAM_ACCESS_TOKEN=
 META_INSTAGRAM_ACCOUNT_ID=
-META_API_VERSION=v21.0
-META_HOST_URL=https://graph.facebook.com
+META_API_VERSION=
+META_HOST_URL=
 
 # Publish Controls (FAIL-CLOSED defaults)
 PTB_AUTO_PUBLISH=false
