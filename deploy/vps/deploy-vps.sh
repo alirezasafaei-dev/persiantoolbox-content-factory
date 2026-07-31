@@ -30,14 +30,21 @@ rsync -avz --delete \
     --exclude 'node_modules' \
     --exclude '.next' \
     --exclude '.git' \
+    --exclude '.venv' \
     --exclude '__pycache__' \
     --exclude '*.pyc' \
     --exclude '.env' \
+    --exclude '.ruff_cache' \
+    --exclude '.pytest_cache' \
     --exclude 'data/publish-queue.db' \
+    --exclude 'data/manual-queue.db' \
+    --exclude 'data/approvals/' \
+    --exclude 'outputs/bundles/' \
     --exclude 'outputs/brief-*/feed-*.png' \
     --exclude 'outputs/test-*/feed-*.png' \
     --exclude 'outputs/golden/' \
     --exclude 'backups/' \
+    --exclude 'reports/' \
     "$PROJECT_DIR/" "${VPS_USER}@${VPS_HOST}:${VPS_DEPLOY_DIR}/"
 
 # Build on VPS
