@@ -8,6 +8,7 @@ Baselines are NEVER auto-updated on failure.
 from __future__ import annotations
 
 import asyncio
+import os
 import shutil
 from pathlib import Path
 
@@ -25,7 +26,8 @@ BASELINES_DIR = Path("tests/baselines")
 FIXTURES_DIR = Path("tests/fixtures")
 
 # Playwright + chromium required for PNG rendering
-_playwright_available = shutil.which("chromium") or shutil.which("chromium-browser")
+# The renderer hardcodes /snap/bin/chromium; skip if not available
+_playwright_available = os.path.exists("/snap/bin/chromium")
 try:
     from playwright.async_api import async_playwright  # noqa: F401
 except ImportError:
