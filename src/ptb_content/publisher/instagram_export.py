@@ -9,8 +9,8 @@ from pathlib import Path
 
 from ..types import Brief, generate_hash, utcnow
 from ..utils.helpers import ensure_dir, project_root
+from . import ApprovalGate
 from .errors import PublishError, ValidationError
-from .publisher import ApprovalGate
 
 
 class InstagramExporter:
@@ -32,7 +32,7 @@ class InstagramExporter:
         self.outputs_dir = outputs_dir or project_root() / "outputs"
         self.bundles_dir = ensure_dir(project_root() / "outputs" / "bundles")
 
-    def export(self, brief: Brief, approval_id: str = "") -> Path:
+    def export(self, brief: Brief, approval_id: str = "", brief_path: Path | None = None) -> Path:
         """Export a brief as an Instagram bundle.
 
         Returns the bundle directory path.
@@ -46,8 +46,11 @@ class InstagramExporter:
             raise ValidationError(f"No approval found for {brief.brief_id}. Cannot export.")
         approval, stored_checksum = loaded
 
-        # Compute current checksum
-        current_checksum = gate.compute_brief_checksum(brief)
+        # Compute current checksum (prefer file-based to avoid reconstruction drift)
+        if brief_path is not None and brief_path.exists():
+            current_checksum = gate.compute_checksum_from_file(brief_path)
+        else:
+            current_checksum = gate.compute_brief_checksum(brief)
         if stored_checksum != current_checksum:
             raise ValidationError(
                 f"Checksum mismatch for {brief.brief_id}. Brief changed after approval."

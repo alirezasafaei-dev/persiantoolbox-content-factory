@@ -360,7 +360,7 @@ def export_instagram(brief_id: str) -> None:
     # Export bundle
     exporter = InstagramExporter()
     try:
-        bundle_dir = exporter.export(brief)
+        bundle_dir = exporter.export(brief, brief_path=brief_path)
     except Exception as e:
         click.echo(f"Export failed: {e}")
         sys.exit(1)
@@ -371,7 +371,7 @@ def export_instagram(brief_id: str) -> None:
     gate = ApprovalGate()
     loaded = gate.load_approval(brief_id)
     approval_id = loaded[0].brief_id if loaded else ""
-    checksum = gate.compute_brief_checksum(brief)
+    checksum = gate.compute_checksum_from_file(brief_path)
 
     queue = ManualQueue()
     try:
