@@ -43,7 +43,7 @@ class LocalScheduler:
         "weekly-qa-report": {
             "description": "Generate weekly QA report",
             "schedule": "0 5 * * 2",  # Tuesday 5 AM
-            "command": "ptb-content qa --report",
+            "command": "ptb-content qa",
         },
     }
 

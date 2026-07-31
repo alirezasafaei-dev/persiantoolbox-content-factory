@@ -381,6 +381,9 @@ def export_instagram(brief_id: str) -> None:
             image_checksum=checksum,
             bundle_path=str(bundle_dir),
         )
+        # Auto-advance: export implies approval, so move to scheduling-ready
+        queue.transition(brief_id, "APPROVED")
+        queue.transition(brief_id, "READY_FOR_MANUAL_SCHEDULING")
     except Exception as e:
         click.echo(f"Queue add failed: {e}")
         sys.exit(1)
@@ -388,7 +391,7 @@ def export_instagram(brief_id: str) -> None:
     click.echo(f"Exported: {bundle_dir}")
     click.echo(f"  Brief: {brief_id}")
     click.echo(f"  Files: {len(list(bundle_dir.iterdir()))}")
-    click.echo("  Queue: READY_FOR_REVIEW")
+    click.echo("  Queue: READY_FOR_MANUAL_SCHEDULING")
 
 
 @main.command("manual-queue")
