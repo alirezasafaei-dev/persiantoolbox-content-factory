@@ -54,7 +54,9 @@ class Crawler:
                 await asyncio.sleep(backoff)
         raise RuntimeError(f"Failed after {self.max_retries} retries: {last_error}")
 
-    def _extract_metadata(self, html: str, url: str, status: int, headers: dict[str, str]) -> dict[str, Any]:
+    def _extract_metadata(
+        self, html: str, url: str, status: int, headers: dict[str, str]
+    ) -> dict[str, Any]:
         """Extract metadata from HTML. Treats HTML as UNTRUSTED DATA."""
         import re
 
@@ -217,7 +219,9 @@ class Crawler:
 
                     # Extract title
                     title = metadata.get("html_title", metadata.get("og:title", source_id))
-                    summary = metadata.get("meta_description", metadata.get("og:description", title))
+                    summary = metadata.get(
+                        "meta_description", metadata.get("og:description", title)
+                    )
 
                     # Extract claims
                     claims = self._extract_claims(html, source_id)
@@ -269,7 +273,9 @@ class Crawler:
             csv_lines = ["source_id,title,risk_tags,canonical_url"]
             for item in review_items:
                 tags = ";".join(item.get("risk_tags", []))
-                csv_lines.append(f'"{item["source_id"]}","{item["title"]}","{tags}","{item["canonical_url"]}"')
+                csv_lines.append(
+                    f'"{item["source_id"]}","{item["title"]}","{tags}","{item["canonical_url"]}"'
+                )
             with open(output_dir / "manual-review.csv", "w", encoding="utf-8") as f:
                 f.write("\n".join(csv_lines))
 

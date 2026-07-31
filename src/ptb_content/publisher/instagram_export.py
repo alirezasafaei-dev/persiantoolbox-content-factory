@@ -43,9 +43,7 @@ class InstagramExporter:
         # Validate approval exists
         loaded = gate.load_approval(brief.brief_id)
         if loaded is None:
-            raise ValidationError(
-                f"No approval found for {brief.brief_id}. Cannot export."
-            )
+            raise ValidationError(f"No approval found for {brief.brief_id}. Cannot export.")
         approval, stored_checksum = loaded
 
         # Compute current checksum
@@ -98,9 +96,7 @@ class InstagramExporter:
     def _write_hashtags(self, brief: Brief, bundle_dir: Path) -> None:
         caption = brief.caption.primary or ""
         hashtags = [word for word in caption.split() if word.startswith("#")]
-        (bundle_dir / "hashtags.txt").write_text(
-            "\n".join(hashtags), encoding="utf-8"
-        )
+        (bundle_dir / "hashtags.txt").write_text("\n".join(hashtags), encoding="utf-8")
 
     def _write_alt_text(self, brief: Brief, bundle_dir: Path) -> None:
         alt = brief.caption.alt_text or brief.catalog_record.title

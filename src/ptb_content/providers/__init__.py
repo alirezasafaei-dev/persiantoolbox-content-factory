@@ -33,7 +33,9 @@ class ProviderBenchmark:
 
     async def probe_ai_horde(self) -> dict[str, Any]:
         """Probe AI Horde API."""
-        reachable, latency = await self.probe_http("https://stablehorde.net/api/v2/status/heartbeat")
+        reachable, latency = await self.probe_http(
+            "https://stablehorde.net/api/v2/status/heartbeat"
+        )
         return {
             "provider": "ai-horde",
             "reachable": reachable,
@@ -87,19 +89,21 @@ class ProviderBenchmark:
         results = []
 
         # Deterministic always works
-        results.append({
-            "provider": "deterministic",
-            "reachable": True,
-            "authentication_ok": True,
-            "free_without_payment": True,
-            "open_weight_model": True,
-            "persian_score": 0.9,
-            "json_score": 1.0,
-            "latency_p50_ms": 1,
-            "latency_p95_ms": 2,
-            "failure_rate": 0.0,
-            "selected_for": ["text", "template", "fallback"],
-        })
+        results.append(
+            {
+                "provider": "deterministic",
+                "reachable": True,
+                "authentication_ok": True,
+                "free_without_payment": True,
+                "open_weight_model": True,
+                "persian_score": 0.9,
+                "json_score": 1.0,
+                "latency_p50_ms": 1,
+                "latency_p95_ms": 2,
+                "failure_rate": 0.0,
+                "selected_for": ["text", "template", "fallback"],
+            }
+        )
 
         # Probe network providers
         probes = [
@@ -133,7 +137,10 @@ class ProviderBenchmark:
         write_json(
             {
                 "providers": self.results,
-                "selected": {task: self.select_provider(task) for task in ["text", "image", "template", "fallback"]},
+                "selected": {
+                    task: self.select_provider(task)
+                    for task in ["text", "image", "template", "fallback"]
+                },
             },
             report_path,
         )

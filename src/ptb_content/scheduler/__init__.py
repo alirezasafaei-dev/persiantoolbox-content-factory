@@ -122,9 +122,7 @@ class LocalScheduler:
     def install_cron(self) -> bool:
         """Install cron jobs (Linux/macOS)."""
         try:
-            existing = subprocess.run(
-                ["crontab", "-l"], capture_output=True, text=True
-            )
+            existing = subprocess.run(["crontab", "-l"], capture_output=True, text=True)
             existing_entries = existing.stdout if existing.returncode == 0 else ""
 
             marker = "# ptb-content-factory"
@@ -136,9 +134,7 @@ class LocalScheduler:
 
             full_cron = "\n".join(filtered + cron_lines) + "\n"
 
-            proc = subprocess.run(
-                ["crontab", "-"], input=full_cron, text=True, capture_output=True
-            )
+            proc = subprocess.run(["crontab", "-"], input=full_cron, text=True, capture_output=True)
             return proc.returncode == 0
         except Exception:
             return False
@@ -146,9 +142,7 @@ class LocalScheduler:
     def uninstall_cron(self) -> bool:
         """Remove all ptb-content-factory cron entries."""
         try:
-            existing = subprocess.run(
-                ["crontab", "-l"], capture_output=True, text=True
-            )
+            existing = subprocess.run(["crontab", "-l"], capture_output=True, text=True)
             existing_entries = existing.stdout if existing.returncode == 0 else ""
 
             marker = "# ptb-content-factory"
@@ -157,9 +151,7 @@ class LocalScheduler:
 
             full_cron = "\n".join(filtered) + "\n" if filtered else ""
 
-            proc = subprocess.run(
-                ["crontab", "-"], input=full_cron, text=True, capture_output=True
-            )
+            proc = subprocess.run(["crontab", "-"], input=full_cron, text=True, capture_output=True)
             return proc.returncode == 0
         except Exception:
             return False
@@ -169,9 +161,7 @@ class LocalScheduler:
         if job_name not in self.JOBS:
             return False
         try:
-            existing = subprocess.run(
-                ["crontab", "-l"], capture_output=True, text=True
-            )
+            existing = subprocess.run(["crontab", "-l"], capture_output=True, text=True)
             existing_entries = existing.stdout if existing.returncode == 0 else ""
             marker = "# ptb-content-factory"
 
@@ -184,9 +174,7 @@ class LocalScheduler:
                     new_lines.append(line)
 
             full_cron = "\n".join(new_lines) + "\n"
-            proc = subprocess.run(
-                ["crontab", "-"], input=full_cron, text=True, capture_output=True
-            )
+            proc = subprocess.run(["crontab", "-"], input=full_cron, text=True, capture_output=True)
             return proc.returncode == 0
         except Exception:
             return False

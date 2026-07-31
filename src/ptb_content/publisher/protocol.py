@@ -30,15 +30,35 @@ class PublishState(str, Enum):
 
 # Valid state transitions
 _VALID_TRANSITIONS: dict[PublishState, set[PublishState]] = {
-    PublishState.DRAFT: {PublishState.QA_PASSED, PublishState.FAILED_PERMANENT, PublishState.CANCELLED},
+    PublishState.DRAFT: {
+        PublishState.QA_PASSED,
+        PublishState.FAILED_PERMANENT,
+        PublishState.CANCELLED,
+    },
     PublishState.QA_PASSED: {PublishState.ESCALATED, PublishState.APPROVED, PublishState.CANCELLED},
     PublishState.ESCALATED: {PublishState.APPROVED, PublishState.REVOKED, PublishState.CANCELLED},
     PublishState.APPROVED: {PublishState.SCHEDULED, PublishState.CANCELLED},
     PublishState.SCHEDULED: {PublishState.VALIDATING, PublishState.CANCELLED},
-    PublishState.VALIDATING: {PublishState.MEDIA_EXPOSED, PublishState.FAILED_RETRYABLE, PublishState.FAILED_PERMANENT},
-    PublishState.MEDIA_EXPOSED: {PublishState.CONTAINER_CREATED, PublishState.FAILED_RETRYABLE, PublishState.FAILED_PERMANENT},
-    PublishState.CONTAINER_CREATED: {PublishState.PROCESSING, PublishState.FAILED_RETRYABLE, PublishState.FAILED_PERMANENT},
-    PublishState.PROCESSING: {PublishState.PUBLISHED, PublishState.FAILED_RETRYABLE, PublishState.FAILED_PERMANENT},
+    PublishState.VALIDATING: {
+        PublishState.MEDIA_EXPOSED,
+        PublishState.FAILED_RETRYABLE,
+        PublishState.FAILED_PERMANENT,
+    },
+    PublishState.MEDIA_EXPOSED: {
+        PublishState.CONTAINER_CREATED,
+        PublishState.FAILED_RETRYABLE,
+        PublishState.FAILED_PERMANENT,
+    },
+    PublishState.CONTAINER_CREATED: {
+        PublishState.PROCESSING,
+        PublishState.FAILED_RETRYABLE,
+        PublishState.FAILED_PERMANENT,
+    },
+    PublishState.PROCESSING: {
+        PublishState.PUBLISHED,
+        PublishState.FAILED_RETRYABLE,
+        PublishState.FAILED_PERMANENT,
+    },
     PublishState.FAILED_RETRYABLE: {PublishState.VALIDATING, PublishState.CANCELLED},
     PublishState.FAILED_PERMANENT: set(),
     PublishState.PUBLISHED: set(),
@@ -74,7 +94,9 @@ class PublishJob:
 
     def __post_init__(self) -> None:
         if not self.idempotency_key:
-            self.idempotency_key = f"publish:{self.brief_id}:{self.content_checksum}:{self.instagram_account_id}"
+            self.idempotency_key = (
+                f"publish:{self.brief_id}:{self.content_checksum}:{self.instagram_account_id}"
+            )
 
     def transition(self, new_state: PublishState, error_message: str | None = None) -> None:
         if not can_transition(self.state, new_state):

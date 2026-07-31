@@ -53,16 +53,20 @@ HOOKS: dict[str, list[str]] = {
 
 CTAS = [
     "همین حالا امتحان کن 👇",
-        "لینک در بیو",
-        "سایت رو ببین 👇",
-        "رایگان امتحان کن",
-        "شروع کن 👇",
+    "لینک در بیو",
+    "سایت رو ببین 👇",
+    "رایگان امتحان کن",
+    "شروع کن 👇",
 ]
 
 AUDIENCES: dict[Category, list[dict[str, str]]] = {
     Category.TOOL_DEMO: [
         {"segment": "کاربران عمومی", "pain_point": "ابزارهای پیچیده", "desire": "سادگی و سرعت"},
-        {"segment": "دانشجویان", "pain_point": "نیاز به ابزارهای متنی", "desire": "ابزار رایگان و سریع"},
+        {
+            "segment": "دانشجویان",
+            "pain_point": "نیاز به ابزارهای متنی",
+            "desire": "ابزار رایگان و سریع",
+        },
         {"segment": "فریلنسرها", "pain_point": "وقت‌گیری کارهای ساده", "desire": "خودکارسازی"},
     ],
     Category.PDF_TUTORIAL: [
@@ -198,6 +202,7 @@ class DeterministicGenerator:
 
         # Risk assessment
         from ..risk import RiskEngine
+
         risk_engine = RiskEngine()
         risk_level, risk_decision = risk_engine.assess(record)
 

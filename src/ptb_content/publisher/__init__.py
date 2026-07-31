@@ -101,12 +101,14 @@ class ApprovalGate:
         # 1. FAIL → never publish
         if qa_result.decision == QADecision.FAIL:
             raise ApprovalError(
-                f"QA decision is FAIL for {brief.brief_id}. "
-                "FAIL results are never publishable."
+                f"QA decision is FAIL for {brief.brief_id}. FAIL results are never publishable."
             )
 
         # 2. ESCALATE → must have valid approval
-        if brief.risk_decision == RiskDecision.ESCALATE or qa_result.decision == QADecision.ESCALATE:
+        if (
+            brief.risk_decision == RiskDecision.ESCALATE
+            or qa_result.decision == QADecision.ESCALATE
+        ):
             self._require_valid_approval(brief, current_checksum)
 
         # 3. Checksum must match current brief

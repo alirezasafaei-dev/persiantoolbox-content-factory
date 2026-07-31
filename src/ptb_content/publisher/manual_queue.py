@@ -25,9 +25,18 @@ class ManualQueueState:
 
 _VALID_MANUAL_TRANSITIONS: dict[str, set[str]] = {
     ManualQueueState.READY_FOR_REVIEW: {ManualQueueState.APPROVED, ManualQueueState.CANCELLED},
-    ManualQueueState.APPROVED: {ManualQueueState.READY_FOR_MANUAL_SCHEDULING, ManualQueueState.CANCELLED},
-    ManualQueueState.READY_FOR_MANUAL_SCHEDULING: {ManualQueueState.MANUALLY_SCHEDULED, ManualQueueState.CANCELLED},
-    ManualQueueState.MANUALLY_SCHEDULED: {ManualQueueState.PUBLISHED_CONFIRMED, ManualQueueState.CANCELLED},
+    ManualQueueState.APPROVED: {
+        ManualQueueState.READY_FOR_MANUAL_SCHEDULING,
+        ManualQueueState.CANCELLED,
+    },
+    ManualQueueState.READY_FOR_MANUAL_SCHEDULING: {
+        ManualQueueState.MANUALLY_SCHEDULED,
+        ManualQueueState.CANCELLED,
+    },
+    ManualQueueState.MANUALLY_SCHEDULED: {
+        ManualQueueState.PUBLISHED_CONFIRMED,
+        ManualQueueState.CANCELLED,
+    },
     ManualQueueState.PUBLISHED_CONFIRMED: set(),
     ManualQueueState.CANCELLED: set(),
 }
@@ -92,8 +101,16 @@ class ManualQueue:
                    (brief_id, state, approval_id, image_checksum, caption_checksum,
                     bundle_path, created_at, updated_at)
                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
-                (brief_id, ManualQueueState.READY_FOR_REVIEW, approval_id,
-                 image_checksum, caption_checksum, bundle_path, now, now),
+                (
+                    brief_id,
+                    ManualQueueState.READY_FOR_REVIEW,
+                    approval_id,
+                    image_checksum,
+                    caption_checksum,
+                    bundle_path,
+                    now,
+                    now,
+                ),
             )
             conn.commit()
         except sqlite3.IntegrityError:
@@ -101,9 +118,7 @@ class ManualQueue:
 
     def get(self, brief_id: str) -> dict | None:
         conn = self._get_conn()
-        row = conn.execute(
-            "SELECT * FROM manual_queue WHERE brief_id = ?", (brief_id,)
-        ).fetchone()
+        row = conn.execute("SELECT * FROM manual_queue WHERE brief_id = ?", (brief_id,)).fetchone()
         return dict(row) if row else None
 
     def transition(self, brief_id: str, new_state: str, **kwargs: str) -> dict:
@@ -117,9 +132,7 @@ class ManualQueue:
 
         current_state = current["state"]
         if new_state not in _VALID_MANUAL_TRANSITIONS.get(current_state, set()):
-            raise QueueError(
-                f"Cannot transition {brief_id} from {current_state} to {new_state}"
-            )
+            raise QueueError(f"Cannot transition {brief_id} from {current_state} to {new_state}")
 
         now = utcnow()
         updates = {"state": new_state, "updated_at": now}
@@ -141,9 +154,7 @@ class ManualQueue:
 
     def list_all(self) -> list[dict]:
         conn = self._get_conn()
-        rows = conn.execute(
-            "SELECT * FROM manual_queue ORDER BY created_at ASC"
-        ).fetchall()
+        rows = conn.execute("SELECT * FROM manual_queue ORDER BY created_at ASC").fetchall()
         return [dict(r) for r in rows]
 
     def count(self, state: str | None = None) -> int:

@@ -28,4 +28,5 @@ class BasePublisher:
             if path.exists():
                 return path
         from .errors import PublishError
+
         raise PublishError(f"No rendered image found for {brief.brief_id}")

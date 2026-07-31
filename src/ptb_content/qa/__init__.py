@@ -96,7 +96,9 @@ class QAEngine:
                 details="LOW risk content should not be ESCALATE",
             )
 
-        return CheckResult(status=CheckStatus.PASS, score=1.0, details="Risk assessment is consistent")
+        return CheckResult(
+            status=CheckStatus.PASS, score=1.0, details="Risk assessment is consistent"
+        )
 
     def check_source_existence(self, brief: Brief) -> CheckResult:
         """Check that source catalog record exists."""
@@ -174,9 +176,7 @@ class QAEngine:
         failures = [k for k, v in checks.items() if v.status == CheckStatus.FAIL]
 
         failure_reasons = [
-            f"{k}: {v.details}"
-            for k, v in checks.items()
-            if v.status == CheckStatus.FAIL
+            f"{k}: {v.details}" for k, v in checks.items() if v.status == CheckStatus.FAIL
         ]
 
         if brief.risk_level == RiskLevel.HIGH:

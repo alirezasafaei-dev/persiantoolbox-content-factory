@@ -24,11 +24,56 @@ h1 { text-align: center; margin-bottom: 8px; font-size: 24px; }
 h3 { font-size: 15px; margin-bottom: 8px; line-height: 1.5; }
 .caption { font-size: 13px; color: #94A3B8; line-height: 1.7; margin-bottom: 8px; }
 .cta { font-size: 12px; color: #38BDF8; font-weight: 600; }
+.mode-banner { background: linear-gradient(135deg, #1E3A5F 0%, #0F172A 100%); border: 1px solid #38BDF8; border-radius: 12px; padding: 16px 24px; margin-bottom: 24px; max-width: 1400px; margin-left: auto; margin-right: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.mode-badge { background: #38BDF8; color: #0F172A; padding: 4px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+.mode-info { display: flex; gap: 16px; font-size: 13px; color: #94A3B8; }
+.mode-info span { display: flex; align-items: center; gap: 4px; }
+.mode-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.mode-dot.green { background: #22C55E; }
+.mode-dot.amber { background: #F59E0B; }
+.mode-dot.red { background: #EF4444; }
+.workflow-steps { background: #1E293B; border-radius: 12px; padding: 16px 24px; margin-bottom: 24px; max-width: 1400px; margin-left: auto; margin-right: auto; }
+.workflow-steps h2 { font-size: 16px; margin-bottom: 12px; color: #F8FAFC; }
+.steps-list { display: flex; gap: 8px; flex-wrap: wrap; }
+.step { display: flex; align-items: center; gap: 6px; background: #334155; padding: 6px 14px; border-radius: 20px; font-size: 12px; color: #CBD5E1; }
+.step-num { background: #38BDF8; color: #0F172A; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 11px; }
+.step-arrow { color: #475569; font-size: 14px; }
+.q-actions { margin-top: 12px; display: flex; gap: 8px; }
+.q-actions code { background: #0F172A; padding: 4px 10px; border-radius: 6px; font-size: 11px; color: #22C55E; border: 1px solid #334155; font-family: monospace; }
 </style>
 </head>
 <body>
 <h1>گالری بازبینی محتوا</h1>
 <p class="subtitle">6 پست | deterministic | persiantoolbox.ir</p>
+
+<div class="mode-banner">
+  <div>
+    <span class="mode-badge">SEMI_AUTOMATED</span>
+  </div>
+  <div class="mode-info">
+    <span><span class="mode-dot green"></span> تولید فعال</span>
+    <span><span class="mode-dot amber"></span> Meta API مسدود</span>
+    <span><span class="mode-dot green"></span> صف دستی فعال</span>
+  </div>
+</div>
+
+<div class="workflow-steps">
+  <h2>مراحل انتشار نیمه‌خودکار</h2>
+  <div class="steps-list">
+    <span class="step"><span class="step-num">1</span> تولید محتوا</span>
+    <span class="step-arrow">←</span>
+    <span class="step"><span class="step-num">2</span> رندر PNG</span>
+    <span class="step-arrow">←</span>
+    <span class="step"><span class="step-num">3</span> بررسی QA</span>
+    <span class="step-arrow">←</span>
+    <span class="step"><span class="step-num">4</span> تایید دستی</span>
+    <span class="step-arrow">←</span>
+    <span class="step"><span class="step-num">5</span> خروجی باندل</span>
+    <span class="step-arrow">←</span>
+    <span class="step"><span class="step-num">6</span> انتشار در اینستاگرام</span>
+  </div>
+</div>
+
 <div class="gallery">
 
     <div class="card">

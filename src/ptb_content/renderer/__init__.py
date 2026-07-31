@@ -489,7 +489,7 @@ body {{ font-family: 'Vazirmatn', sans-serif; direction: rtl; background: #f5f5f
 <h1>گالری بازبینی محتوا</h1>
 <p>تعداد پست‌ها: {len(briefs)}</p>
 <div class="gallery">
-{''.join(cards)}
+{"".join(cards)}
 </div>
 </body>
 </html>"""

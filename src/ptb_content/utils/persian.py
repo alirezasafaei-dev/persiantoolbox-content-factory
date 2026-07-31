@@ -9,12 +9,12 @@ import unicodedata
 ARABIC_TO_PERSIAN: dict[str, str] = {
     "\u0627": "\u0627",  # ا (same)
     "\u0628": "\u0628",  # ب (same)
-    "\u062A": "\u062A",  # ت (same)
-    "\u062B": "\u062B",  # ث (same)
-    "\u062C": "\u062C",  # ج (same)
-    "\u062D": "\u062D",  # ح (same)
-    "\u062E": "\u062E",  # خ (same)
-    "\u062F": "\u062F",  # د (same)
+    "\u062a": "\u062a",  # ت (same)
+    "\u062b": "\u062b",  # ث (same)
+    "\u062c": "\u062c",  # ج (same)
+    "\u062d": "\u062d",  # ح (same)
+    "\u062e": "\u062e",  # خ (same)
+    "\u062f": "\u062f",  # د (same)
     "\u0630": "\u0630",  # ذ (same)
     "\u0631": "\u0631",  # ر (same)
     "\u0632": "\u0632",  # ز (same)
@@ -25,7 +25,7 @@ ARABIC_TO_PERSIAN: dict[str, str] = {
     "\u0637": "\u0637",  # ط (same)
     "\u0638": "\u0638",  # ظ (same)
     "\u0639": "\u0639",  # ع (same)
-    "\u063A": "\u063A",  # غ (same)
+    "\u063a": "\u063a",  # غ (same)
     "\u0641": "\u0641",  # ف (same)
     "\u0642": "\u0642",  # ق (same)
     "\u0644": "\u0644",  # ل (same)
@@ -33,15 +33,15 @@ ARABIC_TO_PERSIAN: dict[str, str] = {
     "\u0646": "\u0646",  # ن (same)
     "\u0647": "\u0647",  # ه (same)
     "\u0648": "\u0648",  # و (same)
-    "\u06CC": "\u06CC",  # ی (same)
+    "\u06cc": "\u06cc",  # ی (same)
     # Arabic-only characters → Persian equivalents
-    "\u0643": "\u06A9",  # ك → ک
-    "\u0649": "\u06CC",  # ى → ی
+    "\u0643": "\u06a9",  # ك → ک
+    "\u0649": "\u06cc",  # ى → ی
     "\u0629": "\u0647",  # ة → ه
     "\u0623": "\u0627",  # أ → ا
     "\u0622": "\u0627",  # آ (already Persian, keep)
     "\u0624": "\u0648",  # ؤ → و
-    "\u0626": "\u06CC",  # ئ → ی
+    "\u0626": "\u06cc",  # ئ → ی
 }
 
 # Persian-specific characters that should NOT be replaced
@@ -49,16 +49,16 @@ _PERSIAN_RANGE = "".join(chr(c) for c in range(0x0600, 0x0700))
 PERSIAN_CHARS = set(_PERSIAN_RANGE)
 
 # Half-space (ZWNJ)
-ZWNJ = "\u200C"
+ZWNJ = "\u200c"
 
 # Common Arabic-letter imposters in Persian text
 IMPOSTER_MAP = {
-    "\u0643": "\u06A9",  # Arabic ك → Persian ک
-    "\u0649": "\u06CC",  # Arabic ى → Persian ی
+    "\u0643": "\u06a9",  # Arabic ك → Persian ک
+    "\u0649": "\u06cc",  # Arabic ى → Persian ی
     "\u0629": "\u0647",  # Arabic ة → Persian ه
     "\u0623": "\u0627",  # Arabic أ → Persian ا
     "\u0624": "\u0648",  # Arabic ؤ → Persian و
-    "\u0626": "\u06CC",  # Arabic ئ → Persian ی
+    "\u0626": "\u06cc",  # Arabic ئ → Persian ی
 }
 
 
@@ -105,7 +105,7 @@ def is_valid_persian(text: str) -> bool:
         return False
 
     # Check for basic Persian character presence
-    persian_chars = sum(1 for c in text if "\u0600" <= c <= "\u06FF" or "\u0750" <= c <= "\u077F")
+    persian_chars = sum(1 for c in text if "\u0600" <= c <= "\u06ff" or "\u0750" <= c <= "\u077f")
     total_alpha = sum(1 for c in text if c.isalpha())
 
     if total_alpha == 0:
@@ -149,7 +149,7 @@ def persian_text_stats(text: str) -> dict[str, int | float]:
     words = len(text.split())
     lines = text.count("\n") + 1
 
-    persian_chars = sum(1 for c in text if "\u0600" <= c <= "\u06FF")
+    persian_chars = sum(1 for c in text if "\u0600" <= c <= "\u06ff")
     total_alpha = sum(1 for c in text if c.isalpha())
     persian_ratio = persian_chars / max(total_alpha, 1)
 

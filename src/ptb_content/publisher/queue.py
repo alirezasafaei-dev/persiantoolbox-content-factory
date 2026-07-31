@@ -93,17 +93,13 @@ class PublishQueue:
             conn.commit()
         except sqlite3.IntegrityError as e:
             if "idempotency_key" in str(e):
-                raise IdempotencyViolationError(
-                    f"Duplicate publish: {job.idempotency_key}"
-                ) from e
+                raise IdempotencyViolationError(f"Duplicate publish: {job.idempotency_key}") from e
             raise QueueError(f"Failed to enqueue job: {e}") from e
         return job
 
     def get(self, job_id: str) -> PublishJob | None:
         conn = self._get_conn()
-        row = conn.execute(
-            "SELECT * FROM publish_jobs WHERE job_id = ?", (job_id,)
-        ).fetchone()
+        row = conn.execute("SELECT * FROM publish_jobs WHERE job_id = ?", (job_id,)).fetchone()
         if row is None:
             return None
         return self._row_to_job(row)
@@ -117,7 +113,9 @@ class PublishQueue:
             return None
         return self._row_to_job(row)
 
-    def update_state(self, job_id: str, new_state: PublishState, error_message: str | None = None) -> PublishJob:
+    def update_state(
+        self, job_id: str, new_state: PublishState, error_message: str | None = None
+    ) -> PublishJob:
         conn = self._get_conn()
 
         job = self.get(job_id)

@@ -91,7 +91,11 @@ class MetaInstagramPublisher(BasePublisher):
         if resp.status_code == 401:
             raise TokenExpiredError("Access token expired or invalid")
         if resp.status_code == 400:
-            body = resp.json() if resp.headers.get("content-type", "").startswith("application/json") else {}
+            body = (
+                resp.json()
+                if resp.headers.get("content-type", "").startswith("application/json")
+                else {}
+            )
             error = body.get("error", {})
             code = error.get("code", 0)
             msg = error.get("message", "")
@@ -221,6 +225,7 @@ class MetaInstagramPublisher(BasePublisher):
 
         # Compute checksum
         import json
+
         payload = json.dumps(brief.to_dict(), sort_keys=True, ensure_ascii=False)
         checksum = generate_hash(payload)
 

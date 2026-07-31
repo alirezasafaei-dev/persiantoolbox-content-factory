@@ -48,6 +48,7 @@ from ptb_content.types import (
 
 # --- Fixtures ---
 
+
 def _make_brief(brief_id: str = "test-brief-001") -> Brief:
     return Brief(
         brief_id=brief_id,
@@ -81,7 +82,9 @@ def _make_brief(brief_id: str = "test-brief-001") -> Brief:
     )
 
 
-def _make_qa_result(brief_id: str = "test-brief-001", decision: QADecision = QADecision.PASS) -> QAResult:
+def _make_qa_result(
+    brief_id: str = "test-brief-001", decision: QADecision = QADecision.PASS
+) -> QAResult:
     return QAResult(
         brief_id=brief_id,
         checks={"length": CheckResult(status=CheckStatus.PASS, score=1.0, details="ok")},
@@ -114,6 +117,7 @@ def tmp_queue(tmp_path):
 
 
 # --- State Machine Tests ---
+
 
 class TestPublishState:
     def test_initial_state(self):
@@ -202,6 +206,7 @@ class TestPublishJob:
 
 # --- Queue Tests ---
 
+
 class TestPublishQueue:
     def test_enqueue_and_get(self, tmp_queue):
         job = PublishJob(
@@ -280,6 +285,7 @@ class TestPublishQueue:
 
 
 # --- Media Gateway Tests ---
+
 
 class TestMediaGateway:
     def test_enabled_when_configured(self):
@@ -368,6 +374,7 @@ class TestMediaGateway:
 
 # --- Settings Tests ---
 
+
 class TestSettings:
     def test_defaults_are_fail_closed(self):
         settings = MetaInstagramSettings()
@@ -402,6 +409,7 @@ class TestSettings:
 
 
 # --- Meta Instagram Publisher Tests ---
+
 
 class TestMetaInstagramPublisher:
     def test_validate_checks_can_publish(self):
@@ -467,11 +475,15 @@ class TestMetaInstagramPublisher:
         publisher.gateway = mock_gateway
 
         # Mock the API calls and image path
-        with patch.object(publisher, "_check_can_publish"), \
-             patch.object(publisher, "_get_image_path", return_value=image_dir / "feed-1080x1080.png"), \
-             patch.object(publisher, "_create_image_container", return_value="container-123"), \
-             patch.object(publisher, "_poll_container", return_value="FINISHED"), \
-             patch.object(publisher, "_publish_container", return_value="media-456"):
+        with (
+            patch.object(publisher, "_check_can_publish"),
+            patch.object(
+                publisher, "_get_image_path", return_value=image_dir / "feed-1080x1080.png"
+            ),
+            patch.object(publisher, "_create_image_container", return_value="container-123"),
+            patch.object(publisher, "_poll_container", return_value="FINISHED"),
+            patch.object(publisher, "_publish_container", return_value="media-456"),
+        ):
             result = publisher.publish(brief, qa)
 
         assert result.state == PublishState.PUBLISHED
@@ -492,9 +504,13 @@ class TestMetaInstagramPublisher:
         mock_gateway.sign_url.return_value = "https://media.example.com/signed.png"
         publisher.gateway = mock_gateway
 
-        with patch.object(publisher, "_check_can_publish"), \
-             patch.object(publisher, "_get_image_path", return_value=tmp_path / "fake.png"), \
-             patch.object(publisher, "_create_image_container", side_effect=RateLimitError("Rate limited")):
+        with (
+            patch.object(publisher, "_check_can_publish"),
+            patch.object(publisher, "_get_image_path", return_value=tmp_path / "fake.png"),
+            patch.object(
+                publisher, "_create_image_container", side_effect=RateLimitError("Rate limited")
+            ),
+        ):
             result = publisher.publish(brief, qa)
             assert result.state == PublishState.FAILED_RETRYABLE
             assert "Rate limited" in (result.error_message or "")
@@ -513,15 +529,20 @@ class TestMetaInstagramPublisher:
         mock_gateway.sign_url.return_value = "https://media.example.com/signed.png"
         publisher.gateway = mock_gateway
 
-        with patch.object(publisher, "_check_can_publish"), \
-             patch.object(publisher, "_get_image_path", return_value=tmp_path / "fake.png"), \
-             patch.object(publisher, "_create_image_container", side_effect=TokenExpiredError("Token expired")):
+        with (
+            patch.object(publisher, "_check_can_publish"),
+            patch.object(publisher, "_get_image_path", return_value=tmp_path / "fake.png"),
+            patch.object(
+                publisher, "_create_image_container", side_effect=TokenExpiredError("Token expired")
+            ),
+        ):
             result = publisher.publish(brief, qa)
             assert result.state == PublishState.FAILED_RETRYABLE
             assert "Token expired" in (result.error_message or "")
 
 
 # --- Integration Test: Full Publish Flow ---
+
 
 class TestFullPublishFlow:
     def test_full_flow_with_queue(self, tmp_queue):

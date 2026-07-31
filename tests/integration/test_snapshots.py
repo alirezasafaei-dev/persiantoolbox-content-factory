@@ -132,6 +132,7 @@ class TestSnapshotBaselines:
             # First run: create baseline, skip comparison
             baseline_dir.mkdir(parents=True, exist_ok=True)
             import shutil
+
             shutil.copy2(rendered_path, baseline_path)
             pytest.skip(f"Baseline created for {size_key}. Re-run to compare.")
 
@@ -164,6 +165,7 @@ class TestSnapshotBaselines:
         if not baseline_path.exists():
             baseline_dir.mkdir(parents=True, exist_ok=True)
             import shutil
+
             rendered_path = asyncio.run(renderer.render_to_png(brief, size_key))
             shutil.copy2(rendered_path, baseline_path)
 
@@ -280,4 +282,6 @@ class TestSnapshotAllSizes:
         assert len(results) == 3, f"Expected 3 results, got {len(results)}"
         for size_key, path in results.items():
             assert path.exists(), f"Missing output for {size_key}"
-            assert path.stat().st_size > 1000, f"PNG too small for {size_key}: {path.stat().st_size} bytes"
+            assert path.stat().st_size > 1000, (
+                f"PNG too small for {size_key}: {path.stat().st_size} bytes"
+            )

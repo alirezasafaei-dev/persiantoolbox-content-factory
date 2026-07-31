@@ -176,7 +176,9 @@ def benchmark() -> None:
 
     for r in results:
         status = "✓" if r["reachable"] else "✗"
-        click.echo(f"  {status} {r['provider']}: reachable={r['reachable']}, latency={r['latency_p50_ms']}ms")
+        click.echo(
+            f"  {status} {r['provider']}: reachable={r['reachable']}, latency={r['latency_p50_ms']}ms"
+        )
 
 
 @main.command()
@@ -408,9 +410,7 @@ def manual_queue_list(state: str | None) -> None:
     click.echo(f"{'Brief ID':<25} {'State':<35} {'Created'}")
     click.echo("-" * 85)
     for item in items:
-        click.echo(
-            f"{item['brief_id']:<25} {item['state']:<35} {item['created_at'][:19]}"
-        )
+        click.echo(f"{item['brief_id']:<25} {item['state']:<35} {item['created_at'][:19]}")
     click.echo(f"\nTotal: {len(items)}")
 
 
@@ -485,8 +485,14 @@ def status() -> None:
     golden_count = len(list(golden_dir.glob("*.json"))) if golden_dir.exists() else 0
     approvals_count = len(list(approvals_dir.glob("*.json"))) if approvals_dir.exists() else 0
     bundles_count = len(list(bundles_dir.glob("*/manifest.json"))) if bundles_dir.exists() else 0
-    pngs = sum(1 for _ in (project_root() / "outputs").rglob("*.png")) if (project_root() / "outputs").exists() else 0
-    baselines = len(list((baselines_dir / "snapshot-test").glob("*.png"))) if baselines_dir.exists() else 0
+    pngs = (
+        sum(1 for _ in (project_root() / "outputs").rglob("*.png"))
+        if (project_root() / "outputs").exists()
+        else 0
+    )
+    baselines = (
+        len(list((baselines_dir / "snapshot-test").glob("*.png"))) if baselines_dir.exists() else 0
+    )
 
     # Manual queue stats
     from .publisher.manual_queue import ManualQueue
@@ -503,7 +509,9 @@ def status() -> None:
     click.echo(f"  Bundles:     {bundles_count}")
     click.echo(f"  PNGs:        {pngs}")
     click.echo(f"  Snapshots:   {baselines}")
-    click.echo(f"  Queue:       {queue_total} total, {queue_scheduled} scheduled, {queue_published} published")
+    click.echo(
+        f"  Queue:       {queue_total} total, {queue_scheduled} scheduled, {queue_published} published"
+    )
     click.echo("  API:         BLOCKED_BY_META_DEVELOPER_VERIFICATION")
     click.echo("  Mode:        SEMI_AUTOMATED")
 
