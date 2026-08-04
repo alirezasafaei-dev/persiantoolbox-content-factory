@@ -35,6 +35,7 @@ def _reconstruct_brief(data: dict) -> Any:
         PsychologyHypothesis,
         RiskDecision,
         RiskLevel,
+        RiskTag,
         TemplateType,
         Typography,
     )
@@ -48,6 +49,8 @@ def _reconstruct_brief(data: dict) -> Any:
         source_id=cr_data["source_id"],
         source_hash=cr_data["source_hash"],
         crawled_at=cr_data["crawled_at"],
+        meta=cr_data.get("meta", {}),
+        risk_tags=[RiskTag(t) for t in cr_data.get("risk_tags", [])],
     )
     cs_data = data["content_strategy"]
     art_data = data["art_direction"]

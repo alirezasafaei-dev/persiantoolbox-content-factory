@@ -147,7 +147,8 @@ class InstagramExporter:
             "publication_risk_tags": meta.get("publication_risk_tags", []),
             "source_risk_level": meta.get("source_risk_level", "unknown"),
             "source_risk_decision": meta.get("source_risk_decision", "unknown"),
-            "source_risk_tags": meta.get("source_risk_tags", []),
+            "source_risk_tags": meta.get("source_risk_tags", [])
+            or [t.value for t in brief.catalog_record.risk_tags],
             "scheduled_at": None,
             "image_checksum": image_checksum,
             "caption_checksum": caption_checksum,
