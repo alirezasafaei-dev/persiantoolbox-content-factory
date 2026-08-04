@@ -67,11 +67,11 @@ def _normalize_multiline(value: str) -> str:
 def clean_source_title(title: str) -> str:
     """Remove site-brand suffixes and normalize punctuation/spacing."""
     value = normalize_persian(title or "").strip()
-    value = re.sub(r"\s*[|–—-]\s*[^|–—-]+$", lambda match: _strip_known_suffix(match.group(0)), value)
+    value = re.sub(
+        r"\s*[|–—-]\s*[^|–—-]+$", lambda match: _strip_known_suffix(match.group(0)), value
+    )
     for suffix in _TITLE_SUFFIXES:
-        value = re.sub(
-            rf"\s*[|–—-]?\s*{re.escape(suffix)}\s*$", "", value, flags=re.IGNORECASE
-        )
+        value = re.sub(rf"\s*[|–—-]?\s*{re.escape(suffix)}\s*$", "", value, flags=re.IGNORECASE)
     value = re.sub(r"\s+", " ", value).strip(" -|–—")
     return value or "ابزارهای پرشین‌تولباکس"
 
@@ -147,7 +147,9 @@ def analyze_png(path: Path) -> VisualMetrics:
     width, height = image.size
     pixels = list(image.getdata())
     total = max(1, len(pixels))
-    near_white = sum(1 for red, green, blue in pixels if red >= 245 and green >= 245 and blue >= 245)
+    near_white = sum(
+        1 for red, green, blue in pixels if red >= 245 and green >= 245 and blue >= 245
+    )
 
     background = Image.new("RGB", image.size, (255, 255, 255))
     difference = __import__("PIL.ImageChops", fromlist=["ImageChops"]).difference(image, background)
