@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
+from ..risk import RiskEngine
 from ..types import (
     Brief,
     CheckResult,
     CheckStatus,
     QADecision,
     QAResult,
-    RiskDecision,
     RiskLevel,
     utcnow,
 )
@@ -24,7 +24,7 @@ class QAEngine:
     """Deterministic QA checks for content briefs."""
 
     def check_factuality(self, brief: Brief) -> CheckResult:
-        """Check that all claims have source_id and are traceable."""
+        """Check that all source claims have source_id and are traceable."""
         claims = brief.catalog_record.claims
         if not claims:
             return CheckResult(status=CheckStatus.WARN, score=0.5, details="No claims to verify")
@@ -81,24 +81,45 @@ class QAEngine:
         return CheckResult(status=CheckStatus.PASS, score=1.0, details="RTL and ZWNJ look correct")
 
     def check_risk_assessment(self, brief: Brief) -> CheckResult:
-        """Check risk level is correctly assigned."""
-        if brief.risk_level == RiskLevel.HIGH and brief.risk_decision != RiskDecision.ESCALATE:
+        """Recalculate risk from exact publication text and detect stale risk."""
+        engine = RiskEngine()
+        expected_level, expected_decision, expected_tags = engine.assess_publishable_text(
+            brief.caption.primary,
+            cta=brief.caption.cta,
+            alt_text=brief.caption.alt_text,
+        )
+
+        if brief.risk_level != expected_level or brief.risk_decision != expected_decision:
             return CheckResult(
                 status=CheckStatus.FAIL,
                 score=0.0,
-                details="HIGH risk content must be ESCALATE",
+                details=(
+                    "Publication risk is stale or incorrectly scoped: "
+                    f"stored={brief.risk_level.value}/{brief.risk_decision.value}, "
+                    f"expected={expected_level.value}/{expected_decision.value}, "
+                    f"tags={sorted(tag.value for tag in expected_tags)}"
+                ),
             )
 
-        if brief.risk_level == RiskLevel.LOW and brief.risk_decision == RiskDecision.ESCALATE:
+        stored_tags = set(brief.catalog_record.meta.get("publication_risk_tags", []))
+        calculated_tags = {tag.value for tag in expected_tags}
+        if stored_tags and stored_tags != calculated_tags:
             return CheckResult(
                 status=CheckStatus.FAIL,
-                score=0.2,
-                details="LOW risk content should not be ESCALATE",
+                score=0.0,
+                details=(
+                    "Stored publication risk tags do not match caption: "
+                    f"stored={sorted(stored_tags)}, calculated={sorted(calculated_tags)}"
+                ),
             )
 
-        return CheckResult(
-            status=CheckStatus.PASS, score=1.0, details="Risk assessment is consistent"
+        source_level, source_decision = engine.assess(brief.catalog_record)
+        details = (
+            f"Publication={expected_level.value}/{expected_decision.value}, "
+            f"source={source_level.value}/{source_decision.value}, "
+            f"publish_tags={sorted(calculated_tags)}"
         )
+        return CheckResult(status=CheckStatus.PASS, score=1.0, details=details)
 
     def check_source_existence(self, brief: Brief) -> CheckResult:
         """Check that source catalog record exists."""
@@ -172,17 +193,17 @@ class QAEngine:
         if existing_briefs is not None:
             checks["duplicate_check"] = self.check_duplicate(brief, existing_briefs)
 
-        # Determine overall decision
         failures = [k for k, v in checks.items() if v.status == CheckStatus.FAIL]
-
         failure_reasons = [
             f"{k}: {v.details}" for k, v in checks.items() if v.status == CheckStatus.FAIL
         ]
 
-        if brief.risk_level == RiskLevel.HIGH:
-            decision = QADecision.ESCALATE
-        elif failures:
+        # FAIL is always stronger than ESCALATE. A high-risk brief with a broken
+        # check must never be mislabeled as merely awaiting review.
+        if failures:
             decision = QADecision.FAIL
+        elif brief.risk_level == RiskLevel.HIGH:
+            decision = QADecision.ESCALATE
         else:
             decision = QADecision.PASS
 
