@@ -23,7 +23,7 @@ class TestNormalizePersian:
 
     def test_arabic_yeh_to_persian(self) -> None:
         for arabic_yeh in ("\u0649", "\u064a"):
-            assert normalize_persian(f"علي{arabic_yeh}") == "علیی"
+            assert normalize_persian(f"عل{arabic_yeh}") == "علی"
 
     def test_whitespace_normalization(self) -> None:
         assert normalize_persian("سلام   دنیا") == "سلام دنیا"
