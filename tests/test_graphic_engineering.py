@@ -52,7 +52,9 @@ def test_structured_render_passes_density_thresholds(tmp_path: Path) -> None:
     draw = ImageDraw.Draw(image)
     draw.rectangle((80, 80, 1000, 1270), fill="#E0E7FF")
     draw.rounded_rectangle((110, 130, 620, 540), radius=36, fill="#172554")
-    draw.rounded_rectangle((650, 180, 940, 980), radius=30, fill="#FFFFFF", outline="#2563EB", width=12)
+    draw.rounded_rectangle(
+        (650, 180, 940, 980), radius=30, fill="#FFFFFF", outline="#2563EB", width=12
+    )
     draw.rectangle((150, 680, 580, 760), fill="#2563EB")
     draw.rectangle((150, 820, 500, 875), fill="#F59E0B")
     for y in range(250, 900, 90):
