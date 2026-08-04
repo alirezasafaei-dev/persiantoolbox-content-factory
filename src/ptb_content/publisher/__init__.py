@@ -93,11 +93,7 @@ class ApprovalGate:
         data = json.loads(path.read_text(encoding="utf-8"))
         checksum = data.pop("checksum", "")
         approval = Approval(
-            **{
-                key: value
-                for key, value in data.items()
-                if key in Approval.__dataclass_fields__
-            }
+            **{key: value for key, value in data.items() if key in Approval.__dataclass_fields__}
         )
         return approval, checksum
 
@@ -150,9 +146,7 @@ class ApprovalGate:
     def _require_valid_approval(self, brief: Brief, current_checksum: str | None = None) -> None:
         loaded = self.load_approval(brief.brief_id)
         if loaded is None:
-            raise ApprovalError(
-                f"No approval found for {brief.brief_id}. Human approval required."
-            )
+            raise ApprovalError(f"No approval found for {brief.brief_id}. Human approval required.")
         approval, stored_checksum = loaded
         if not approval.approved:
             raise ApprovalError(
