@@ -59,12 +59,19 @@ class VisualMetrics:
     dominant_color_count: int
 
 
+def _normalize_multiline(value: str) -> str:
+    """Normalize Persian text without destroying intentional layout breaks."""
+    return "\n".join(normalize_persian(line) for line in value.splitlines())
+
+
 def clean_source_title(title: str) -> str:
     """Remove site-brand suffixes and normalize punctuation/spacing."""
     value = normalize_persian(title or "").strip()
-    value = re.sub(r"\s*[|–—-]\s*[^|–—-]+$", lambda m: _strip_known_suffix(m.group(0)), value)
+    value = re.sub(r"\s*[|–—-]\s*[^|–—-]+$", lambda match: _strip_known_suffix(match.group(0)), value)
     for suffix in _TITLE_SUFFIXES:
-        value = re.sub(rf"\s*[|–—-]?\s*{re.escape(suffix)}\s*$", "", value, flags=re.IGNORECASE)
+        value = re.sub(
+            rf"\s*[|–—-]?\s*{re.escape(suffix)}\s*$", "", value, flags=re.IGNORECASE
+        )
     value = re.sub(r"\s+", " ", value).strip(" -|–—")
     return value or "ابزارهای پرشین‌تولباکس"
 
@@ -99,11 +106,11 @@ def build_copy_deck(title: str, category: Category) -> CopyDeck:
 
     return CopyDeck(
         short_title=short,
-        headline=normalize_persian(headline),
+        headline=_normalize_multiline(headline),
         supporting_text=normalize_persian(supporting),
         cta=normalize_persian(cta),
         alt_text=normalize_persian(alt),
-        category_label=label,
+        category_label=normalize_persian(label),
     )
 
 
@@ -131,8 +138,8 @@ def validate_copy_deck(deck: CopyDeck) -> list[str]:
 def analyze_png(path: Path) -> VisualMetrics:
     """Compute production visual metrics using Pillow.
 
-    Pillow is already used in the project test/runtime environment. The metric
-    intentionally treats pixels with all channels >= 245 as near-white.
+    The metric intentionally treats pixels with all channels >= 245 as
+    near-white and quantifies content coverage, edges and color structure.
     """
     from PIL import Image, ImageFilter
 
@@ -140,7 +147,7 @@ def analyze_png(path: Path) -> VisualMetrics:
     width, height = image.size
     pixels = list(image.getdata())
     total = max(1, len(pixels))
-    near_white = sum(1 for r, g, b in pixels if r >= 245 and g >= 245 and b >= 245)
+    near_white = sum(1 for red, green, blue in pixels if red >= 245 and green >= 245 and blue >= 245)
 
     background = Image.new("RGB", image.size, (255, 255, 255))
     difference = __import__("PIL.ImageChops", fromlist=["ImageChops"]).difference(image, background)
