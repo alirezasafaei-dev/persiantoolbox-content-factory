@@ -46,18 +46,14 @@ def test_clean_caption_is_low_even_when_source_is_high() -> None:
 
 
 def test_price_claim_escalates_publication() -> None:
-    level, decision, tags = RiskEngine().assess_publishable_text(
-        "این ابزار را رایگان امتحان کنید"
-    )
+    level, decision, tags = RiskEngine().assess_publishable_text("این ابزار را رایگان امتحان کنید")
     assert level == RiskLevel.HIGH
     assert decision == RiskDecision.ESCALATE
     assert RiskTag.FINANCIAL in tags
 
 
 def test_security_and_privacy_claims_escalate_publication() -> None:
-    level, decision, tags = RiskEngine().assess_publishable_text(
-        "پردازش محلی و بدون ثبت‌نام"
-    )
+    level, decision, tags = RiskEngine().assess_publishable_text("پردازش محلی و بدون ثبت‌نام")
     assert level == RiskLevel.HIGH
     assert decision == RiskDecision.ESCALATE
     assert RiskTag.SECURITY in tags
@@ -65,18 +61,14 @@ def test_security_and_privacy_claims_escalate_publication() -> None:
 
 
 def test_statistical_words_escalate_publication() -> None:
-    level, decision, tags = RiskEngine().assess_publishable_text(
-        "تحلیل آمار متن را ببینید"
-    )
+    level, decision, tags = RiskEngine().assess_publishable_text("تحلیل آمار متن را ببینید")
     assert level == RiskLevel.HIGH
     assert decision == RiskDecision.ESCALATE
     assert RiskTag.STATISTICAL in tags
 
 
 def test_numeric_claim_escalates_publication() -> None:
-    level, decision, tags = RiskEngine().assess_publishable_text(
-        "پردازش فایل در 3 ثانیه"
-    )
+    level, decision, tags = RiskEngine().assess_publishable_text("پردازش فایل در 3 ثانیه")
     assert level == RiskLevel.HIGH
     assert decision == RiskDecision.ESCALATE
     assert RiskTag.STATISTICAL in tags
