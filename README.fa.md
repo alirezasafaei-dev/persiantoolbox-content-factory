@@ -1,6 +1,6 @@
 # جعبه‌ابزار محتوای فارسی — PersianToolbox Content Factory
 
-**نسخه ۱.۱.۰** | AGPL-3.0-only
+**نسخه ۱.۱.۵** | AGPL-3.0-only
 
 ## خلاصه
 
