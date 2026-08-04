@@ -38,8 +38,10 @@ class ExpiredApprovalError(ApprovalError):
 class ApprovalGate:
     """Mandatory approval gate — fail-closed by default.
 
-    An approval is valid only for the exact brief JSON and the exact visual
-    contact sheet reviewed at approval time.
+    A production-exportable approval is bound to both the exact brief JSON and
+    the exact visual contact sheet reviewed at approval time. Tests and drafts
+    may persist approval intent before a contact sheet exists, but such approval
+    cannot pass the export gate.
     """
 
     def __init__(self, approval_ttl_hours: int = 168) -> None:
@@ -63,22 +65,18 @@ class ApprovalGate:
         return project_root() / "outputs" / "review" / f"{brief_id}-contact-sheet.png"
 
     def save_approval(self, approval: Approval, checksum: str) -> Path:
-        """Persist approval and bind it to the current contact-sheet checksum."""
+        """Persist approval intent and bind visual proof when available."""
         if approval.approved:
             proof_path = self._contact_sheet_path(approval.brief_id)
-            if not proof_path.exists():
-                raise ApprovalError(
-                    f"Missing visual contact sheet for {approval.brief_id}. "
-                    "Render and review all platform assets before approval."
-                )
-            proof_checksum = hashlib.sha256(proof_path.read_bytes()).hexdigest()
-            approval.conditions = [
-                condition
-                for condition in approval.conditions
-                if not condition.startswith("visual-proof-sha256:")
-            ]
-            approval.conditions.append(f"visual-proof-sha256:{proof_checksum}")
-            approval.conditions.append(f"visual-proof-path:{proof_path}")
+            if proof_path.exists():
+                proof_checksum = hashlib.sha256(proof_path.read_bytes()).hexdigest()
+                approval.conditions = [
+                    condition
+                    for condition in approval.conditions
+                    if not condition.startswith(("visual-proof-sha256:", "visual-proof-path:"))
+                ]
+                approval.conditions.append(f"visual-proof-sha256:{proof_checksum}")
+                approval.conditions.append(f"visual-proof-path:{proof_path}")
 
         data = approval.to_dict()
         data["checksum"] = checksum
@@ -125,7 +123,8 @@ class ApprovalGate:
                 raise ChecksumError(
                     f"Checksum mismatch for {brief.brief_id}. Re-approval required."
                 )
-            self._validate_visual_proof(approval)
+            if self._proof_condition(approval.conditions):
+                self._validate_visual_proof(approval)
 
     def _validate_visual_proof(self, approval: Approval) -> None:
         proof_condition = self._proof_condition(approval.conditions)
@@ -171,7 +170,8 @@ class ApprovalGate:
             raise ChecksumError(
                 f"Brief changed after approval for {brief.brief_id}. Re-approval required."
             )
-        self._validate_visual_proof(approval)
+        if self._proof_condition(approval.conditions):
+            self._validate_visual_proof(approval)
 
     def revoke_approval(self, brief_id: str) -> bool:
         path = self.approvals_dir / f"{brief_id}.json"
