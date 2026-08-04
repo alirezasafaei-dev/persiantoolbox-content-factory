@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ptb-content-factory"
-version = "1.1.0"
+version = "1.1.3"
 description = "PersianToolbox Content Factory — deterministic social media content pipeline"
 readme = "README.fa.md"
 requires-python = ">=3.11"
@@ -28,6 +28,8 @@ dependencies = [
     "httpx>=0.27",
     "click>=8.1",
     "Pillow>=10.0",
+    "beautifulsoup4>=4.15.0",
+    "lxml>=6.1.1",
 ]
 
 [project.optional-dependencies]
