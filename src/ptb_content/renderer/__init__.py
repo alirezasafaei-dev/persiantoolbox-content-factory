@@ -169,7 +169,7 @@ def _render_tool_demo(brief: Brief, width: int, height: int) -> str:
     cta = brief.caption.cta or "همین حالا امتحان کن"
 
     content = f"""
-    <div class="badge">ابزار رایگان</div>
+    <div class="badge">{brief.catalog_record.category.value}</div>
     <div class="heading" style="font-size: {min(typo.heading_size_px + 4, 36)}px">{heading}</div>
     <div class="divider"></div>
     <div class="body-text">{body}</div>

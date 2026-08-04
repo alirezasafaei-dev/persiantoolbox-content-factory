@@ -26,12 +26,23 @@ BASELINES_DIR = Path("tests/baselines")
 FIXTURES_DIR = Path("tests/fixtures")
 
 # Playwright + chromium required for PNG rendering
-# The renderer hardcodes /snap/bin/chromium; skip if not available
-_playwright_available = os.path.exists("/snap/bin/chromium")
-try:
-    from playwright.async_api import async_playwright  # noqa: F401
-except ImportError:
-    _playwright_available = False
+_playwright_available = False
+if os.path.exists("/snap/bin/chromium"):
+    try:
+        from playwright.async_api import async_playwright  # noqa: F401
+
+        _playwright_available = True
+    except ImportError:
+        pass
+
+if _playwright_available:
+    _pw_cache = os.path.expanduser("~/.cache/ms-playwright")
+    if not os.path.isdir(_pw_cache) or not any(
+        d.startswith("chromium")
+        for d in os.listdir(_pw_cache)
+        if os.path.isdir(os.path.join(_pw_cache, d))
+    ):
+        _playwright_available = False
 
 requires_playwright = pytest.mark.skipif(
     not _playwright_available,
