@@ -138,10 +138,16 @@ class InstagramExporter:
         caption_text = brief.caption.primary or ""
         caption_checksum = generate_hash(caption_text)
 
+        meta = brief.catalog_record.meta or {}
         manifest = {
             "brief_id": brief.brief_id,
             "approval_id": approval_id,
-            "risk_status": f"{brief.risk_level.value}/{brief.risk_decision.value}",
+            "publication_risk_level": brief.risk_level.value,
+            "publication_risk_decision": brief.risk_decision.value,
+            "publication_risk_tags": meta.get("publication_risk_tags", []),
+            "source_risk_level": meta.get("source_risk_level", "unknown"),
+            "source_risk_decision": meta.get("source_risk_decision", "unknown"),
+            "source_risk_tags": meta.get("source_risk_tags", []),
             "scheduled_at": None,
             "image_checksum": image_checksum,
             "caption_checksum": caption_checksum,

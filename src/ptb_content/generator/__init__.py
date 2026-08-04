@@ -209,6 +209,7 @@ class DeterministicGenerator:
             **record.meta,
             "source_risk_level": source_level.value,
             "source_risk_decision": source_decision.value,
+            "source_risk_tags": sorted(tag.value for tag in record.risk_tags),
             "publication_risk_tags": sorted(tag.value for tag in publish_tags),
             "risk_scope_version": 2,
         }
