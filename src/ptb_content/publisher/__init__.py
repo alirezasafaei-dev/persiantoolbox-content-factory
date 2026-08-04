@@ -1,7 +1,8 @@
-"""Publisher with mandatory approval gate. Fail-closed by default."""
+"""Publisher with mandatory approval and visual-proof gates."""
 
 from __future__ import annotations
 
+import hashlib
 import json
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
@@ -37,14 +38,8 @@ class ExpiredApprovalError(ApprovalError):
 class ApprovalGate:
     """Mandatory approval gate — fail-closed by default.
 
-    Rules:
-    - ESCALATE → never publish without human approval.
-    - FAIL → never publish under any condition.
-    - Checksum mismatch → block.
-    - No approval → block.
-    - Expired approval → block.
-    - Version mismatch → block.
-    - Brief changed after approval → approval invalidated.
+    An approval is valid only for the exact brief JSON and the exact visual
+    contact sheet reviewed at approval time.
     """
 
     def __init__(self, approval_ttl_hours: int = 168) -> None:
@@ -52,18 +47,39 @@ class ApprovalGate:
         self.approvals_dir = ensure_dir(project_root() / "data" / "approvals")
 
     def compute_brief_checksum(self, brief: Brief) -> str:
-        """Compute deterministic checksum for a brief from its serialized dict."""
         payload = json.dumps(brief.to_dict(), sort_keys=True, ensure_ascii=False)
         return generate_hash(payload)
 
     def compute_checksum_from_file(self, brief_path: Path) -> str:
-        """Compute checksum directly from a brief JSON file (avoids reconstruction drift)."""
         data = json.loads(brief_path.read_text(encoding="utf-8"))
         payload = json.dumps(data, sort_keys=True, ensure_ascii=False)
         return generate_hash(payload)
 
+    @staticmethod
+    def _proof_condition(conditions: list[str]) -> str:
+        return next((item for item in conditions if item.startswith("visual-proof-sha256:")), "")
+
+    def _contact_sheet_path(self, brief_id: str) -> Path:
+        return project_root() / "outputs" / "review" / f"{brief_id}-contact-sheet.png"
+
     def save_approval(self, approval: Approval, checksum: str) -> Path:
-        """Persist approval with checksum."""
+        """Persist approval and bind it to the current contact-sheet checksum."""
+        if approval.approved:
+            proof_path = self._contact_sheet_path(approval.brief_id)
+            if not proof_path.exists():
+                raise ApprovalError(
+                    f"Missing visual contact sheet for {approval.brief_id}. "
+                    "Render and review all platform assets before approval."
+                )
+            proof_checksum = hashlib.sha256(proof_path.read_bytes()).hexdigest()
+            approval.conditions = [
+                condition
+                for condition in approval.conditions
+                if not condition.startswith("visual-proof-sha256:")
+            ]
+            approval.conditions.append(f"visual-proof-sha256:{proof_checksum}")
+            approval.conditions.append(f"visual-proof-path:{proof_path}")
+
         data = approval.to_dict()
         data["checksum"] = checksum
         path = self.approvals_dir / f"{approval.brief_id}.json"
@@ -71,13 +87,12 @@ class ApprovalGate:
         return path
 
     def load_approval(self, brief_id: str) -> tuple[Approval, str] | None:
-        """Load approval + checksum. Returns None if not found."""
         path = self.approvals_dir / f"{brief_id}.json"
         if not path.exists():
             return None
         data = json.loads(path.read_text(encoding="utf-8"))
         checksum = data.pop("checksum", "")
-        approval = Approval(**{k: v for k, v in data.items() if k in Approval.__dataclass_fields__})
+        approval = Approval(**{key: value for key, value in data.items() if key in Approval.__dataclass_fields__})
         return approval, checksum
 
     def validate(
@@ -86,92 +101,79 @@ class ApprovalGate:
         qa_result: QAResult,
         brief_path: Path | None = None,
     ) -> None:
-        """Validate all gate conditions. Raises ApprovalError on failure.
-
-        This method is the single entry point for publishing gating.
-        If brief_path is provided, checksums are computed from the file directly
-        to avoid reconstruction drift.
-        """
-        # Compute current checksum
-        if brief_path is not None:
-            current_checksum = self.compute_checksum_from_file(brief_path)
-        else:
-            current_checksum = self.compute_brief_checksum(brief)
-
-        # 1. FAIL → never publish
+        current_checksum = (
+            self.compute_checksum_from_file(brief_path)
+            if brief_path is not None
+            else self.compute_brief_checksum(brief)
+        )
         if qa_result.decision == QADecision.FAIL:
             raise ApprovalError(
                 f"QA decision is FAIL for {brief.brief_id}. FAIL results are never publishable."
             )
-
-        # 2. ESCALATE → must have valid approval
         if (
             brief.risk_decision == RiskDecision.ESCALATE
             or qa_result.decision == QADecision.ESCALATE
         ):
             self._require_valid_approval(brief, current_checksum)
 
-        # 3. Checksum must match current brief
         loaded = self.load_approval(brief.brief_id)
         if loaded is not None:
             approval, stored_checksum = loaded
-
             if stored_checksum != current_checksum:
                 raise ChecksumError(
-                    f"Checksum mismatch for {brief.brief_id}. "
-                    "Brief has changed since approval. Re-approval required."
+                    f"Checksum mismatch for {brief.brief_id}. Re-approval required."
                 )
+            self._validate_visual_proof(approval)
 
-        # 4. AUTO_APPROVE with no issues passes
+    def _validate_visual_proof(self, approval: Approval) -> None:
+        proof_condition = self._proof_condition(approval.conditions)
+        if not proof_condition:
+            raise ApprovalError(
+                f"Approval for {approval.brief_id} is not bound to a visual contact sheet."
+            )
+        expected = proof_condition.split(":", 1)[1]
+        proof_path = self._contact_sheet_path(approval.brief_id)
+        if not proof_path.exists():
+            raise ApprovalError(f"Visual contact sheet missing for {approval.brief_id}.")
+        actual = hashlib.sha256(proof_path.read_bytes()).hexdigest()
+        if actual != expected:
+            raise ChecksumError(
+                f"Visual assets changed after approval for {approval.brief_id}. Re-approval required."
+            )
 
     def _require_valid_approval(self, brief: Brief, current_checksum: str | None = None) -> None:
-        """Require a valid, non-expired approval for the exact brief version."""
         loaded = self.load_approval(brief.brief_id)
         if loaded is None:
             raise ApprovalError(
-                f"No approval found for {brief.brief_id}. "
-                "Human approval required for ESCALATE content."
+                f"No approval found for {brief.brief_id}. Human approval required."
             )
-
         approval, stored_checksum = loaded
-
-        # 5. Approval must be approved
         if not approval.approved:
             raise ApprovalError(
                 f"Approval for {brief.brief_id} is not approved (approved={approval.approved})."
             )
-
-        # 6. Check expiry
         try:
             created = datetime.fromisoformat(approval.created_at)
         except (ValueError, TypeError):
             raise ApprovalError(f"Invalid approval timestamp for {brief.brief_id}.") from None
-
         expires = created + timedelta(hours=self.approval_ttl_hours)
         if datetime.now(UTC) > expires:
             raise ExpiredApprovalError(
-                f"Approval for {brief.brief_id} expired at {expires.isoformat()}. "
-                "Re-approval required."
+                f"Approval for {brief.brief_id} expired at {expires.isoformat()}."
             )
-
-        # 7. Version must match
-        if hasattr(approval, "version") and approval.version != brief.version:
+        if approval.version != brief.version:
             raise VersionError(
-                f"Approval version ({approval.version}) does not match "
-                f"brief version ({brief.version}) for {brief.brief_id}."
+                f"Approval version ({approval.version}) does not match brief version ({brief.version})."
             )
-
-        # 8. Checksum must match (brief not changed after approval)
         if current_checksum is None:
             current_checksum = self.compute_brief_checksum(brief)
         if stored_checksum != current_checksum:
             raise ChecksumError(
-                f"Brief changed after approval for {brief.brief_id}. "
-                "Checksum mismatch. Re-approval required."
+                f"Brief changed after approval for {brief.brief_id}. Re-approval required."
             )
+        self._validate_visual_proof(approval)
 
     def revoke_approval(self, brief_id: str) -> bool:
-        """Revoke (delete) an approval."""
         path = self.approvals_dir / f"{brief_id}.json"
         if path.exists():
             path.unlink()
@@ -180,7 +182,7 @@ class ApprovalGate:
 
 
 class MockPublisher:
-    """Mock publisher for testing — never actually publishes."""
+    """Mock publisher for testing — never sends external requests."""
 
     def __init__(self) -> None:
         self.published: list[str] = []
@@ -192,7 +194,6 @@ class MockPublisher:
         qa_result: QAResult,
         brief_path: Path | None = None,
     ) -> dict:
-        """Attempt to publish. Returns status dict. Never sends external requests."""
         try:
             gate.validate(brief, qa_result, brief_path=brief_path)
             self.published.append(brief.brief_id)
@@ -202,16 +203,15 @@ class MockPublisher:
                 "mock": True,
                 "published_at": utcnow(),
             }
-        except ApprovalError as e:
+        except ApprovalError as exc:
             return {
                 "status": "blocked",
                 "brief_id": brief.brief_id,
                 "mock": True,
-                "reason": str(e),
+                "reason": str(exc),
             }
 
 
-# --- New Instagram publisher exports ---
 __all__ = [
     "AuthenticationError",
     "ContainerError",
@@ -239,8 +239,8 @@ from .errors import ContainerExpiredError as ContainerExpiredError  # noqa: E402
 from .errors import ContainerProcessingError as ContainerProcessingError  # noqa: E402
 from .errors import IdempotencyViolationError as IdempotencyViolationError  # noqa: E402
 from .errors import MediaGatewayError as MediaGatewayError  # noqa: E402
-from .errors import PublisherError as PublisherError  # noqa: E402
 from .errors import PublishError as PublishError  # noqa: E402
+from .errors import PublisherError as PublisherError  # noqa: E402
 from .errors import RateLimitError as RateLimitError  # noqa: E402
 from .errors import TokenExpiredError as TokenExpiredError  # noqa: E402
 from .media_gateway import MediaGateway as MediaGateway  # noqa: E402
