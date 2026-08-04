@@ -92,7 +92,13 @@ class ApprovalGate:
             return None
         data = json.loads(path.read_text(encoding="utf-8"))
         checksum = data.pop("checksum", "")
-        approval = Approval(**{key: value for key, value in data.items() if key in Approval.__dataclass_fields__})
+        approval = Approval(
+            **{
+                key: value
+                for key, value in data.items()
+                if key in Approval.__dataclass_fields__
+            }
+        )
         return approval, checksum
 
     def validate(
@@ -239,8 +245,8 @@ from .errors import ContainerExpiredError as ContainerExpiredError  # noqa: E402
 from .errors import ContainerProcessingError as ContainerProcessingError  # noqa: E402
 from .errors import IdempotencyViolationError as IdempotencyViolationError  # noqa: E402
 from .errors import MediaGatewayError as MediaGatewayError  # noqa: E402
-from .errors import PublishError as PublishError  # noqa: E402
 from .errors import PublisherError as PublisherError  # noqa: E402
+from .errors import PublishError as PublishError  # noqa: E402
 from .errors import RateLimitError as RateLimitError  # noqa: E402
 from .errors import TokenExpiredError as TokenExpiredError  # noqa: E402
 from .media_gateway import MediaGateway as MediaGateway  # noqa: E402
