@@ -7,6 +7,7 @@ States:
 
 from __future__ import annotations
 
+import json
 import os
 import sqlite3
 from pathlib import Path
@@ -44,25 +45,16 @@ _VALID_MANUAL_TRANSITIONS: dict[str, set[str]] = {
 
 
 def _resolve_db_path(user_override: Path | str | None = None) -> Path:
-    """Resolve the database path with environment awareness.
-
-    Priority:
-    1. Explicit user_override argument
-    2. PTB_MANUAL_QUEUE_DB environment variable
-    3. Fallback to project_root() / data / manual-queue.db
-    """
     if user_override is not None:
         return Path(user_override)
-
     env_path = os.environ.get("PTB_MANUAL_QUEUE_DB")
     if env_path:
         return Path(env_path)
-
     return project_root() / "data" / "manual-queue.db"
 
 
 class ManualQueue:
-    """SQLite-backed queue for manual Instagram publishing workflow."""
+    """SQLite-backed queue whose identity is derived from the exported manifest."""
 
     def __init__(self, db_path: Path | str | None = None) -> None:
         self.db_path = _resolve_db_path(db_path)
@@ -73,10 +65,10 @@ class ManualQueue:
         if self._conn is None:
             try:
                 self._conn = sqlite3.connect(str(self.db_path))
-            except sqlite3.OperationalError as e:
+            except sqlite3.OperationalError as exc:
                 raise QueueError(
-                    f"Cannot open database at {self.db_path}: {e}. "
-                    f"Check that the directory exists and has write permissions."
+                    f"Cannot open database at {self.db_path}: {exc}. "
+                    "Check that the directory exists and has write permissions."
                 ) from None
             self._conn.execute("PRAGMA journal_mode=WAL")
             self._conn.execute("PRAGMA busy_timeout=5000")
@@ -106,19 +98,15 @@ class ManualQueue:
         conn.commit()
 
     def health_check(self) -> dict[str, str | bool]:
-        """Perform a real read/write health check on the database."""
         try:
             conn = self._get_conn()
-            # Write test
             conn.execute(
                 "CREATE TABLE IF NOT EXISTS _health_check (id INTEGER PRIMARY KEY, ts TEXT)"
             )
             conn.execute("INSERT INTO _health_check (ts) VALUES (datetime('now'))")
             conn.commit()
-            # Read test
             row = conn.execute("SELECT COUNT(*) FROM _health_check").fetchone()
             count = row[0] if row else 0
-            # Cleanup
             conn.execute("DROP TABLE IF EXISTS _health_check")
             conn.commit()
             return {
@@ -128,14 +116,38 @@ class ManualQueue:
                 "readable": True,
                 "test_rows": count,
             }
-        except Exception as e:
+        except Exception as exc:
             return {
                 "status": "unhealthy",
                 "db_path": str(self.db_path),
-                "error": str(e),
+                "error": str(exc),
                 "writable": False,
                 "readable": False,
             }
+
+    @staticmethod
+    def _validated_manifest(brief_id: str, bundle_path: str) -> dict:
+        if not bundle_path:
+            raise QueueError("bundle_path is required")
+        bundle = Path(bundle_path)
+        manifest_path = bundle / "manifest.json"
+        checksums_path = bundle / "checksums.sha256"
+        if not manifest_path.exists() or not checksums_path.exists():
+            raise QueueError("Bundle is missing manifest.json or checksums.sha256")
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise QueueError(f"Cannot read bundle manifest: {exc}") from None
+        if manifest.get("brief_id") != brief_id:
+            raise QueueError("Bundle manifest brief_id mismatch")
+        manifest_approval = str(manifest.get("approval_id", "")).strip()
+        if not manifest_approval:
+            raise QueueError("Bundle manifest has empty approval_id")
+        if manifest.get("publish_status") != "READY_FOR_MANUAL_SCHEDULING":
+            raise QueueError("Bundle is not marked READY_FOR_MANUAL_SCHEDULING")
+        if manifest.get("publication_risk_level") != "LOW":
+            raise QueueError("Only LOW publication-risk bundles may enter manual scheduling")
+        return manifest
 
     def add(
         self,
@@ -145,8 +157,16 @@ class ManualQueue:
         caption_checksum: str = "",
         bundle_path: str = "",
     ) -> None:
-        """Add a brief to the manual queue in READY_FOR_REVIEW state."""
+        """Add a manifest-validated bundle in READY_FOR_REVIEW state."""
         from ..types import utcnow
+
+        manifest = self._validated_manifest(brief_id, bundle_path)
+        manifest_approval = str(manifest["approval_id"])
+        if approval_id and approval_id != manifest_approval:
+            raise QueueError("Queue approval_id does not match bundle manifest")
+        approval_id = manifest_approval
+        caption_checksum = str(manifest.get("caption_checksum", caption_checksum))
+        image_checksum = str(manifest.get("brief_checksum", image_checksum))
 
         conn = self._get_conn()
         now = utcnow()
@@ -177,40 +197,42 @@ class ManualQueue:
         return dict(row) if row else None
 
     def transition(self, brief_id: str, new_state: str, **kwargs: str) -> dict:
-        """Transition a brief to a new state. Raises on invalid transition."""
         from ..types import utcnow
 
         conn = self._get_conn()
         current = self.get(brief_id)
         if current is None:
             raise QueueError(f"Brief {brief_id} not in queue")
-
         current_state = current["state"]
         if new_state not in _VALID_MANUAL_TRANSITIONS.get(current_state, set()):
             raise QueueError(f"Cannot transition {brief_id} from {current_state} to {new_state}")
-
         now = utcnow()
         updates = {"state": new_state, "updated_at": now}
         updates.update(kwargs)
-
-        set_clause = ", ".join(f"{k} = ?" for k in updates)
-        values = [*list(updates.values()), brief_id]
+        set_clause = ", ".join(f"{key} = ?" for key in updates)
+        values = [*updates.values(), brief_id]
         conn.execute(f"UPDATE manual_queue SET {set_clause} WHERE brief_id = ?", values)
         conn.commit()
         return self.get(brief_id)  # type: ignore[return-value]
 
     def list_by_state(self, state: str, limit: int = 100) -> list[dict]:
-        conn = self._get_conn()
-        rows = conn.execute(
-            "SELECT * FROM manual_queue WHERE state = ? ORDER BY created_at ASC LIMIT ?",
-            (state, limit),
-        ).fetchall()
-        return [dict(r) for r in rows]
+        rows = (
+            self._get_conn()
+            .execute(
+                "SELECT * FROM manual_queue WHERE state = ? ORDER BY created_at ASC LIMIT ?",
+                (state, limit),
+            )
+            .fetchall()
+        )
+        return [dict(row) for row in rows]
 
     def list_all(self) -> list[dict]:
-        conn = self._get_conn()
-        rows = conn.execute("SELECT * FROM manual_queue ORDER BY created_at ASC").fetchall()
-        return [dict(r) for r in rows]
+        rows = (
+            self._get_conn()
+            .execute("SELECT * FROM manual_queue ORDER BY created_at ASC")
+            .fetchall()
+        )
+        return [dict(row) for row in rows]
 
     def count(self, state: str | None = None) -> int:
         conn = self._get_conn()

@@ -1,9 +1,10 @@
-"""Deterministic content generator — no AI needed."""
+"""Deterministic, publication-safe content generator."""
 
 from __future__ import annotations
 
-import random
+from dataclasses import asdict
 
+from ..graphic_engineering import build_copy_deck, validate_copy_deck
 from ..types import (
     ArtDirection,
     Audience,
@@ -22,94 +23,59 @@ from ..types import (
 )
 from ..utils.helpers import load_config
 
-# Publication-safe templates. They intentionally avoid price, performance,
-# security, privacy, comparison, and outcome claims. Product-page source risk is
-# assessed separately and remains attached to the catalog record.
-HOOKS: dict[str, list[str]] = {
-    "direct": [
-        "{tool_name} را در پرشین‌تولباکس ببینید",
-        "با {tool_name} آشنا شوید",
-        "ابزار {tool_name} برای کارهای فارسی و روزمره",
-    ],
-    "educational": [
-        "با کاربرد {tool_name} آشنا شوید",
-        "راهنمای شروع کار با {tool_name}",
-        "یک معرفی کوتاه از {tool_name}",
-    ],
-    "curiosity": [
-        "{tool_name} چه کاربردی دارد؟",
-        "نگاهی به {tool_name} در پرشین‌تولباکس",
-        "این بار با {tool_name} آشنا شوید",
-    ],
-    "problem-solution": [
-        "برای کار با متن فارسی، {tool_name} را ببینید",
-        "{tool_name}؛ یکی از ابزارهای نگارش پرشین‌تولباکس",
-        "ابزار مناسب کارتان را در {tool_name} پیدا کنید",
-    ],
-    "before-after": [
-        "از انتخاب ابزار تا شروع کار با {tool_name}",
-        "پیش از شروع، با امکانات {tool_name} آشنا شوید",
-    ],
+AUDIENCE_PROFILES: dict[Category, Audience] = {
+    Category.TOOL_DEMO: Audience(
+        segment="کاربرانی که برای یک نیاز مشخص دنبال ابزار هستند",
+        pain_point="پیش از روشن‌شدن کاربرد، میان ابزارهای مختلف انتخاب می‌کنند",
+        desire="درک کاربرد و تناسب ابزار پیش از اقدام",
+    ),
+    Category.PDF_TUTORIAL: Audience(
+        segment="کاربران اداری، دانشجویان و متقاضیان استخدام",
+        pain_point="برای مدیریت فایل PDF نمی‌دانند کدام ابزار با کار فعلی‌شان مرتبط است",
+        desire="دیدن مجموعه ابزارهای PDF و انتخاب بر اساس نیاز فعلی",
+    ),
+    Category.PERSIAN_TEXT: Audience(
+        segment="نویسندگان، تولیدکنندگان محتوا و کاربران متن فارسی",
+        pain_point="متن فارسی پیش از استفاده یا انتشار ناهماهنگ و نامرتب است",
+        desire="رسیدن به متن استاندارد و خوانا با ابزار مرتبط",
+    ),
+    Category.PROFESSIONAL: Audience(
+        segment="کاربران حرفه‌ای و تیم‌های کاری",
+        pain_point="انتخاب ابزار بدون سنجش کاربرد و تناسب با فرایند کاری",
+        desire="بررسی روشن کاربرد ابزار پیش از استفاده",
+    ),
+    Category.PRIVACY: Audience(
+        segment="کاربرانی که با داده‌های شخصی یا حساس کار می‌کنند",
+        pain_point="نحوه استفاده یا پردازش داده برایشان روشن نیست",
+        desire="تصمیم‌گیری آگاهانه پیش از واردکردن داده",
+    ),
+    Category.FINANCIAL: Audience(
+        segment="کاربرانی که با داده‌ها و محاسبات مالی کار می‌کنند",
+        pain_point="انتخاب ابزار بدون شناخت محدودیت و کاربرد آن",
+        desire="بررسی کاربرد و جزئیات پیش از استفاده",
+    ),
+    Category.SEASONAL: Audience(
+        segment="کاربرانی که محتوای مناسبتی یا زمان‌مند می‌خواهند",
+        pain_point="پیام عمومی با نیاز فعلی آن‌ها ارتباط روشنی ندارد",
+        desire="محتوای مرتبط با موقعیت و اقدام مشخص",
+    ),
+    Category.COMPARISON: Audience(
+        segment="کاربرانی که میان چند راه‌حل تصمیم می‌گیرند",
+        pain_point="معیار انتخاب و تفاوت کاربرد گزینه‌ها برایشان روشن نیست",
+        desire="مقایسه بر اساس نیاز و معیار مشخص",
+    ),
 }
-
-CTAS = [
-    "لینک در بیو",
-    "صفحه ابزار را ببینید",
-    "در پرشین‌تولباکس مشاهده کنید",
-    "برای آشنایی بیشتر، صفحه ابزار را ببینید",
-]
-
-AUDIENCES: dict[Category, list[dict[str, str]]] = {
-    Category.TOOL_DEMO: [
-        {"segment": "کاربران عمومی", "pain_point": "انتخاب ابزار مناسب", "desire": "دسترسی ساده"},
-        {
-            "segment": "دانشجویان",
-            "pain_point": "نیاز به ابزارهای متنی",
-            "desire": "انتخاب ابزار مناسب",
-        },
-        {"segment": "فریلنسرها", "pain_point": "کارهای تکراری", "desire": "دسترسی منظم به ابزارها"},
-    ],
-    Category.PDF_TUTORIAL: [
-        {"segment": "کاربران مبتدی", "pain_point": "پیچیدگی PDF", "desire": "راهنمای روشن"},
-        {"segment": "کاربران اداری", "pain_point": "مدیریت اسناد", "desire": "انتخاب ابزار مناسب"},
-    ],
-    Category.PERSIAN_TEXT: [
-        {"segment": "نویسندگان", "pain_point": "مشکلات متن فارسی", "desire": "متن استاندارد"},
-        {"segment": "برنامه‌نویسان", "pain_point": "نرمال‌سازی متن", "desire": "ابزار مشخص"},
-    ],
-    Category.PROFESSIONAL: [
-        {"segment": "مدیران", "pain_point": "انتخاب ابزار", "desire": "دسترسی منظم"},
-        {"segment": "تیم‌ها", "pain_point": "هماهنگی", "desire": "ابزار مشترک"},
-    ],
-    Category.PRIVACY: [
-        {"segment": "کاربران حساس", "pain_point": "انتخاب آگاهانه", "desire": "اطلاعات روشن"},
-    ],
-}
-
-PSYCHOLOGY: list[dict[str, str]] = [
-    {"principle": "سادگی", "expected_effect": "کاهش اصطکاک در انتخاب ابزار"},
-    {"principle": "وضوح", "expected_effect": "درک بهتر موضوع محتوا"},
-    {"principle": "ارتباط", "expected_effect": "تطابق بهتر محتوا با نیاز کاربر"},
-    {"principle": "راهنمایی", "expected_effect": "هدایت کاربر به صفحه مرتبط"},
-]
 
 
 class DeterministicGenerator:
-    """Generate content briefs deterministically without AI."""
+    """Generate complete briefs from one semantic messaging contract."""
 
     def __init__(self) -> None:
         self.brand = load_config("brand")
         self.colors = self.brand["colors"]
         self.typography = self.brand["typography"]
 
-    @staticmethod
-    def _rng(record: CatalogRecord) -> random.Random:
-        """Create a stable RNG from immutable source identity."""
-        seed = f"{record.source_id}:{record.content_hash or record.source_hash}"
-        return random.Random(seed)
-
     def _pick_template(self, category: Category) -> TemplateType:
-        """Pick template type based on category."""
         mapping = {
             Category.TOOL_DEMO: TemplateType.TOOL_DEMO,
             Category.PDF_TUTORIAL: TemplateType.STEP_BY_STEP,
@@ -123,44 +89,40 @@ class DeterministicGenerator:
         return mapping.get(category, TemplateType.TOOL_DEMO)
 
     def _pick_hook_type(self, category: Category) -> HookType:
-        """Pick hook type based on category."""
         mapping = {
-            Category.TOOL_DEMO: HookType.DIRECT,
-            Category.PDF_TUTORIAL: HookType.EDUCATIONAL,
+            Category.TOOL_DEMO: HookType.EDUCATIONAL,
+            Category.PDF_TUTORIAL: HookType.PROBLEM_SOLUTION,
             Category.PERSIAN_TEXT: HookType.PROBLEM_SOLUTION,
-            Category.PROFESSIONAL: HookType.DIRECT,
-            Category.PRIVACY: HookType.CURIOSITY,
+            Category.PROFESSIONAL: HookType.EDUCATIONAL,
+            Category.PRIVACY: HookType.PROBLEM_SOLUTION,
+            Category.COMPARISON: HookType.PROBLEM_SOLUTION,
         }
-        return mapping.get(category, HookType.DIRECT)
+        return mapping.get(category, HookType.EDUCATIONAL)
 
-    def _generate_caption(self, record: CatalogRecord, hook_type: HookType) -> Caption:
-        """Generate claim-free caption variants from source identity."""
-        tool_name = record.title.strip() or "این ابزار"
-        rng = self._rng(record)
+    @staticmethod
+    def _audience_for(category: Category) -> Audience:
+        return AUDIENCE_PROFILES.get(category, AUDIENCE_PROFILES[Category.TOOL_DEMO])
 
-        hook_templates = HOOKS.get(hook_type.value, HOOKS["direct"])
-        primary_hook = rng.choice(hook_templates).format(tool_name=tool_name)
-        body = (
-            f"برای آشنایی با {tool_name} و انتخاب ابزار متناسب با کارتان، "
-            "صفحه مربوط را در پرشین‌تولباکس ببینید."
-        )
-        cta = rng.choice(CTAS)
-        caption_text = f"{primary_hook}\n\n{body}\n\n{cta}"
+    def _generate_caption(self, record: CatalogRecord) -> Caption:
+        deck = build_copy_deck(record.title, record.category, record.summary)
+        defects = validate_copy_deck(deck)
+        if defects:
+            raise ValueError(f"CopyDeck rejected for {record.source_id}: {'; '.join(defects)}")
 
-        variants: dict[str, str] = {}
-        for h_type, templates in HOOKS.items():
-            hook = rng.choice(templates).format(tool_name=tool_name)
-            variants[f"{h_type}_variant"] = f"{hook}\n\n{body}\n\n{rng.choice(CTAS)}"
-
+        primary = f"{deck.caption_lead}\n\n{deck.value_proposition}.\n\n{deck.cta}."
+        variants = {
+            "concise": f"{deck.headline.replace(chr(10), ' ')}\n\n{deck.cta}.",
+            "problem-solution": (f"{deck.problem}.\n\n{deck.value_proposition}.\n\n{deck.cta}."),
+            "editorial": (f"{deck.caption_lead}\n\n{deck.supporting_text}\n\n{deck.cta}."),
+        }
         return Caption(
-            primary=caption_text,
+            primary=primary,
             variants=variants,
-            alt_text=f"تصویر معرفی {tool_name} در پرشین‌تولباکس",
-            cta=cta,
+            alt_text=deck.alt_text,
+            cta=deck.cta,
         )
 
     def _generate_art_direction(self, template: TemplateType) -> ArtDirection:
-        """Generate art direction for the template."""
         return ArtDirection(
             template=template,
             color_palette=ColorPalette(
@@ -171,35 +133,34 @@ class DeterministicGenerator:
                 text=self.colors["text"],
             ),
             typography=Typography(
-                heading_font=self.typography["heading_font"],
-                body_font=self.typography["body_font"],
-                heading_size_px=28,
-                body_size_px=16,
+                heading_font="Noto Sans Arabic",
+                body_font="Noto Sans Arabic",
+                heading_size_px=64,
+                body_size_px=30,
             ),
-            layout_notes=f"Template: {template.value}. RTL layout. Persian text prominent.",
+            layout_notes=(
+                "graphic-engineering-v2; editorial-product composition; "
+                "platform-specific layout; vector document material; RTL"
+            ),
         )
 
     def generate_brief(self, record: CatalogRecord) -> Brief:
-        """Generate a complete brief from a catalog record."""
         category = record.category
         template = self._pick_template(category)
         hook_type = self._pick_hook_type(category)
-        rng = self._rng(record)
+        deck = build_copy_deck(record.title, category, record.summary)
+        defects = validate_copy_deck(deck)
+        if defects:
+            raise ValueError(f"CopyDeck rejected for {record.source_id}: {'; '.join(defects)}")
 
-        audience_list = AUDIENCES.get(category, AUDIENCES[Category.TOOL_DEMO])
-        audience_data = rng.choice(audience_list)
-        psychology = rng.choice(PSYCHOLOGY)
-        caption = self._generate_caption(record, hook_type)
+        audience = self._audience_for(category)
+        caption = self._generate_caption(record)
         art_direction = self._generate_art_direction(template)
 
         from ..risk import RiskEngine
 
         risk_engine = RiskEngine()
-
-        # Preserve source-page risk for provenance and review.
         source_level, source_decision = risk_engine.assess(record)
-
-        # Brief risk represents only the exact audience-visible publication text.
         risk_level, risk_decision, publish_tags = risk_engine.assess_publishable_text(
             caption.primary,
             cta=caption.cta,
@@ -212,18 +173,27 @@ class DeterministicGenerator:
             "source_risk_tags": sorted(tag.value for tag in record.risk_tags),
             "publication_risk_tags": sorted(tag.value for tag in publish_tags),
             "risk_scope_version": 2,
+            "graphic_engineering_version": 2,
+            "semantic_messaging_version": 1,
+            "copy_deck": asdict(deck),
         }
 
         return Brief(
             brief_id=generate_id("brief"),
             catalog_record=record,
-            audience=Audience(**audience_data),
+            audience=audience,
             content_strategy=ContentStrategy(
-                angle=f"معرفی {record.title} برای {audience_data['segment']}",
+                angle=(
+                    f"مسئله: {deck.problem} | ارزش: {deck.value_proposition} | "
+                    f"هدف: {deck.marketing_goal}"
+                ),
                 hook_type=hook_type,
                 template_type=template,
             ),
-            psychology_hypothesis=PsychologyHypothesis(**psychology),
+            psychology_hypothesis=PsychologyHypothesis(
+                principle=deck.psychology_principle,
+                expected_effect=deck.psychology_effect,
+            ),
             caption=caption,
             art_direction=art_direction,
             risk_level=risk_level,
@@ -235,9 +205,8 @@ class DeterministicGenerator:
                 "content": record.source_id,
             },
             created_at=utcnow(),
-            version=1,
+            version=3,
         )
 
     def generate_briefs(self, records: list[CatalogRecord]) -> list[Brief]:
-        """Generate briefs for multiple catalog records."""
-        return [self.generate_brief(r) for r in records]
+        return [self.generate_brief(record) for record in records]

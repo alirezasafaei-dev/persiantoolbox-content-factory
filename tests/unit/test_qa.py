@@ -95,18 +95,23 @@ class TestQAEngine:
         result = self.qa.check_source_existence(brief)
         assert result.status.value == "PASS"
 
-    def test_visual_render(self) -> None:
+    def test_visual_render_requires_real_assets(self) -> None:
+        """Metadata alone is not visual QA; missing PNGs and proof must fail."""
         brief = _make_brief()
         result = self.qa.check_visual_render(brief)
-        assert result.status.value == "PASS"
+        assert result.status.value == "FAIL"
+        assert "missing required PNG" in result.details
+        assert "missing human-review contact sheet" in result.details
 
-    def test_run_all_pass(self) -> None:
+    def test_run_all_without_assets_fails_closed(self) -> None:
         brief = _make_brief()
         result = self.qa.run_all(brief)
-        assert result.decision.value in ("PASS", "ESCALATE")
+        assert result.decision.value == "FAIL"
+        assert result.checks["visual_render"].status.value == "FAIL"
         assert len(result.checks) > 0
 
-    def test_run_all_high_risk_escalates(self) -> None:
+    def test_run_all_high_risk_with_missing_assets_is_fail_not_escalate(self) -> None:
+        """A broken visual gate is stronger than a risk escalation."""
         claims = [Claim(text="test", source_id="src", verifiable=True)]
         brief = _make_brief(
             risk_level=RiskLevel.HIGH,
@@ -115,7 +120,8 @@ class TestQAEngine:
             caption_text="این ابزار رایگان است",
         )
         result = self.qa.run_all(brief)
-        assert result.decision.value == "ESCALATE"
+        assert result.decision.value == "FAIL"
+        assert result.checks["visual_render"].status.value == "FAIL"
 
     def test_duplicate_check(self) -> None:
         brief = _make_brief()
