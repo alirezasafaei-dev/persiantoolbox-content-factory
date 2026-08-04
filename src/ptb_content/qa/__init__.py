@@ -196,9 +196,7 @@ class QAEngine:
             )
 
         audits = audit_render_set(brief.brief_id, self.outputs_dir)
-        failures = {
-            size: list(audit.issues) for size, audit in audits.items() if not audit.passed
-        }
+        failures = {size: list(audit.issues) for size, audit in audits.items() if not audit.passed}
         if failures:
             return CheckResult(
                 status=CheckStatus.FAIL,

@@ -92,14 +92,11 @@ class InstagramExporter:
 
         visual_audits = audit_render_set(brief.brief_id, self.outputs_dir)
         failed_visuals = {
-            size: list(audit.issues)
-            for size, audit in visual_audits.items()
-            if not audit.passed
+            size: list(audit.issues) for size, audit in visual_audits.items() if not audit.passed
         }
         if failed_visuals:
             raise ValidationError(
-                "Visual QA failed before export: "
-                + json.dumps(failed_visuals, ensure_ascii=False)
+                "Visual QA failed before export: " + json.dumps(failed_visuals, ensure_ascii=False)
             )
 
         hashtags = self._select_hashtags(brief)
@@ -185,9 +182,7 @@ class InstagramExporter:
         return hashtags
 
     def _write_hashtags(self, hashtags: list[str], bundle_dir: Path) -> None:
-        (bundle_dir / "hashtags.txt").write_text(
-            "\n".join(hashtags) + "\n", encoding="utf-8"
-        )
+        (bundle_dir / "hashtags.txt").write_text("\n".join(hashtags) + "\n", encoding="utf-8")
 
     def _write_alt_text(self, brief: Brief, bundle_dir: Path) -> None:
         alt = brief.caption.alt_text.strip() or clean_display_title(brief.catalog_record.title)
@@ -252,9 +247,7 @@ class InstagramExporter:
             or [tag.value for tag in brief.catalog_record.risk_tags],
             "graphics_engine_version": 2,
             "visual_motif": visual.motif,
-            "visual_qa": {
-                size: audit.to_dict() for size, audit in visual_audits.items()
-            },
+            "visual_qa": {size: audit.to_dict() for size, audit in visual_audits.items()},
             "scheduled_at": None,
             "image_checksum": image_checksum,
             "caption_checksum": generate_hash(caption_text),
@@ -275,6 +268,4 @@ class InstagramExporter:
             if file_path.is_file() and file_path.name != "checksums.sha256":
                 sha = hashlib.sha256(file_path.read_bytes()).hexdigest()
                 lines.append(f"{sha}  {file_path.name}")
-        (bundle_dir / "checksums.sha256").write_text(
-            "\n".join(lines) + "\n", encoding="utf-8"
-        )
+        (bundle_dir / "checksums.sha256").write_text("\n".join(lines) + "\n", encoding="utf-8")

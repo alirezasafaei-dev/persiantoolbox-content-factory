@@ -125,8 +125,12 @@ def test_visual_qa_accepts_dense_high_contrast_design(tmp_path: Path) -> None:
                 31 + int(70 * (x + y) / (width + height)),
             )
     draw = ImageDraw.Draw(image)
-    draw.rounded_rectangle((70, 150, 650, 1150), radius=48, fill="#17386B", outline="#60A5FA", width=8)
-    draw.rounded_rectangle((700, 230, 1010, 980), radius=42, fill="#F8FAFC", outline="#F59E0B", width=9)
+    draw.rounded_rectangle(
+        (70, 150, 650, 1150), radius=48, fill="#17386B", outline="#60A5FA", width=8
+    )
+    draw.rounded_rectangle(
+        (700, 230, 1010, 980), radius=42, fill="#F8FAFC", outline="#F59E0B", width=9
+    )
     for index in range(8):
         top = 310 + index * 74
         draw.rounded_rectangle((745, top, 960 - index * 10, top + 28), radius=14, fill="#94A3B8")

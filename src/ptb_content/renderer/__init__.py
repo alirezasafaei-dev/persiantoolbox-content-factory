@@ -376,14 +376,12 @@ body {{
             cards.append(
                 "<article class='preview-card'><iframe sandbox srcdoc=\""
                 + html.escape(rendered, quote=True)
-                + "\"></iframe></article>"
+                + '"></iframe></article>'
             )
         return (
             "<!doctype html><html lang='fa' dir='rtl'><meta charset='utf-8'>"
             "<style>body{margin:0;padding:32px;background:#0f172a;display:grid;gap:28px;"
             "grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}.preview-card{"
             "background:#111827;padding:12px;border-radius:20px}iframe{border:0;width:100%;"
-            "aspect-ratio:4/5;border-radius:14px}</style><body>"
-            + "".join(cards)
-            + "</body></html>"
+            "aspect-ratio:4/5;border-radius:14px}</style><body>" + "".join(cards) + "</body></html>"
         )
