@@ -189,10 +189,10 @@ body {{
       <div class="badge">{label}</div>
       <h1 class="headline">{headline}</h1>
       <p class="supporting">{supporting}</p>
-      {'' if fmt == 'story' else f'<div class="cta">{cta}<span class="cta-arrow">←</span></div>'}
+      {"" if fmt == "story" else f'<div class="cta">{cta}<span class="cta-arrow">←</span></div>'}
     </div>
     <div class="visual-wrap">{visual}</div>
-    {f'<div class="cta">{cta}<span class="cta-arrow">←</span></div>' if fmt == 'story' else ''}
+    {f'<div class="cta">{cta}<span class="cta-arrow">←</span></div>' if fmt == "story" else ""}
     <div class="microcopy">persiantoolbox.ir · ابزار مناسب برای کار مشخص</div>
   </section>
 </main>
@@ -257,7 +257,9 @@ class Renderer:
         )
         if defects:
             output_path.unlink(missing_ok=True)
-            raise RuntimeError(f"Visual QA failed for {brief.brief_id}/{size_key}: {'; '.join(defects)}")
+            raise RuntimeError(
+                f"Visual QA failed for {brief.brief_id}/{size_key}: {'; '.join(defects)}"
+            )
         return output_path
 
     async def render_all_sizes(self, brief: Brief) -> dict[str, Path]:
@@ -294,7 +296,8 @@ class Renderer:
     def render_preview_html(self, briefs: list[Brief]) -> str:
         cards = "".join(
             f"<article><h2>{html.escape(build_copy_deck(b.catalog_record.title, b.catalog_record.category).short_title)}</h2>"
-            f"<p>{html.escape(b.caption.primary)}</p></article>" for b in briefs
+            f"<p>{html.escape(b.caption.primary)}</p></article>"
+            for b in briefs
         )
         return (
             "<!DOCTYPE html><html lang='fa' dir='rtl'><meta charset='UTF-8'>"
