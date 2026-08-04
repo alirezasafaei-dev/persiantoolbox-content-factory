@@ -29,20 +29,28 @@ def test_pdf_copy_is_concrete_source_grounded_and_actionable() -> None:
         Category.PDF_TUTORIAL,
         "مجموعه ابزارهای مرتبط با مدیریت فایل‌های PDF.",
     )
-    assert deck.headline == "ابزار PDF را\nبر اساس کارتان انتخاب کنید"
-    assert deck.category_label == "مدیریت PDF"
-    assert "مجموعه ابزارهای مدیریت PDF" in deck.supporting_text
-    assert deck.cta == "ابزارهای PDF را بررسی کنید"
+    assert deck.headline == "فایل PDF دارید؟\nابزار مربوط به کارتان را پیدا کنید"
+    assert deck.category_label == "ابزارهای PDF"
+    assert "مجموعه ابزارهای PDF اداری و استخدامی" in deck.supporting_text
+    assert deck.cta == "ابزارهای PDF را ببینید"
     assert "جعبه ابزار فارسی" not in deck.headline
     assert "tool-demo" not in " ".join(deck.__dict__.values())
     assert "مجموعه ابزارهای مرتبط با مدیریت فایل‌های PDF" in deck.reason_to_believe
-    assert "بار شناختی" in deck.psychology_principle
+    assert "نیاز شخصی" in deck.psychology_principle
+    assert deck.value_proposition.startswith("در صفحه ابزارهای PDF")
     assert validate_copy_deck(deck) == []
 
 
 def test_vague_placeholder_headline_fails_semantic_gate() -> None:
     deck = build_copy_deck("ابزارهای PDF", Category.PDF_TUTORIAL)
     vague = replace(deck, headline="کار با PDF\nاز کجا شروع کنیم؟")
+    defects = validate_copy_deck(vague)
+    assert any("vague" in defect for defect in defects)
+
+
+def test_generic_option_language_fails_semantic_gate() -> None:
+    deck = build_copy_deck("ابزارهای PDF", Category.PDF_TUTORIAL)
+    vague = replace(deck, supporting_text="گزینه مرتبط را برای نیاز خود بررسی کنید.")
     defects = validate_copy_deck(vague)
     assert any("vague" in defect for defect in defects)
 
@@ -76,8 +84,9 @@ def test_generator_uses_problem_solution_and_non_random_psychology() -> None:
     assert brief.content_strategy.hook_type == HookType.PROBLEM_SOLUTION
     assert "کاربران اداری" in brief.audience.segment
     assert "کدام ابزار" in brief.audience.pain_point
-    assert brief.psychology_hypothesis.principle == "کاهش بار شناختی و ابهام انتخاب"
-    assert "لازم نیست میان ابزارهای پراکنده سردرگم شوید" in brief.caption.primary
+    assert brief.psychology_hypothesis.principle == "فعال‌سازی نیاز شخصی و کاهش اضافه‌بار انتخاب"
+    assert "فایل PDF دارید و نمی‌دانید" in brief.caption.primary
+    assert "مسیله" not in brief.content_strategy.angle
     assert brief.catalog_record.meta["semantic_messaging_version"] == 1
 
 
