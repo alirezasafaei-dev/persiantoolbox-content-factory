@@ -22,76 +22,75 @@ from ..types import (
 )
 from ..utils.helpers import load_config
 
-# ─── Persian content templates ───────────────────────────────────────────────
-
+# Publication-safe templates. They intentionally avoid price, performance,
+# security, privacy, comparison, and outcome claims. Product-page source risk is
+# assessed separately and remains attached to the catalog record.
 HOOKS: dict[str, list[str]] = {
     "direct": [
-        "با این ابزار رایگان {tool_name} کارت رو سریع‌تر انجام بده",
-        "{tool_name} — یه ابزار ساده برای {use_case}",
-        "دیگه نیازی به {pain_point} نیست",
+        "{tool_name} را در پرشین‌تولباکس ببینید",
+        "با {tool_name} آشنا شوید",
+        "ابزار {tool_name} برای کارهای فارسی و روزمره",
     ],
     "educational": [
-        "آیا می‌دونستی می‌تونی {use_case} رو رایگان انجام بدی؟",
-        "روش {use_case} رو قدم‌به‌قدم یاد بگیر",
-        "یه ترفند ساده برای {use_case}",
+        "با کاربرد {tool_name} آشنا شوید",
+        "راهنمای شروع کار با {tool_name}",
+        "یک معرفی کوتاه از {tool_name}",
     ],
     "curiosity": [
-        "چطور بدون {pain_point} می‌تونی {use_case}؟",
-        "این ابزار رایگان یه چیزی داره که بقیه ندارن",
-        "یه راه‌حل ساده برای یه مشکل قدیمی",
+        "{tool_name} چه کاربردی دارد؟",
+        "نگاهی به {tool_name} در پرشین‌تولباکس",
+        "این بار با {tool_name} آشنا شوید",
     ],
     "problem-solution": [
-        "مشکل {pain_point}؟ این راه‌حل رو امتحان کن",
-        "وقتی {pain_point} داری، {tool_name} کمکت می‌کنه",
-        "دیگه درگیر {pain_point} نباش",
+        "برای کار با متن فارسی، {tool_name} را ببینید",
+        "{tool_name}؛ یکی از ابزارهای نگارش پرشین‌تولباکس",
+        "ابزار مناسب کارتان را در {tool_name} پیدا کنید",
     ],
     "before-after": [
-        "قبل: {pain_point} | بعد: {use_case} آسان",
-        "از {pain_point} تا {use_case} در چند ثانیه",
+        "از انتخاب ابزار تا شروع کار با {tool_name}",
+        "پیش از شروع، با امکانات {tool_name} آشنا شوید",
     ],
 }
 
 CTAS = [
-    "همین حالا امتحان کن 👇",
     "لینک در بیو",
-    "سایت رو ببین 👇",
-    "رایگان امتحان کن",
-    "شروع کن 👇",
+    "صفحه ابزار را ببینید",
+    "در پرشین‌تولباکس مشاهده کنید",
+    "برای آشنایی بیشتر، صفحه ابزار را ببینید",
 ]
 
 AUDIENCES: dict[Category, list[dict[str, str]]] = {
     Category.TOOL_DEMO: [
-        {"segment": "کاربران عمومی", "pain_point": "ابزارهای پیچیده", "desire": "سادگی و سرعت"},
+        {"segment": "کاربران عمومی", "pain_point": "انتخاب ابزار مناسب", "desire": "دسترسی ساده"},
         {
             "segment": "دانشجویان",
             "pain_point": "نیاز به ابزارهای متنی",
-            "desire": "ابزار رایگان و سریع",
+            "desire": "انتخاب ابزار مناسب",
         },
-        {"segment": "فریلنسرها", "pain_point": "وقت‌گیری کارهای ساده", "desire": "خودکارسازی"},
+        {"segment": "فریلنسرها", "pain_point": "کارهای تکراری", "desire": "دسترسی منظم به ابزارها"},
     ],
     Category.PDF_TUTORIAL: [
-        {"segment": "کاربران مبتدی", "pain_point": "پیچیدگی PDF", "desire": "آموزش ساده"},
-        {"segment": "اداری", "pain_point": "مدیریت اسناد", "desire": "سرعت در کار"},
+        {"segment": "کاربران مبتدی", "pain_point": "پیچیدگی PDF", "desire": "راهنمای روشن"},
+        {"segment": "کاربران اداری", "pain_point": "مدیریت اسناد", "desire": "انتخاب ابزار مناسب"},
     ],
     Category.PERSIAN_TEXT: [
-        {"segment": "نویسندگان", "pain_point": "مشکلات متن فارسی", "desire": "متن تمیز و حرفه‌ای"},
-        {"segment": "برنامه‌نویسان", "pain_point": "نرمال‌سازی متن", "desire": "ابزار دقیق"},
+        {"segment": "نویسندگان", "pain_point": "مشکلات متن فارسی", "desire": "متن استاندارد"},
+        {"segment": "برنامه‌نویسان", "pain_point": "نرمال‌سازی متن", "desire": "ابزار مشخص"},
     ],
     Category.PROFESSIONAL: [
-        {"segment": "مدیران", "pain_point": "زمان محدود", "desire": "ابزار سریع"},
+        {"segment": "مدیران", "pain_point": "انتخاب ابزار", "desire": "دسترسی منظم"},
         {"segment": "تیم‌ها", "pain_point": "هماهنگی", "desire": "ابزار مشترک"},
     ],
     Category.PRIVACY: [
-        {"segment": "کاربران حساس", "pain_point": "نگرانی حریم خصوصی", "desire": "امنیت و اعتماد"},
+        {"segment": "کاربران حساس", "pain_point": "انتخاب آگاهانه", "desire": "اطلاعات روشن"},
     ],
 }
 
 PSYCHOLOGY: list[dict[str, str]] = [
-    {"principle": "سادگی", "expected_effect": "کاهش اصطکاک و افزایش تبدیل"},
-    {"principle": "اثبات اجتماعی", "expected_effect": "افزایش اعتماد"},
-    {"principle": "کمیابی", "expected_effect": "افزایش فوریت (فقط برای محتوای فصلی)"},
-    {"principle": "پاداش", "expected_effect": "ارزش درک‌شده بالاتر"},
-    {"principle": "تعهد", "expected_effect": "پیگیری و بازگشت"},
+    {"principle": "سادگی", "expected_effect": "کاهش اصطکاک در انتخاب ابزار"},
+    {"principle": "وضوح", "expected_effect": "درک بهتر موضوع محتوا"},
+    {"principle": "ارتباط", "expected_effect": "تطابق بهتر محتوا با نیاز کاربر"},
+    {"principle": "راهنمایی", "expected_effect": "هدایت کاربر به صفحه مرتبط"},
 ]
 
 
@@ -102,6 +101,12 @@ class DeterministicGenerator:
         self.brand = load_config("brand")
         self.colors = self.brand["colors"]
         self.typography = self.brand["typography"]
+
+    @staticmethod
+    def _rng(record: CatalogRecord) -> random.Random:
+        """Create a stable RNG from immutable source identity."""
+        seed = f"{record.source_id}:{record.content_hash or record.source_hash}"
+        return random.Random(seed)
 
     def _pick_template(self, category: Category) -> TemplateType:
         """Pick template type based on category."""
@@ -129,39 +134,28 @@ class DeterministicGenerator:
         return mapping.get(category, HookType.DIRECT)
 
     def _generate_caption(self, record: CatalogRecord, hook_type: HookType) -> Caption:
-        """Generate caption variants."""
-        tool_name = record.title
-        use_case = record.summary[:100]
-        pain_point = record.summary[:50] if record.summary else "پیچیدگی"
+        """Generate claim-free caption variants from source identity."""
+        tool_name = record.title.strip() or "این ابزار"
+        rng = self._rng(record)
 
         hook_templates = HOOKS.get(hook_type.value, HOOKS["direct"])
-        primary_hook = random.choice(hook_templates).format(
-            tool_name=tool_name, use_case=use_case, pain_point=pain_point
+        primary_hook = rng.choice(hook_templates).format(tool_name=tool_name)
+        body = (
+            f"برای آشنایی با {tool_name} و انتخاب ابزار متناسب با کارتان، "
+            "صفحه مربوط را در پرشین‌تولباکس ببینید."
         )
+        cta = rng.choice(CTAS)
+        caption_text = f"{primary_hook}\n\n{body}\n\n{cta}"
 
-        # Build full caption
-        caption_text = f"{primary_hook}\n\n"
-        if record.summary:
-            caption_text += f"{record.summary[:200]}\n\n"
-        cta = random.choice(CTAS)
-        caption_text += cta
-
-        # Generate variants
-        variants = {}
+        variants: dict[str, str] = {}
         for h_type, templates in HOOKS.items():
-            hook = random.choice(templates).format(
-                tool_name=tool_name, use_case=use_case, pain_point=pain_point
-            )
-            variant_text = f"{hook}\n\n"
-            if record.summary:
-                variant_text += f"{record.summary[:200]}\n\n"
-            variant_text += random.choice(CTAS)
-            variants[f"{h_type}_variant"] = variant_text
+            hook = rng.choice(templates).format(tool_name=tool_name)
+            variants[f"{h_type}_variant"] = f"{hook}\n\n{body}\n\n{rng.choice(CTAS)}"
 
         return Caption(
             primary=caption_text,
             variants=variants,
-            alt_text=f"تصویر پست {tool_name} — {use_case}",
+            alt_text=f"تصویر معرفی {tool_name} در پرشین‌تولباکس",
             cta=cta,
         )
 
@@ -190,21 +184,34 @@ class DeterministicGenerator:
         category = record.category
         template = self._pick_template(category)
         hook_type = self._pick_hook_type(category)
+        rng = self._rng(record)
 
         audience_list = AUDIENCES.get(category, AUDIENCES[Category.TOOL_DEMO])
-        audience_data = random.choice(audience_list)
-
-        psychology = random.choice(PSYCHOLOGY)
-
+        audience_data = rng.choice(audience_list)
+        psychology = rng.choice(PSYCHOLOGY)
         caption = self._generate_caption(record, hook_type)
-
         art_direction = self._generate_art_direction(template)
 
-        # Risk assessment
         from ..risk import RiskEngine
 
         risk_engine = RiskEngine()
-        risk_level, risk_decision = risk_engine.assess(record)
+
+        # Preserve source-page risk for provenance and review.
+        source_level, source_decision = risk_engine.assess(record)
+
+        # Brief risk represents only the exact audience-visible publication text.
+        risk_level, risk_decision, publish_tags = risk_engine.assess_publishable_text(
+            caption.primary,
+            cta=caption.cta,
+            alt_text=caption.alt_text,
+        )
+        record.meta = {
+            **record.meta,
+            "source_risk_level": source_level.value,
+            "source_risk_decision": source_decision.value,
+            "publication_risk_tags": sorted(tag.value for tag in publish_tags),
+            "risk_scope_version": 2,
+        }
 
         return Brief(
             brief_id=generate_id("brief"),
