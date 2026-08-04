@@ -82,9 +82,7 @@ class RiskEngine:
         self.escalate_tags = {RiskTag(t) for t in self.risk_config["escalate_tags"]}
         self.always_review = set(self.risk_config["always_review"])
 
-    def _decision_for_tags(
-        self, risk_tags: set[RiskTag]
-    ) -> tuple[RiskLevel, RiskDecision]:
+    def _decision_for_tags(self, risk_tags: set[RiskTag]) -> tuple[RiskLevel, RiskDecision]:
         if risk_tags & self.escalate_tags:
             return RiskLevel.HIGH, RiskDecision.ESCALATE
         if risk_tags:
