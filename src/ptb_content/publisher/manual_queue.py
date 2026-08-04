@@ -7,6 +7,7 @@ States:
 
 from __future__ import annotations
 
+import os
 import sqlite3
 from pathlib import Path
 
@@ -42,19 +43,41 @@ _VALID_MANUAL_TRANSITIONS: dict[str, set[str]] = {
 }
 
 
+def _resolve_db_path(user_override: Path | str | None = None) -> Path:
+    """Resolve the database path with environment awareness.
+
+    Priority:
+    1. Explicit user_override argument
+    2. PTB_MANUAL_QUEUE_DB environment variable
+    3. Fallback to project_root() / data / manual-queue.db
+    """
+    if user_override is not None:
+        return Path(user_override)
+
+    env_path = os.environ.get("PTB_MANUAL_QUEUE_DB")
+    if env_path:
+        return Path(env_path)
+
+    return project_root() / "data" / "manual-queue.db"
+
+
 class ManualQueue:
     """SQLite-backed queue for manual Instagram publishing workflow."""
 
     def __init__(self, db_path: Path | str | None = None) -> None:
-        if db_path is None:
-            db_path = project_root() / "data" / "manual-queue.db"
-        self.db_path = Path(db_path)
+        self.db_path = _resolve_db_path(db_path)
         ensure_dir(self.db_path.parent)
         self._conn: sqlite3.Connection | None = None
 
     def _get_conn(self) -> sqlite3.Connection:
         if self._conn is None:
-            self._conn = sqlite3.connect(str(self.db_path))
+            try:
+                self._conn = sqlite3.connect(str(self.db_path))
+            except sqlite3.OperationalError as e:
+                raise QueueError(
+                    f"Cannot open database at {self.db_path}: {e}. "
+                    f"Check that the directory exists and has write permissions."
+                ) from None
             self._conn.execute("PRAGMA journal_mode=WAL")
             self._conn.execute("PRAGMA busy_timeout=5000")
             self._conn.row_factory = sqlite3.Row
@@ -81,6 +104,38 @@ class ManualQueue:
             CREATE INDEX IF NOT EXISTS idx_state ON manual_queue(state);
         """)
         conn.commit()
+
+    def health_check(self) -> dict[str, str | bool]:
+        """Perform a real read/write health check on the database."""
+        try:
+            conn = self._get_conn()
+            # Write test
+            conn.execute(
+                "CREATE TABLE IF NOT EXISTS _health_check (id INTEGER PRIMARY KEY, ts TEXT)"
+            )
+            conn.execute("INSERT INTO _health_check (ts) VALUES (datetime('now'))")
+            conn.commit()
+            # Read test
+            row = conn.execute("SELECT COUNT(*) FROM _health_check").fetchone()
+            count = row[0] if row else 0
+            # Cleanup
+            conn.execute("DROP TABLE IF EXISTS _health_check")
+            conn.commit()
+            return {
+                "status": "healthy",
+                "db_path": str(self.db_path),
+                "writable": True,
+                "readable": True,
+                "test_rows": count,
+            }
+        except Exception as e:
+            return {
+                "status": "unhealthy",
+                "db_path": str(self.db_path),
+                "error": str(e),
+                "writable": False,
+                "readable": False,
+            }
 
     def add(
         self,

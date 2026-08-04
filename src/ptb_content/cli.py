@@ -14,7 +14,7 @@ from .utils.helpers import ensure_dir, project_root, read_jsonl, write_json
 
 
 @click.group()
-@click.version_option(version="0.2.0")
+@click.version_option(version="1.1.3")
 def main() -> None:
     """PersianToolbox Content Factory — deterministic social media content pipeline."""
     pass

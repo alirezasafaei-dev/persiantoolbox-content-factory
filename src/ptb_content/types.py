@@ -136,6 +136,8 @@ class CatalogRecord:
     verified_at: str | None = None
     expires_at: str | None = None
     meta: dict[str, Any] = field(default_factory=dict)
+    content_hash: str = ""
+    visible_text_length: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         d = asdict(self)
