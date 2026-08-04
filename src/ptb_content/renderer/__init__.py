@@ -122,7 +122,7 @@ def render_html(brief: Brief, width: int, height: int) -> str:
 html, body {{ width: {width}px; height: {height}px; overflow: hidden; }}
 body {{
   direction: rtl;
-  font-family: "Noto Sans Arabic", "DejaVu Sans", sans-serif;
+  font-family: "Noto Sans Arabic", "Vazirmatn", "Tahoma", "DejaVu Sans", sans-serif;
   background: #eaf1ff;
   color: #172554;
   text-rendering: geometricPrecision;
@@ -149,7 +149,7 @@ body {{
 .copy {{ display:flex; flex-direction:column; align-items:flex-start; }}
 .headline {{ font-size:72px; line-height:1.32; letter-spacing:-1.7px; font-weight:900; color:#172554; }}
 .supporting {{ max-width:560px; font-size:30px; line-height:1.75; font-weight:500; color:#475569; }}
-.cta {{ display:inline-flex; align-items:center; gap:14px; background:#2563eb; color:#fff; padding:20px 31px; border-radius:20px; font-size:25px; font-weight:800; box-shadow:0 18px 38px rgba(37,99,235,.28); }}
+.cta {{ display:inline-flex; align-items:center; gap:14px; margin-top:0; background:#2563eb; color:#fff; padding:20px 31px; border-radius:20px; font-size:25px; font-weight:800; box-shadow:0 18px 38px rgba(37,99,235,.28); }}
 .cta-arrow {{ font-size:30px; transform:translateY(-1px); }}
 .visual-wrap {{ position:relative; display:grid; place-items:center; }}
 .product-visual {{ width:100%; height:auto; overflow:visible; }}
@@ -189,10 +189,10 @@ body {{
       <div class="badge">{label}</div>
       <h1 class="headline">{headline}</h1>
       <p class="supporting">{supporting}</p>
-      {"" if fmt == "story" else f'<div class="cta">{cta}<span class="cta-arrow">←</span></div>'}
+      {"" if fmt == "story" else f'<div class="cta cta-button">{cta}<span class="cta-arrow">←</span></div>'}
     </div>
     <div class="visual-wrap">{visual}</div>
-    {f'<div class="cta">{cta}<span class="cta-arrow">←</span></div>' if fmt == "story" else ""}
+    {f'<div class="cta cta-button">{cta}<span class="cta-arrow">←</span></div>' if fmt == "story" else ""}
     <div class="microcopy">persiantoolbox.ir · ابزار مناسب برای کار مشخص</div>
   </section>
 </main>
