@@ -99,6 +99,20 @@ class InstagramExporter:
     def _write_hashtags(self, brief: Brief, bundle_dir: Path) -> None:
         caption = brief.caption.primary or ""
         hashtags = [word for word in caption.split() if word.startswith("#")]
+        if not hashtags:
+            category = brief.catalog_record.category.value
+            defaults = {
+                "tool-demo": [
+                    "#ابزار_آفلاین",
+                    "#جعبه_ابزار_فارسی",
+                    "#ابزار_رایگان",
+                    "#پرشین_تولباکس",
+                ],
+                "how-to": ["#آموزش", "#جعبه_ابزار_فارسی", "#پرشین_تولباکس"],
+                "comparison": ["#مقایسه", "#جعبه_ابزار_فارسی", "#پرشین_تولباکس"],
+                "announcement": ["#اخبار", "#جعبه_ابزار_فارسی", "#پرشین_تولباکس"],
+            }
+            hashtags = defaults.get(category, ["#جعبه_ابزار_فارسی", "#پرشین_تولباکس"])
         (bundle_dir / "hashtags.txt").write_text("\n".join(hashtags), encoding="utf-8")
 
     def _write_alt_text(self, brief: Brief, bundle_dir: Path) -> None:
