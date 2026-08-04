@@ -20,9 +20,9 @@ jobs:
       - name: Install dependencies
         run: uv sync --locked --group dev
       - name: Ruff check
-        run: uv run ruff check src/ tests/
+        run: uv run ruff check src/ tests/ scripts/render_graphic_proof.py
       - name: Ruff format check
-        run: uv run ruff format --check src/ tests/
+        run: uv run ruff format --check src/ tests/ scripts/render_graphic_proof.py
 
   test:
     runs-on: ubuntu-latest
@@ -36,3 +36,33 @@ jobs:
         run: uv sync --locked --group dev
       - name: Run tests
         run: uv run pytest tests/ -x -q --tb=short
+
+  visual-proof:
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+      - name: Install dependencies
+        run: uv sync --locked --group dev
+      - name: Install production Arabic font
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-core
+          fc-cache -f
+          fc-match "Noto Sans Arabic"
+      - name: Install Chromium
+        run: uv run playwright install --with-deps chromium
+      - name: Render graphic proof
+        run: uv run python scripts/render_graphic_proof.py
+      - name: List proof assets
+        run: find artifacts/graphic-proof -maxdepth 3 -type f -print
+      - name: Upload graphic proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-graphic-proof
+          path: artifacts/graphic-proof/
+          if-no-files-found: error
+          retention-days: 14
