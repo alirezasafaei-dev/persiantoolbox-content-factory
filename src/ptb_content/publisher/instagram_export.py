@@ -49,7 +49,9 @@ class InstagramExporter:
         return next((value for value in conditions if value.startswith("visual-proof-sha256:")), "")
 
     @staticmethod
-    def _approval_reference(brief_id: str, reviewer: str | None, created_at: str, checksum: str) -> str:
+    def _approval_reference(
+        brief_id: str, reviewer: str | None, created_at: str, checksum: str
+    ) -> str:
         payload = f"{brief_id}|{reviewer or 'unknown'}|{created_at}|{checksum}"
         return f"approval-{generate_hash(payload)[:20]}"
 
@@ -162,9 +164,7 @@ class InstagramExporter:
         (bundle_dir / "caption.txt").write_text(brief.caption.primary, encoding="utf-8")
 
     def _select_hashtags(self, brief: Brief) -> list[str]:
-        caption_hashtags = [
-            word for word in brief.caption.primary.split() if word.startswith("#")
-        ]
+        caption_hashtags = [word for word in brief.caption.primary.split() if word.startswith("#")]
         hashtags = caption_hashtags or list(
             _DEFAULT_HASHTAGS.get(brief.catalog_record.category.value, _GENERIC_HASHTAGS)
         )
