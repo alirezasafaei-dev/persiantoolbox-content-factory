@@ -7,10 +7,51 @@ import json
 import shutil
 from pathlib import Path
 
+from ..risk import RiskEngine
 from ..types import Brief, generate_hash, utcnow
 from ..utils.helpers import ensure_dir, project_root
 from . import ApprovalGate
 from .errors import PublishError, ValidationError
+
+# These defaults are descriptive taxonomy only. They intentionally avoid price,
+# availability, performance, privacy, security, comparison, and outcome claims.
+_DEFAULT_HASHTAGS: dict[str, tuple[str, ...]] = {
+    "tool-demo": (
+        "#پرشین_تولباکس",
+        "#معرفی_ابزار",
+        "#ابزار_فارسی",
+        "#جعبه_ابزار_فارسی",
+    ),
+    "pdf-tutorial": (
+        "#پرشین_تولباکس",
+        "#PDF",
+        "#راهنمای_PDF",
+        "#ابزار_فارسی",
+    ),
+    "persian-text": (
+        "#پرشین_تولباکس",
+        "#متن_فارسی",
+        "#نگارش_فارسی",
+        "#ابزار_فارسی",
+    ),
+    "professional": (
+        "#پرشین_تولباکس",
+        "#معرفی_ابزار",
+        "#ابزار_حرفه‌ای",
+        "#ابزار_فارسی",
+    ),
+    "seasonal": (
+        "#پرشین_تولباکس",
+        "#محتوای_فصلی",
+        "#معرفی_ابزار",
+        "#ابزار_فارسی",
+    ),
+}
+_GENERIC_HASHTAGS = (
+    "#پرشین_تولباکس",
+    "#معرفی_ابزار",
+    "#ابزار_فارسی",
+)
 
 
 class InstagramExporter:
@@ -96,23 +137,25 @@ class InstagramExporter:
         caption = brief.caption.primary or ""
         (bundle_dir / "caption.txt").write_text(caption, encoding="utf-8")
 
-    def _write_hashtags(self, brief: Brief, bundle_dir: Path) -> None:
+    def _select_hashtags(self, brief: Brief) -> list[str]:
+        """Select hashtags and fail closed if they introduce publication risk."""
         caption = brief.caption.primary or ""
         hashtags = [word for word in caption.split() if word.startswith("#")]
         if not hashtags:
             category = brief.catalog_record.category.value
-            defaults = {
-                "tool-demo": [
-                    "#ابزار_آفلاین",
-                    "#جعبه_ابزار_فارسی",
-                    "#ابزار_رایگان",
-                    "#پرشین_تولباکس",
-                ],
-                "how-to": ["#آموزش", "#جعبه_ابزار_فارسی", "#پرشین_تولباکس"],
-                "comparison": ["#مقایسه", "#جعبه_ابزار_فارسی", "#پرشین_تولباکس"],
-                "announcement": ["#اخبار", "#جعبه_ابزار_فارسی", "#پرشین_تولباکس"],
-            }
-            hashtags = defaults.get(category, ["#جعبه_ابزار_فارسی", "#پرشین_تولباکس"])
+            hashtags = list(_DEFAULT_HASHTAGS.get(category, _GENERIC_HASHTAGS))
+
+        detected_tags = RiskEngine().detect_publishable_tags(" ".join(hashtags))
+        if detected_tags:
+            tag_names = ", ".join(sorted(tag.value for tag in detected_tags))
+            raise ValidationError(
+                "Hashtags introduce publication risk "
+                f"({tag_names}) for {brief.brief_id}. Export blocked."
+            )
+        return hashtags
+
+    def _write_hashtags(self, brief: Brief, bundle_dir: Path) -> None:
+        hashtags = self._select_hashtags(brief)
         (bundle_dir / "hashtags.txt").write_text("\n".join(hashtags), encoding="utf-8")
 
     def _write_alt_text(self, brief: Brief, bundle_dir: Path) -> None:
@@ -120,6 +163,7 @@ class InstagramExporter:
         (bundle_dir / "alt-text.txt").write_text(alt, encoding="utf-8")
 
     def _write_instructions(self, brief: Brief, bundle_dir: Path) -> None:
+        hashtag_count = len(self._select_hashtags(brief))
         content = f"""# Instagram Publish Instructions
 
 **Brief ID:** {brief.brief_id}
@@ -140,7 +184,7 @@ class InstagramExporter:
 ## Notes
 
 - Caption: {len(brief.caption.primary or "")} characters
-- Hashtags: {len([w for w in (brief.caption.primary or "").split() if w.startswith("#")])} tags
+- Hashtags: {hashtag_count} tags
 - ZWNJ: Verify Persian text has proper half-spaces
 - Generated: {utcnow()}
 """
