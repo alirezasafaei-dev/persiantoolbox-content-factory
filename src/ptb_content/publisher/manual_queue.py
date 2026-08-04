@@ -216,16 +216,22 @@ class ManualQueue:
         return self.get(brief_id)  # type: ignore[return-value]
 
     def list_by_state(self, state: str, limit: int = 100) -> list[dict]:
-        rows = self._get_conn().execute(
-            "SELECT * FROM manual_queue WHERE state = ? ORDER BY created_at ASC LIMIT ?",
-            (state, limit),
-        ).fetchall()
+        rows = (
+            self._get_conn()
+            .execute(
+                "SELECT * FROM manual_queue WHERE state = ? ORDER BY created_at ASC LIMIT ?",
+                (state, limit),
+            )
+            .fetchall()
+        )
         return [dict(row) for row in rows]
 
     def list_all(self) -> list[dict]:
-        rows = self._get_conn().execute(
-            "SELECT * FROM manual_queue ORDER BY created_at ASC"
-        ).fetchall()
+        rows = (
+            self._get_conn()
+            .execute("SELECT * FROM manual_queue ORDER BY created_at ASC")
+            .fetchall()
+        )
         return [dict(row) for row in rows]
 
     def count(self, state: str | None = None) -> int:
