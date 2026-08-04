@@ -25,24 +25,64 @@ from ..utils.helpers import load_config
 
 AUDIENCES: dict[Category, list[dict[str, str]]] = {
     Category.TOOL_DEMO: [
-        {"segment": "کاربران عمومی", "pain_point": "انتخاب ابزار مناسب", "desire": "دسترسی ساده"},
-        {"segment": "دانشجویان", "pain_point": "نیاز به ابزارهای متنی", "desire": "انتخاب ابزار مناسب"},
-        {"segment": "فریلنسرها", "pain_point": "کارهای تکراری", "desire": "دسترسی منظم به ابزارها"},
+        {
+            "segment": "کاربران عمومی",
+            "pain_point": "انتخاب ابزار مناسب",
+            "desire": "دسترسی ساده",
+        },
+        {
+            "segment": "دانشجویان",
+            "pain_point": "نیاز به ابزارهای متنی",
+            "desire": "انتخاب ابزار مناسب",
+        },
+        {
+            "segment": "فریلنسرها",
+            "pain_point": "کارهای تکراری",
+            "desire": "دسترسی منظم به ابزارها",
+        },
     ],
     Category.PDF_TUTORIAL: [
-        {"segment": "کاربران مبتدی", "pain_point": "پیچیدگی PDF", "desire": "راهنمای روشن"},
-        {"segment": "کاربران اداری", "pain_point": "مدیریت اسناد", "desire": "انتخاب ابزار مناسب"},
+        {
+            "segment": "کاربران مبتدی",
+            "pain_point": "پیچیدگی PDF",
+            "desire": "راهنمای روشن",
+        },
+        {
+            "segment": "کاربران اداری",
+            "pain_point": "مدیریت اسناد",
+            "desire": "انتخاب ابزار مناسب",
+        },
     ],
     Category.PERSIAN_TEXT: [
-        {"segment": "نویسندگان", "pain_point": "مشکلات متن فارسی", "desire": "متن استاندارد"},
-        {"segment": "برنامه‌نویسان", "pain_point": "نرمال‌سازی متن", "desire": "ابزار مشخص"},
+        {
+            "segment": "نویسندگان",
+            "pain_point": "مشکلات متن فارسی",
+            "desire": "متن استاندارد",
+        },
+        {
+            "segment": "برنامه‌نویسان",
+            "pain_point": "نرمال‌سازی متن",
+            "desire": "ابزار مشخص",
+        },
     ],
     Category.PROFESSIONAL: [
-        {"segment": "مدیران", "pain_point": "انتخاب ابزار", "desire": "دسترسی منظم"},
-        {"segment": "تیم‌ها", "pain_point": "هماهنگی", "desire": "ابزار مشترک"},
+        {
+            "segment": "مدیران",
+            "pain_point": "انتخاب ابزار",
+            "desire": "دسترسی منظم",
+        },
+        {
+            "segment": "تیم‌ها",
+            "pain_point": "هماهنگی",
+            "desire": "ابزار مشترک",
+        },
     ],
     Category.PRIVACY: [
-        {"segment": "کاربران حساس", "pain_point": "انتخاب آگاهانه", "desire": "اطلاعات روشن"},
+        {
+            "segment": "کاربران حساس",
+            "pain_point": "انتخاب آگاهانه",
+            "desire": "اطلاعات روشن",
+        },
     ],
 }
 
