@@ -817,7 +817,7 @@ wheels = [
 
 [[package]]
 name = "ptb-content-factory"
-version = "1.1.4"
+version = "1.1.5"
 source = { editable = "." }
 dependencies = [
     { name = "beautifulsoup4" },
