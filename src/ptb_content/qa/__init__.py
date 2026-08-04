@@ -9,7 +9,6 @@ from ..types import (
     CheckStatus,
     QADecision,
     QAResult,
-    RiskDecision,
     RiskLevel,
     utcnow,
 )
