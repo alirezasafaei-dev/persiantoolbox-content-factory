@@ -125,9 +125,7 @@ def build_copy_deck(title: str, category: Category, summary: str = "") -> CopyDe
 
     if category == Category.PDF_TUTORIAL or "PDF" in short.upper():
         headline = "PDF اداری یا استخدامی؟\nابزار مناسب را پیدا کنید"
-        supporting = (
-            "ابزارهای این مجموعه را یک‌جا ببینید و بر اساس کاری که دارید، انتخاب کنید."
-        )
+        supporting = "ابزارهای این مجموعه را یک‌جا ببینید و بر اساس کاری که دارید، انتخاب کنید."
         cta = "ابزارهای PDF را ببینید"
         alt = "طرح راهنمای انتخاب ابزار PDF برای کارهای اداری و مدارک استخدامی"
         problem = (
@@ -144,10 +142,7 @@ def build_copy_deck(title: str, category: Category, summary: str = "") -> CopyDe
             "دو موقعیت روشنِ اداری و استخدامی، مخاطب را به تشخیص سریع نیاز خود و ادامه مسیر "
             "هدایت می‌کنند."
         )
-        lead = (
-            "با یک فایل PDF ممکن است کار اداری داشته باشید یا بخواهید مدارک استخدامی را "
-            "آماده کنید."
-        )
+        lead = "با یک فایل PDF ممکن است کار اداری داشته باشید یا بخواهید مدارک استخدامی را آماده کنید."
     elif category == Category.PERSIAN_TEXT:
         headline = "متن فارسی را\nپیش از انتشار مرتب کنید"
         supporting = (
