@@ -31,9 +31,10 @@ def test_pdf_copy_is_concrete_source_grounded_and_actionable() -> None:
     )
     assert deck.headline == "فایل PDF دارید؟\nابزار مربوط به کارتان را پیدا کنید"
     assert deck.category_label == "ابزارهای PDF"
-    assert "مجموعه ابزارهای PDF اداری و استخدامی" in deck.supporting_text
+    assert "ابزارهای اداری و استخدامی مرتبط با PDF" in deck.supporting_text
     assert deck.cta == "ابزارهای PDF را ببینید"
     assert "جعبه ابزار فارسی" not in deck.headline
+    assert deck.short_title not in deck.supporting_text
     assert "tool-demo" not in " ".join(deck.__dict__.values())
     assert "مجموعه ابزارهای مرتبط با مدیریت فایل‌های PDF" in deck.reason_to_believe
     assert "نیاز شخصی" in deck.psychology_principle
