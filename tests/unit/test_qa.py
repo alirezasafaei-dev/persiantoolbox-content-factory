@@ -112,6 +112,7 @@ class TestQAEngine:
             risk_level=RiskLevel.HIGH,
             risk_decision=RiskDecision.ESCALATE,
             claims=claims,
+            caption_text="این ابزار رایگان است",
         )
         result = self.qa.run_all(brief)
         assert result.decision.value == "ESCALATE"
