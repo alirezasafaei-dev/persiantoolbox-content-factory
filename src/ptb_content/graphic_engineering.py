@@ -89,7 +89,7 @@ def build_copy_deck(title: str, category: Category) -> CopyDeck:
     label = CATEGORY_LABELS.get(category, "معرفی ابزار")
 
     if category == Category.PDF_TUTORIAL or "PDF" in short.upper():
-        headline = "برای کارهای روزمره با PDF\nاز کجا شروع کنیم؟"
+        headline = "کار با PDF\nاز کجا شروع کنیم؟"
         supporting = "ابزار مناسبِ ادغام، تقسیم، تبدیل یا مرتب‌سازی فایل را انتخاب کنید."
         cta = "ابزارهای PDF را ببینید"
         alt = "طرح معرفی مجموعه ابزارهای PDF پرشین‌تولباکس با کارت‌های سند و مسیر انتخاب ابزار"
