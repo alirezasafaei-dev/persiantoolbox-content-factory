@@ -26,7 +26,7 @@ def test_pdf_copy_is_natural_and_does_not_repeat_raw_title() -> None:
         "ابزارهای PDF اداری و استخدامی - جعبه ابزار فارسی",
         Category.PDF_TUTORIAL,
     )
-    assert deck.headline == "برای کارهای روزمره با PDF\nاز کجا شروع کنیم؟"
+    assert deck.headline == "کار با PDF\nاز کجا شروع کنیم؟"
     assert "جعبه ابزار فارسی" not in deck.headline
     assert "tool-demo" not in " ".join(deck.__dict__.values())
     assert validate_copy_deck(deck) == []
