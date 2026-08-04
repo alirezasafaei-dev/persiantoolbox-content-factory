@@ -109,19 +109,11 @@ class DeterministicGenerator:
         if defects:
             raise ValueError(f"CopyDeck rejected for {record.source_id}: {'; '.join(defects)}")
 
-        primary = (
-            f"{deck.caption_lead}\n\n"
-            f"{deck.value_proposition}.\n\n"
-            f"{deck.cta}."
-        )
+        primary = f"{deck.caption_lead}\n\n{deck.value_proposition}.\n\n{deck.cta}."
         variants = {
             "concise": f"{deck.headline.replace(chr(10), ' ')}\n\n{deck.cta}.",
-            "problem-solution": (
-                f"{deck.problem}.\n\n{deck.value_proposition}.\n\n{deck.cta}."
-            ),
-            "editorial": (
-                f"{deck.caption_lead}\n\n{deck.supporting_text}\n\n{deck.cta}."
-            ),
+            "problem-solution": (f"{deck.problem}.\n\n{deck.value_proposition}.\n\n{deck.cta}."),
+            "editorial": (f"{deck.caption_lead}\n\n{deck.supporting_text}\n\n{deck.cta}."),
         }
         return Caption(
             primary=primary,
