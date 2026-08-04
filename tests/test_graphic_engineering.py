@@ -29,15 +29,15 @@ def test_pdf_copy_is_concrete_source_grounded_and_actionable() -> None:
         Category.PDF_TUTORIAL,
         "مجموعه ابزارهای مرتبط با مدیریت فایل‌های PDF.",
     )
-    assert deck.headline == "فایل PDF دارید؟\nابزار مربوط به کارتان را پیدا کنید"
-    assert deck.category_label == "ابزارهای PDF"
-    assert "ابزارهای اداری و استخدامی مرتبط با PDF" in deck.supporting_text
+    assert deck.headline == "PDF اداری یا استخدامی؟\nابزار مناسب را پیدا کنید"
+    assert deck.category_label == "راهنمای انتخاب PDF"
+    assert "ابزارهای این مجموعه را یک‌جا ببینید" in deck.supporting_text
     assert deck.cta == "ابزارهای PDF را ببینید"
     assert "جعبه ابزار فارسی" not in deck.headline
     assert deck.short_title not in deck.supporting_text
     assert "tool-demo" not in " ".join(deck.__dict__.values())
     assert "مجموعه ابزارهای مرتبط با مدیریت فایل‌های PDF" in deck.reason_to_believe
-    assert "نیاز شخصی" in deck.psychology_principle
+    assert deck.psychology_principle == "خودارجاعی موقعیتی و کاهش پیچیدگی انتخاب"
     assert deck.value_proposition.startswith("در صفحه ابزارهای PDF")
     assert validate_copy_deck(deck) == []
 
@@ -85,8 +85,9 @@ def test_generator_uses_problem_solution_and_non_random_psychology() -> None:
     assert brief.content_strategy.hook_type == HookType.PROBLEM_SOLUTION
     assert "کاربران اداری" in brief.audience.segment
     assert "کدام ابزار" in brief.audience.pain_point
-    assert brief.psychology_hypothesis.principle == "فعال‌سازی نیاز شخصی و کاهش اضافه‌بار انتخاب"
-    assert "فایل PDF دارید و نمی‌دانید" in brief.caption.primary
+    assert brief.psychology_hypothesis.principle == "خودارجاعی موقعیتی و کاهش پیچیدگی انتخاب"
+    assert "کار اداری" in brief.caption.primary
+    assert "مدارک استخدامی" in brief.caption.primary
     assert "مسیله" not in brief.content_strategy.angle
     assert brief.catalog_record.meta["semantic_messaging_version"] == 1
 
