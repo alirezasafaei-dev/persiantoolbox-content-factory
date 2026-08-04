@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-import random
+from dataclasses import asdict
 
 from ..graphic_engineering import build_copy_deck, validate_copy_deck
 from ..types import (
@@ -23,89 +23,57 @@ from ..types import (
 )
 from ..utils.helpers import load_config
 
-AUDIENCES: dict[Category, list[dict[str, str]]] = {
-    Category.TOOL_DEMO: [
-        {
-            "segment": "کاربران عمومی",
-            "pain_point": "انتخاب ابزار مناسب",
-            "desire": "دسترسی ساده",
-        },
-        {
-            "segment": "دانشجویان",
-            "pain_point": "نیاز به ابزارهای متنی",
-            "desire": "انتخاب ابزار مناسب",
-        },
-        {
-            "segment": "فریلنسرها",
-            "pain_point": "کارهای تکراری",
-            "desire": "دسترسی منظم به ابزارها",
-        },
-    ],
-    Category.PDF_TUTORIAL: [
-        {
-            "segment": "کاربران مبتدی",
-            "pain_point": "پیچیدگی PDF",
-            "desire": "راهنمای روشن",
-        },
-        {
-            "segment": "کاربران اداری",
-            "pain_point": "مدیریت اسناد",
-            "desire": "انتخاب ابزار مناسب",
-        },
-    ],
-    Category.PERSIAN_TEXT: [
-        {
-            "segment": "نویسندگان",
-            "pain_point": "مشکلات متن فارسی",
-            "desire": "متن استاندارد",
-        },
-        {
-            "segment": "برنامه‌نویسان",
-            "pain_point": "نرمال‌سازی متن",
-            "desire": "ابزار مشخص",
-        },
-    ],
-    Category.PROFESSIONAL: [
-        {
-            "segment": "مدیران",
-            "pain_point": "انتخاب ابزار",
-            "desire": "دسترسی منظم",
-        },
-        {
-            "segment": "تیم‌ها",
-            "pain_point": "هماهنگی",
-            "desire": "ابزار مشترک",
-        },
-    ],
-    Category.PRIVACY: [
-        {
-            "segment": "کاربران حساس",
-            "pain_point": "انتخاب آگاهانه",
-            "desire": "اطلاعات روشن",
-        },
-    ],
+AUDIENCE_PROFILES: dict[Category, Audience] = {
+    Category.TOOL_DEMO: Audience(
+        segment="کاربرانی که برای یک نیاز مشخص دنبال ابزار هستند",
+        pain_point="پیش از روشن‌شدن کاربرد، میان ابزارهای مختلف انتخاب می‌کنند",
+        desire="درک کاربرد و تناسب ابزار پیش از اقدام",
+    ),
+    Category.PDF_TUTORIAL: Audience(
+        segment="کاربران اداری، دانشجویان و متقاضیان استخدام",
+        pain_point="برای مدیریت فایل PDF نمی‌دانند کدام ابزار با کار فعلی‌شان مرتبط است",
+        desire="دیدن مجموعه ابزارهای PDF و انتخاب بر اساس نیاز فعلی",
+    ),
+    Category.PERSIAN_TEXT: Audience(
+        segment="نویسندگان، تولیدکنندگان محتوا و کاربران متن فارسی",
+        pain_point="متن فارسی پیش از استفاده یا انتشار ناهماهنگ و نامرتب است",
+        desire="رسیدن به متن استاندارد و خوانا با ابزار مرتبط",
+    ),
+    Category.PROFESSIONAL: Audience(
+        segment="کاربران حرفه‌ای و تیم‌های کاری",
+        pain_point="انتخاب ابزار بدون سنجش کاربرد و تناسب با فرایند کاری",
+        desire="بررسی روشن کاربرد ابزار پیش از استفاده",
+    ),
+    Category.PRIVACY: Audience(
+        segment="کاربرانی که با داده‌های شخصی یا حساس کار می‌کنند",
+        pain_point="نحوه استفاده یا پردازش داده برایشان روشن نیست",
+        desire="تصمیم‌گیری آگاهانه پیش از واردکردن داده",
+    ),
+    Category.FINANCIAL: Audience(
+        segment="کاربرانی که با داده‌ها و محاسبات مالی کار می‌کنند",
+        pain_point="انتخاب ابزار بدون شناخت محدودیت و کاربرد آن",
+        desire="بررسی کاربرد و جزئیات پیش از استفاده",
+    ),
+    Category.SEASONAL: Audience(
+        segment="کاربرانی که محتوای مناسبتی یا زمان‌مند می‌خواهند",
+        pain_point="پیام عمومی با نیاز فعلی آن‌ها ارتباط روشنی ندارد",
+        desire="محتوای مرتبط با موقعیت و اقدام مشخص",
+    ),
+    Category.COMPARISON: Audience(
+        segment="کاربرانی که میان چند راه‌حل تصمیم می‌گیرند",
+        pain_point="معیار انتخاب و تفاوت کاربرد گزینه‌ها برایشان روشن نیست",
+        desire="مقایسه بر اساس نیاز و معیار مشخص",
+    ),
 }
-
-PSYCHOLOGY: list[dict[str, str]] = [
-    {"principle": "سادگی", "expected_effect": "کاهش اصطکاک در انتخاب ابزار"},
-    {"principle": "وضوح", "expected_effect": "درک بهتر موضوع محتوا"},
-    {"principle": "ارتباط", "expected_effect": "تطابق بهتر محتوا با نیاز کاربر"},
-    {"principle": "راهنمایی", "expected_effect": "هدایت کاربر به صفحه مرتبط"},
-]
 
 
 class DeterministicGenerator:
-    """Generate complete briefs with one canonical audience-visible copy deck."""
+    """Generate complete briefs from one semantic messaging contract."""
 
     def __init__(self) -> None:
         self.brand = load_config("brand")
         self.colors = self.brand["colors"]
         self.typography = self.brand["typography"]
-
-    @staticmethod
-    def _rng(record: CatalogRecord) -> random.Random:
-        seed = f"{record.source_id}:{record.content_hash or record.source_hash}"
-        return random.Random(seed)
 
     def _pick_template(self, category: Category) -> TemplateType:
         mapping = {
@@ -122,25 +90,38 @@ class DeterministicGenerator:
 
     def _pick_hook_type(self, category: Category) -> HookType:
         mapping = {
-            Category.TOOL_DEMO: HookType.DIRECT,
-            Category.PDF_TUTORIAL: HookType.EDUCATIONAL,
+            Category.TOOL_DEMO: HookType.EDUCATIONAL,
+            Category.PDF_TUTORIAL: HookType.PROBLEM_SOLUTION,
             Category.PERSIAN_TEXT: HookType.PROBLEM_SOLUTION,
-            Category.PROFESSIONAL: HookType.DIRECT,
-            Category.PRIVACY: HookType.CURIOSITY,
+            Category.PROFESSIONAL: HookType.EDUCATIONAL,
+            Category.PRIVACY: HookType.PROBLEM_SOLUTION,
+            Category.COMPARISON: HookType.PROBLEM_SOLUTION,
         }
-        return mapping.get(category, HookType.DIRECT)
+        return mapping.get(category, HookType.EDUCATIONAL)
+
+    @staticmethod
+    def _audience_for(category: Category) -> Audience:
+        return AUDIENCE_PROFILES.get(category, AUDIENCE_PROFILES[Category.TOOL_DEMO])
 
     def _generate_caption(self, record: CatalogRecord) -> Caption:
-        deck = build_copy_deck(record.title, record.category)
+        deck = build_copy_deck(record.title, record.category, record.summary)
         defects = validate_copy_deck(deck)
         if defects:
             raise ValueError(f"CopyDeck rejected for {record.source_id}: {'; '.join(defects)}")
 
-        headline = deck.headline.replace("\n", " ")
-        primary = f"{headline}\n\n{deck.supporting_text}\n\n{deck.cta}"
+        primary = (
+            f"{deck.caption_lead}\n\n"
+            f"{deck.value_proposition}.\n\n"
+            f"{deck.cta}."
+        )
         variants = {
-            "concise": f"{headline}\n\n{deck.cta}",
-            "editorial": f"{deck.supporting_text}\n\n{deck.cta}",
+            "concise": f"{deck.headline.replace(chr(10), ' ')}\n\n{deck.cta}.",
+            "problem-solution": (
+                f"{deck.problem}.\n\n{deck.value_proposition}.\n\n{deck.cta}."
+            ),
+            "editorial": (
+                f"{deck.caption_lead}\n\n{deck.supporting_text}\n\n{deck.cta}."
+            ),
         }
         return Caption(
             primary=primary,
@@ -175,12 +156,12 @@ class DeterministicGenerator:
         category = record.category
         template = self._pick_template(category)
         hook_type = self._pick_hook_type(category)
-        rng = self._rng(record)
-        deck = build_copy_deck(record.title, category)
+        deck = build_copy_deck(record.title, category, record.summary)
+        defects = validate_copy_deck(deck)
+        if defects:
+            raise ValueError(f"CopyDeck rejected for {record.source_id}: {'; '.join(defects)}")
 
-        audience_list = AUDIENCES.get(category, AUDIENCES[Category.TOOL_DEMO])
-        audience_data = rng.choice(audience_list)
-        psychology = rng.choice(PSYCHOLOGY)
+        audience = self._audience_for(category)
         caption = self._generate_caption(record)
         art_direction = self._generate_art_direction(template)
 
@@ -201,26 +182,26 @@ class DeterministicGenerator:
             "publication_risk_tags": sorted(tag.value for tag in publish_tags),
             "risk_scope_version": 2,
             "graphic_engineering_version": 2,
-            "copy_deck": {
-                "short_title": deck.short_title,
-                "headline": deck.headline,
-                "supporting_text": deck.supporting_text,
-                "cta": deck.cta,
-                "alt_text": deck.alt_text,
-                "category_label": deck.category_label,
-            },
+            "semantic_messaging_version": 1,
+            "copy_deck": asdict(deck),
         }
 
         return Brief(
             brief_id=generate_id("brief"),
             catalog_record=record,
-            audience=Audience(**audience_data),
+            audience=audience,
             content_strategy=ContentStrategy(
-                angle=f"معرفی کاربردی {deck.short_title} برای {audience_data['segment']}",
+                angle=(
+                    f"مسئله: {deck.problem} | ارزش: {deck.value_proposition} | "
+                    f"هدف: {deck.marketing_goal}"
+                ),
                 hook_type=hook_type,
                 template_type=template,
             ),
-            psychology_hypothesis=PsychologyHypothesis(**psychology),
+            psychology_hypothesis=PsychologyHypothesis(
+                principle=deck.psychology_principle,
+                expected_effect=deck.psychology_effect,
+            ),
             caption=caption,
             art_direction=art_direction,
             risk_level=risk_level,
@@ -232,7 +213,7 @@ class DeterministicGenerator:
                 "content": record.source_id,
             },
             created_at=utcnow(),
-            version=2,
+            version=3,
         )
 
     def generate_briefs(self, records: list[CatalogRecord]) -> list[Brief]:
