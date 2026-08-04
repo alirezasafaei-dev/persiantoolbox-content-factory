@@ -418,7 +418,6 @@ class Renderer:
 
             async with async_playwright() as p:
                 browser = await p.chromium.launch(
-                    executable_path="/snap/bin/chromium",
                     args=[
                         "--no-sandbox",
                         "--disable-gpu",
