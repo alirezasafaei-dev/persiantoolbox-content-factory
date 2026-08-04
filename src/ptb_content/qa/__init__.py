@@ -58,9 +58,7 @@ class QAEngine:
         """Validate natural Persian copy and reject raw metadata leakage."""
         deck = build_copy_deck(brief.catalog_record.title, brief.catalog_record.category)
         defects = validate_copy_deck(deck)
-        audience_text = " ".join(
-            [brief.caption.primary, brief.caption.cta, brief.caption.alt_text]
-        )
+        audience_text = " ".join([brief.caption.primary, brief.caption.cta, brief.caption.alt_text])
         forbidden = [
             token
             for token in (
@@ -91,9 +89,7 @@ class QAEngine:
         )
 
     def check_persian_normalization(self, brief: Brief) -> CheckResult:
-        text = "\n".join(
-            [brief.caption.primary, brief.caption.cta, brief.caption.alt_text]
-        )
+        text = "\n".join([brief.caption.primary, brief.caption.cta, brief.caption.alt_text])
         normalized = normalize_persian(text)
         if has_arabic_imposters(text):
             return CheckResult(
